@@ -1,0 +1,9 @@
+# Maintainers of the Jinn protocol specification. See GOVERNANCE.md.
+# Code-owner approval is required on every path listed here.
+
+/GOVERNANCE.md      @oaksprout @ritsukai @ritsuKai2000
+/CONTRIBUTING.md    @oaksprout @ritsukai @ritsuKai2000
+/README.md          @oaksprout @ritsukai @ritsuKai2000
+/LICENSE            @oaksprout @ritsukai @ritsuKai2000
+/.github/           @oaksprout @ritsukai @ritsuKai2000
+/proposals/         @oaksprout @ritsukai @ritsuKai2000
