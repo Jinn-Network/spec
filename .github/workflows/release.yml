@@ -1,0 +1,237 @@
+# Build the attested bundle for a release tag and deploy it to spec.jinn.network.
+#
+# One release tag, one origin, no human step in between. The job builds each release
+# group's served root from this repository's own documents, signs each group manifest with
+# the release key, assembles the deploy bundle, publishes the signing key's public half
+# beside it, deploys the bundle, and then proves the origin serves it.
+#
+# Three commitments this file exists to hold:
+#
+#   * Tags only. A branch push must never deploy the origin, so the first step refuses
+#     anything that is not a `v*.*.*` tag before any other step runs.
+#   * Never unsigned. A missing signing key is a loud failure naming the secret, not a
+#     bundle without a sidecar. `sign-profile-manifest.mjs` exits 0 and writes nothing when
+#     no key is provisioned, which is right for a pull request and wrong for a release.
+#   * Deploy is not done until verification passes. `verify-live-host.mjs` fetches every
+#     document of every group from the live origin and compares bytes, media type and
+#     signature. It has no "host unreachable, skip" branch, and the job fails when it does.
+#
+# The private key is read from the secret into `node`'s environment and never written to
+# disk. Only its public half reaches the bundle.
+
+name: release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-origin
+  cancel-in-progress: false
+
+env:
+  ORIGIN: https://spec.jinn.network
+  BUNDLE_DIR: ${{ github.workspace }}/build/deploy-bundle
+  ROOTS_DIR: ${{ github.workspace }}/build/profile-roots
+  REPORT_PATH: ${{ github.workspace }}/build/live-host-report.json
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Refuse anything that is not a release tag
+        run: |
+          set -euo pipefail
+          if [ "${GITHUB_REF_TYPE}" != "tag" ]; then
+            echo "release deploys tags only; ${GITHUB_REF} is a ${GITHUB_REF_TYPE}" >&2
+            exit 1
+          fi
+          case "${GITHUB_REF_NAME}" in
+            v[0-9]*.[0-9]*.[0-9]*) ;;
+            *) echo "release tag must be v<major>.<minor>.<patch>, got ${GITHUB_REF_NAME}" >&2; exit 1 ;;
+          esac
+
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.23.1
+
+      - run: npm ci
+
+      # The byte-identity assertion. Nothing is built for deployment before it passes.
+      - name: Check
+        run: npm run check
+
+      - name: Require the provisioned secrets
+        env:
+          JINN_PROFILE_MANIFEST_SIGNING_KEY: ${{ secrets.JINN_PROFILE_MANIFEST_SIGNING_KEY }}
+          JINN_PROFILE_MANIFEST_KEY_ID: ${{ secrets.JINN_PROFILE_MANIFEST_KEY_ID }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          set -euo pipefail
+          missing=""
+          for name in JINN_PROFILE_MANIFEST_SIGNING_KEY JINN_PROFILE_MANIFEST_KEY_ID \
+                      VERCEL_TOKEN VERCEL_ORG_ID VERCEL_PROJECT_ID; do
+            if [ -z "${!name:-}" ]; then missing="${missing} ${name}"; fi
+          done
+          if [ -n "${missing}" ]; then
+            echo "this repository is not provisioned to deploy the origin; missing secrets:${missing}" >&2
+            echo "see docs/releasing.md for what an operator provisions once" >&2
+            exit 1
+          fi
+
+      # The key id becomes a path segment under `keys/` in the bundle and a URL segment at
+      # the origin, so it is checked against the same rule the verifier applies before it
+      # is used to name a file.
+      - name: Build and sign one served root per release group
+        env:
+          JINN_PROFILE_MANIFEST_SIGNING_KEY: ${{ secrets.JINN_PROFILE_MANIFEST_SIGNING_KEY }}
+          JINN_PROFILE_MANIFEST_KEY_ID: ${{ secrets.JINN_PROFILE_MANIFEST_KEY_ID }}
+        run: |
+          set -euo pipefail
+          node --input-type=module -e '
+            import { publicKeyServedPath } from "./scripts/verify-live-host.mjs";
+            const derived = publicKeyServedPath(process.env.JINN_PROFILE_MANIFEST_KEY_ID);
+            if (derived.error) { console.error(derived.error); process.exit(1); }
+          '
+          groups="$(node --input-type=module -e '
+            import { loadInventory, releaseGroupNames } from "./scripts/build-profile-root.mjs";
+            console.log(releaseGroupNames(loadInventory(process.cwd())).join(" "));
+          ')"
+          echo "release groups: ${groups}"
+          roots=""
+          for group in ${groups}; do
+            node scripts/build-profile-root.mjs \
+              --out "${ROOTS_DIR}/${group}" --release-group "${group}" --lane stable
+            node scripts/sign-profile-manifest.mjs --root "${ROOTS_DIR}/${group}"
+            if [ ! -f "${ROOTS_DIR}/${group}/manifest.dsse.json" ]; then
+              echo "no signature sidecar for ${group}; refusing to deploy an unsigned manifest" >&2
+              exit 1
+            fi
+            roots="${roots} --root ${ROOTS_DIR}/${group}"
+          done
+          # shellcheck disable=SC2086
+          node scripts/build-profile-host-bundle.mjs ${roots} --out "${BUNDLE_DIR}"
+
+      # The public half of the signing key, so a verifier can fetch it at
+      # `<origin>/keys/<key id>.pem`. The private half is never written anywhere.
+      - name: Publish the signing key's public half into the bundle
+        env:
+          JINN_PROFILE_MANIFEST_SIGNING_KEY: ${{ secrets.JINN_PROFILE_MANIFEST_SIGNING_KEY }}
+          JINN_PROFILE_MANIFEST_KEY_ID: ${{ secrets.JINN_PROFILE_MANIFEST_KEY_ID }}
+        run: |
+          set -euo pipefail
+          # shellcheck disable=SC2016  # the ${} below are JavaScript template literals
+          node --input-type=module -e '
+            import { createPrivateKey, createPublicKey } from "node:crypto";
+            import { mkdirSync, writeFileSync } from "node:fs";
+            import { join } from "node:path";
+            import { publicKeyServedPath } from "./scripts/verify-live-host.mjs";
+            const derived = publicKeyServedPath(process.env.JINN_PROFILE_MANIFEST_KEY_ID);
+            if (derived.error) { console.error(derived.error); process.exit(1); }
+            const key = createPublicKey(createPrivateKey(process.env.JINN_PROFILE_MANIFEST_SIGNING_KEY));
+            if (key.asymmetricKeyType !== "ed25519") {
+              console.error(`signing key must be ed25519, got ${key.asymmetricKeyType}`);
+              process.exit(1);
+            }
+            const target = join(process.env.BUNDLE_DIR, ...derived.servedPath.split("/"));
+            mkdirSync(join(process.env.BUNDLE_DIR, "keys"), { recursive: true });
+            writeFileSync(target, key.export({ type: "spki", format: "pem" }).toString(), "utf8");
+            console.log(`published the signing key public half at ${derived.servedPath}`);
+          '
+
+      # Uploaded before the deploy so a failed deploy still leaves the exact bytes that
+      # were meant to be served.
+      - name: Upload the deploy bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: deploy-bundle-${{ github.ref_name }}
+          path: ${{ env.BUNDLE_DIR }}
+          if-no-files-found: error
+
+      # `vercel build` translates the bundle's own `vercel.json` into the deployment's
+      # route table using Vercel's builder rather than a hand-written copy of its
+      # semantics, and `--prebuilt` then uploads exactly that output. There is no git
+      # integration and no build command: the deployed bytes are the bundle's bytes.
+      - name: Deploy the bundle to the origin
+        working-directory: ${{ env.BUNDLE_DIR }}
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          set -euo pipefail
+          npm install --global vercel@59.11.2
+          vercel pull --yes --environment=production --token="${VERCEL_TOKEN}"
+          vercel build --prod --token="${VERCEL_TOKEN}"
+          vercel deploy --prebuilt --prod --token="${VERCEL_TOKEN}" \
+            | tee "${RUNNER_TEMP}/deployment-url.txt"
+
+      # Deploy is not done until the origin serves it.
+      - name: Verify the live origin
+        run: |
+          set -euo pipefail
+          node scripts/verify-live-host.mjs \
+            --bundle "${BUNDLE_DIR}" \
+            --repo-root "${GITHUB_WORKSPACE}" \
+            --origin "${ORIGIN}" \
+            --release "${GITHUB_REF_NAME}" \
+            --out "${REPORT_PATH}"
+
+      - name: Upload the verification report
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-host-report-${{ github.ref_name }}
+          path: ${{ env.REPORT_PATH }}
+          if-no-files-found: error
+
+      # The one write this workflow makes to GitHub: the release for the tag carries each
+      # group's manifest and its signature sidecar, so the inventory of a release is
+      # readable without fetching the origin.
+      - name: Attach the group manifests to the release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          assets="${RUNNER_TEMP}/release-assets"
+          mkdir -p "${assets}"
+          for path in "${ROOTS_DIR}"/*/manifest.json; do
+            group="$(basename "$(dirname "${path}")")"
+            cp "${path}" "${assets}/${group}.manifest.json"
+            cp "$(dirname "${path}")/manifest.dsse.json" "${assets}/${group}.manifest.dsse.json"
+          done
+          if ! gh release view "${GITHUB_REF_NAME}" >/dev/null 2>&1; then
+            gh release create "${GITHUB_REF_NAME}" --title "${GITHUB_REF_NAME}" \
+              --notes "Served at ${ORIGIN}, verified against the live origin by this release run. Each release group's digest manifest and its detached DSSE signature are attached; the signing key's public half is published at ${ORIGIN}/keys/."
+          fi
+          gh release upload "${GITHUB_REF_NAME}" "${assets}"/* --clobber
+
+      - name: Summarize the release
+        run: |
+          set -euo pipefail
+          {
+            echo "## Release ${GITHUB_REF_NAME}"
+            echo
+            echo "- Tagged commit: \`${GITHUB_SHA}\`"
+            echo "- Origin: ${ORIGIN}"
+            echo "- Deployment: $(tail -n 1 "${RUNNER_TEMP}/deployment-url.txt")"
+            echo "- Live-host verification: passed"
+            echo
+            echo "| Release group | Manifest sha256 | Documents |"
+            echo "| --- | --- | --- |"
+            # shellcheck disable=SC2016  # the ${} below are JavaScript template literals
+            node --input-type=module -e '
+              import { readFileSync } from "node:fs";
+              const report = JSON.parse(readFileSync(process.env.REPORT_PATH, "utf8"));
+              for (const group of report.groups) {
+                console.log(`| \`${group.releaseGroup}\` | \`${group.manifestSha256}\` | ${group.documentsVerified} |`);
+              }'
+          } | tee -a "${GITHUB_STEP_SUMMARY}"

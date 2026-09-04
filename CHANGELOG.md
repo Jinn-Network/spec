@@ -5,6 +5,7 @@ Every release of the specification, newest first. Each entry names the documents
 ## Unreleased
 
 - Repository created with its front door, governance, contributing guide, proposal template, and license.
+- Continuous integration: `check` runs the test suite on every pull request and on `main`; `release` builds, signs, deploys and then verifies the origin on a `v*.*.*` tag, gated by `scripts/verify-live-host.mjs`, a fail-closed live-host verifier with no "host unreachable, skip" branch. See [`docs/releasing.md`](docs/releasing.md).
 
 ### Imported: 535 documents
 

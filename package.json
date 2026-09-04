@@ -11,6 +11,7 @@
   "scripts": {
     "check": "node --test scripts/*.test.mjs",
     "build:sealed-platform-v1": "node scripts/build-profile-root.mjs --out build/sealed-platform-v1 --release-group sealed-platform-v1 --lane stable",
-    "build:implementations-v1": "node scripts/build-profile-root.mjs --out build/implementations-v1 --release-group implementations-v1 --lane stable"
+    "build:implementations-v1": "node scripts/build-profile-root.mjs --out build/implementations-v1 --release-group implementations-v1 --lane stable",
+    "verify:live": "node scripts/verify-live-host.mjs"
   }
 }

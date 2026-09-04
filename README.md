@@ -82,7 +82,7 @@ Every document carries a status line:
 - **candidate**: changes only through a proposal; implementations are invited to test it.
 - **sealed**: never edited. A change is a new document that supersedes it. Errata to vectors are append-only.
 
-The served origin is `https://spec.jinn.network/`. It is built and deployed from this repository's continuous integration.
+The served origin is `https://spec.jinn.network/`. A release tag builds the signed bundle and deploys it from this repository's continuous integration, and the deploy is not done until the origin has been verified against the bundle byte for byte. How a release is cut, what an operator provisions once, and how anyone checks the origin by hand are in [`docs/releasing.md`](docs/releasing.md).
 
 ## Proposing a change
 
