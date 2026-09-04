@@ -1,0 +1,2505 @@
+{
+  "version": 1,
+  "generatedFrom": {
+    "repository": "Jinn-Network/mono",
+    "commit": "34359891760dc199e5688690ff3abf87f7ae51d7"
+  },
+  "inventory": {
+    "path": "inventory.json",
+    "sha256": "ebe380d1b0f86db6d5638a52c41b5b637d9d4b2ecad13e2ffb4886214a0d1c38"
+  },
+  "releaseGroup": "sealed-platform-v1",
+  "lane": "stable",
+  "packages": [
+    "@jinn-network/chain-environment-record",
+    "@jinn-network/environment-record",
+    "@jinn-network/evidence-offer",
+    "@jinn-network/evidence-protocol",
+    "@jinn-network/evidence-trace",
+    "@jinn-network/record-discovery-protocol",
+    "@jinn-network/record-discovery-testing",
+    "@jinn-network/task-execution-profiles",
+    "@jinn-network/task-execution-protocol",
+    "@jinn-network/trust-core"
+  ],
+  "documents": [
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/adversarial-v1/anchor-root-as-initial-commitment/document.json",
+      "sha256": "480fca101a8987765a8bf281b243db0383a8668bc5de2f836a2f319b1cda24da",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/adversarial-v1/artifact-entry-uncovered/document.json",
+      "sha256": "610301031b760347e85831078675cc63cc78e7a685ac251e0aea1092fcd0a3f8",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/adversarial-v1/bare-extension-key/document.json",
+      "sha256": "ac2a8473c2853c85e48e50b4fd2f5ebe30e1ab1f44d93517bf19801ae7e5243a",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/adversarial-v1/digest-confusion-bare-hex/document.json",
+      "sha256": "186174bd16127b9aada482c0f6755c456bd7e7f1334f9dbb09652caab0b24d1f",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/adversarial-v1/index-digest-as-manifest/document.json",
+      "sha256": "41da114e8a504da47de74683c3c389cca4c452400303619dadc033dc7bf9aa0a",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/adversarial-v1/manifest.json",
+      "sha256": "6a2368ce95fe839313c417c7673bc61b4dc1c7a325aa28e1a1631aae66af3317",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/adversarial-v1/namespaced-extension-preserved/document.json",
+      "sha256": "113041c0c15d40004425bb4e60b10cf7708197b5de952710ebe247e232149dc5",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/adversarial-v1/origin-precedence-undeclared/document.json",
+      "sha256": "e1a579df61e3ff109e784212f580db6bd8a9a4aef6d6e56039d5c9b02b11331b",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/adversarial-v1/recanonicalized-bytes/document.bytes",
+      "sha256": "a70974e09d7261c0cd8457748bb704495a610470098c5b033a3e7d943c7fad9d",
+      "mediaType": "application/octet-stream",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/adversarial-v1/well-known-fixture-address/document.json",
+      "sha256": "cfaec60bc2e6c501ca22e4f97d26f2b4ce5e1831c19c2f030f820bdb4ca6956b",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/chain/archive-dependent.json",
+      "sha256": "6706e857f3f4f33873d25839e17025dd691dc33dd9d19017c422ce9602a9ad73",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/chain/closed-anchored-subset.json",
+      "sha256": "001e03523bcf81c82a8a24e36d3f102763402ec751be248d4e8f235d03d24e7f",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/chain/closed-local.json",
+      "sha256": "21ca4990f5a36dd847f63a4515d7d7c91f98003a232bcfee08e9f2142dd281a1",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/composite/chain-only.json",
+      "sha256": "768145b331d27c8451672d98c96d9e7141a87749bc914f40b4d20cb2dc196e13",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/composite/composed.json",
+      "sha256": "242618394b37fb7ef3dc86bdc81be8f65e0729fd5b78371fc51bd8b3e94832db",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/composite/extension.json",
+      "sha256": "289bf0769d2a91b4221b616d30b4712c58d6c04b3bb70a399ecc025961f26280",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/equivalence/expected-digest.json",
+      "sha256": "0097e9e2af2e08bc95b65336ed2bf5aef82b2025a63f764226144bd388c98042",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/equivalence/input-a.json",
+      "sha256": "a70974e09d7261c0cd8457748bb704495a610470098c5b033a3e7d943c7fad9d",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/equivalence/input-b.json",
+      "sha256": "7a668d8c3b9f87bd2667da9a240f4dfe7d853abe33d41d9fcbde2d142da5edae",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/invalid/anchor-root-as-initial-commitment.json",
+      "sha256": "480fca101a8987765a8bf281b243db0383a8668bc5de2f836a2f319b1cda24da",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/invalid/artifact-entry-uncovered.json",
+      "sha256": "610301031b760347e85831078675cc63cc78e7a685ac251e0aea1092fcd0a3f8",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/invalid/bare-extension-key.json",
+      "sha256": "ac2a8473c2853c85e48e50b4fd2f5ebe30e1ab1f44d93517bf19801ae7e5243a",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/invalid/checksummed-address.json",
+      "sha256": "d82fa9f1e6f10d4820fb1974daf708ec5967e8ac20e4ae5f4801f040d13a63ff",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/invalid/digest-confusion-bare-hex.json",
+      "sha256": "186174bd16127b9aada482c0f6755c456bd7e7f1334f9dbb09652caab0b24d1f",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/invalid/digest-confusion-prefixed-descriptor.json",
+      "sha256": "f704b69bb3a42fc8788ca954ef27403e762eed0716f606116492e9521ecc0023",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/invalid/index-digest-as-manifest.json",
+      "sha256": "41da114e8a504da47de74683c3c389cca4c452400303619dadc033dc7bf9aa0a",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/invalid/origin-precedence-undeclared.json",
+      "sha256": "e1a579df61e3ff109e784212f580db6bd8a9a4aef6d6e56039d5c9b02b11331b",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/invalid/snapshot-reset-closed-state.json",
+      "sha256": "ee4a9bb875dbf65cbed423999fc987c047393e6a2bb0df46b4bc198648ce171a",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/invalid/well-known-fixture-address.json",
+      "sha256": "cfaec60bc2e6c501ca22e4f97d26f2b4ce5e1831c19c2f030f820bdb4ca6956b",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/chain-environment-record/fixtures/manifest.sha256.json",
+      "sha256": "6eb5febe1c8831d2a8ebcffb3b86c04e099e7a541c2452096a7d5088638395b7",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "@jinn-network/environment-record/fixtures/adversarial-v1/bare-extension-key/document.json",
+      "sha256": "6f60239ff92c1bf5fd3f53e30ba92bb38eda9f963cb6f855bed04cf1be9680d7",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/environment-record"
+    },
+    {
+      "path": "@jinn-network/environment-record/fixtures/adversarial-v1/bare-hex-manifest-digest/document.json",
+      "sha256": "c40dff236005dbd613fabf1ad5ab8211291ff23403d1127cd65d311cf18954bf",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/environment-record"
+    },
+    {
+      "path": "@jinn-network/environment-record/fixtures/adversarial-v1/index-digest-as-manifest/document.json",
+      "sha256": "2ed978732e864699925a1a53e9ef661c0396a1a626258130fea746afe78b13e8",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/environment-record"
+    },
+    {
+      "path": "@jinn-network/environment-record/fixtures/adversarial-v1/manifest.json",
+      "sha256": "ebd031f02967c2d8d75100adab126c1750b918f48a32309f572f27f2eed8b572",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/environment-record"
+    },
+    {
+      "path": "@jinn-network/environment-record/fixtures/adversarial-v1/namespaced-extension-preserved/document.json",
+      "sha256": "9c1876dabfee4ed1cb966f4713b223390bffbf366fec1f97e926ffefb595b61a",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/environment-record"
+    },
+    {
+      "path": "@jinn-network/environment-record/fixtures/adversarial-v1/recanonicalized-bytes/document.bytes",
+      "sha256": "03aea854308c893e0c309f181de897b16038c3935a9e6fffcafc816ea3da4e8b",
+      "mediaType": "application/octet-stream",
+      "sourcePackage": "@jinn-network/environment-record"
+    },
+    {
+      "path": "@jinn-network/environment-record/fixtures/adversarial-v1/reference-not-ending-in-digest/document.json",
+      "sha256": "b7b0044df45bea39d3efd99be721b64d81f49417928831b9256280053fa9d6c2",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/environment-record"
+    },
+    {
+      "path": "@jinn-network/environment-record/fixtures/adversarial-v1/shell-command-exe-spelling/document.json",
+      "sha256": "9e1019153b8f173f35990d8cfe0afb2c07b8425cc5438dfa549643e5e53ff7ec",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/environment-record"
+    },
+    {
+      "path": "@jinn-network/environment-record/fixtures/adversarial-v1/shell-command/document.json",
+      "sha256": "7185fb2f3a034504fd7aed52b3c3f73c1ef7c44a6eb962fd082287e45744016a",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/environment-record"
+    },
+    {
+      "path": "@jinn-network/environment-record/fixtures/environment/extension.json",
+      "sha256": "b395e4ac993a0aa7a386c883ec69582d75e4ee26a88a53deae1feadfe6f3f3fc",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/environment-record"
+    },
+    {
+      "path": "@jinn-network/environment-record/fixtures/environment/imported.json",
+      "sha256": "a3524f16f976b17281d4d7deb42490616f0e464ba4f9490f7b5c9ba2c019c273",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/environment-record"
+    },
+    {
+      "path": "@jinn-network/environment-record/fixtures/environment/invalid-bare-extension-key.json",
+      "sha256": "6f60239ff92c1bf5fd3f53e30ba92bb38eda9f963cb6f855bed04cf1be9680d7",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/environment-record"
+    },
+    {
+      "path": "@jinn-network/environment-record/fixtures/environment/invalid-bare-hex-manifest-digest.json",
+      "sha256": "c40dff236005dbd613fabf1ad5ab8211291ff23403d1127cd65d311cf18954bf",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/environment-record"
+    },
+    {
+      "path": "@jinn-network/environment-record/fixtures/environment/invalid-index-digest-as-manifest.json",
+      "sha256": "2ed978732e864699925a1a53e9ef661c0396a1a626258130fea746afe78b13e8",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/environment-record"
+    },
+    {
+      "path": "@jinn-network/environment-record/fixtures/environment/invalid-reference-not-ending-in-digest.json",
+      "sha256": "b7b0044df45bea39d3efd99be721b64d81f49417928831b9256280053fa9d6c2",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/environment-record"
+    },
+    {
+      "path": "@jinn-network/environment-record/fixtures/environment/invalid-shell-command-exe-spelling.json",
+      "sha256": "9e1019153b8f173f35990d8cfe0afb2c07b8425cc5438dfa549643e5e53ff7ec",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/environment-record"
+    },
+    {
+      "path": "@jinn-network/environment-record/fixtures/environment/invalid-shell-command.json",
+      "sha256": "7185fb2f3a034504fd7aed52b3c3f73c1ef7c44a6eb962fd082287e45744016a",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/environment-record"
+    },
+    {
+      "path": "@jinn-network/environment-record/fixtures/environment/tier-1.json",
+      "sha256": "d62842d2135b31ff3b5db96120f99fb385101083e6b1e1e47c96e70b91f43a30",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/environment-record"
+    },
+    {
+      "path": "@jinn-network/environment-record/fixtures/equivalence/expected-digest.json",
+      "sha256": "473fcf3e10941cbca2a6869e19b9e79924550f86714471948fa0917ba2d303ff",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/environment-record"
+    },
+    {
+      "path": "@jinn-network/environment-record/fixtures/equivalence/input-a.json",
+      "sha256": "03aea854308c893e0c309f181de897b16038c3935a9e6fffcafc816ea3da4e8b",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/environment-record"
+    },
+    {
+      "path": "@jinn-network/environment-record/fixtures/equivalence/input-b.json",
+      "sha256": "2961c67bb720f8f4c78cc9b4e50b3c9dca7b6091fc8f311cbbbb66a2c370da20",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/environment-record"
+    },
+    {
+      "path": "@jinn-network/environment-record/fixtures/manifest.sha256.json",
+      "sha256": "61d30698390a43cd80fe19e1c7fb4145e765dcf624a760e59647869d0c9490f7",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/environment-record"
+    },
+    {
+      "path": "@jinn-network/evidence-offer/fixtures/manifest.sha256.json",
+      "sha256": "9203046c1e3ff5198e0ff20e0eb5613e0a668fe3d1a82c029bf80c948818a1f9",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-offer"
+    },
+    {
+      "path": "@jinn-network/evidence-offer/fixtures/offer/free.document.json",
+      "sha256": "d4d51a2a6beb46470da070f1f5ab23086406ad210fbe9d9fc9e70cb96d4c0715",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-offer"
+    },
+    {
+      "path": "@jinn-network/evidence-offer/fixtures/offer/free.json",
+      "sha256": "58b6c08203dbe40f5eb2545ddc05528ab2e81d2a849f71718fe5884cf3ce542f",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-offer"
+    },
+    {
+      "path": "@jinn-network/evidence-offer/fixtures/offer/invalid-bare-extension-key.json",
+      "sha256": "5c57e776228f28d22a160345caf094a30f2f32e979ba39b70320e4545aa4f609",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-offer"
+    },
+    {
+      "path": "@jinn-network/evidence-offer/fixtures/offer/invalid-bare-hex-subject.json",
+      "sha256": "87a851ed49af369556ff2f42e388dbf5062c30dce469ce7e92cf5429ec511bba",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-offer"
+    },
+    {
+      "path": "@jinn-network/evidence-offer/fixtures/offer/invalid-duplicate-rail.json",
+      "sha256": "3206536cab4034db7bd970937ef6ec4a378b8027c7dd340ab513617210dc3465",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-offer"
+    },
+    {
+      "path": "@jinn-network/evidence-offer/fixtures/offer/invalid-equivalent-rail-spelling.json",
+      "sha256": "9f2645ca1ee75761c88548a9a01625936d05ada8de9bd00ec18a361ed4cebd62",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-offer"
+    },
+    {
+      "path": "@jinn-network/evidence-offer/fixtures/offer/invalid-leading-zero-amount.json",
+      "sha256": "edd182056a50d48dc04540eebfdee433950fb2d110c61226d695d121f607ff72",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-offer"
+    },
+    {
+      "path": "@jinn-network/evidence-offer/fixtures/offer/invalid-missing-rails.json",
+      "sha256": "98b809361155eecc760176c347a1daaaab76c5e15e010044f6917848b6dce3dc",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-offer"
+    },
+    {
+      "path": "@jinn-network/evidence-offer/fixtures/offer/invalid-rail-spelled-twice.json",
+      "sha256": "64a9ffc0d5340b1358af5e11d461fb8bf3ec0f7b32feae4a1c64ffc28bfd1d5c",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-offer"
+    },
+    {
+      "path": "@jinn-network/evidence-offer/fixtures/offer/invalid-relative-gate-uri.json",
+      "sha256": "1325ab6495b20f2bc3d5e963ffd224a6c6d6c40cdcd9889224336b66592f108f",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-offer"
+    },
+    {
+      "path": "@jinn-network/evidence-offer/fixtures/offer/invalid-relative-rail-identifier.json",
+      "sha256": "09a0f1d15dee4defb9d8e9bffb84ea3d02dc5869b5d5beaa417b70e078930358",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-offer"
+    },
+    {
+      "path": "@jinn-network/evidence-offer/fixtures/offer/invalid-signed-amount.json",
+      "sha256": "fadc33bb215c3e1e59b97155d936c9cdaeeec1553f03e312c5b9f81cb04e81c9",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-offer"
+    },
+    {
+      "path": "@jinn-network/evidence-offer/fixtures/offer/invalid-spoofable-rail-destination.json",
+      "sha256": "256dc5b8c706d265d0cdac458fb53de17906e5639ee6de185e00079be46800fc",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-offer"
+    },
+    {
+      "path": "@jinn-network/evidence-offer/fixtures/offer/invalid-unnormalized-rail-identifier.json",
+      "sha256": "bf21caee43d693a25877171580a0e764192d40a0ac495a377f505e71e7046d73",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-offer"
+    },
+    {
+      "path": "@jinn-network/evidence-offer/fixtures/offer/invalid-unsorted-rails.json",
+      "sha256": "eb23f9c3981a9ab894ec35965157cd8d0d91c17a2a8405fba7a11bf0270bd054",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-offer"
+    },
+    {
+      "path": "@jinn-network/evidence-offer/fixtures/offer/invalid-zero-amount.json",
+      "sha256": "b7428a300b8ca2ca8634c6dff70681d8dea563a416e1b2ae00b01565d1d41b98",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-offer"
+    },
+    {
+      "path": "@jinn-network/evidence-offer/fixtures/offer/priced.document.json",
+      "sha256": "8636395c5a4c31b68215668b266c26a48c949556d45da67d145d90d9eee659ac",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-offer"
+    },
+    {
+      "path": "@jinn-network/evidence-offer/fixtures/offer/priced.json",
+      "sha256": "62b49fb4debfd4ffdb6416a2c8999bcb4aaf3ff2665b3feddcb3db017813bf1b",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-offer"
+    },
+    {
+      "path": "@jinn-network/evidence-offer/fixtures/offer/superseding.document.json",
+      "sha256": "1e5c327a6f59b39c960b039cf7de027ead39dc8cd18ef6a0d39cc58d1d2478a9",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-offer"
+    },
+    {
+      "path": "@jinn-network/evidence-offer/fixtures/offer/superseding.json",
+      "sha256": "3e1a576ec1abeeafa201ae86828bb2e1e5a150c379d68d686867cb8a2f49264f",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-offer"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/README.md",
+      "sha256": "2ad090fd2779806e8048655e51e0786f51d62a348a53e0f81db55ea4db084e64",
+      "mediaType": "text/markdown",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/claims/execution-verification/execution-verification.dsse.json",
+      "sha256": "d683da3800f0860a8881c9affe8d9a569264254c3359995d38d18ec1962b64b1",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/claims/execution-verification/public-key.pem",
+      "sha256": "4d741dbfb4845615773251bcfe130b7ce3e63d9626a5979a51bf3b6631ab78eb",
+      "mediaType": "application/octet-stream",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/claims/execution-verification/statement.json",
+      "sha256": "db97bb6a24f3190cf0a357b861c998d6c193d27d35a51413c3d44b4e3e94884d",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/claims/execution-verification/verification-policy.md",
+      "sha256": "e4e3edda0138ad852221568c3996239438119098d7c41c70ebad287119647e48",
+      "mediaType": "text/markdown",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/claims/execution-verification/verifier-implementation.json",
+      "sha256": "79243a25b4f0f2986facdcf27265d6dc3bd67b0402cbd244b4274fd3f17f7bfd",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/claims/execution-verification/verifier.mjs",
+      "sha256": "1935c1001b4cfdccbc8a4701bc9ad47496ce540d516f386dab0499a8feef7a23",
+      "mediaType": "application/octet-stream",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/claims/result-evaluation/evaluation-report.json",
+      "sha256": "a13d0046865150ec121194084a45e23fb7ee8b22a1ffb6cb251dbfd223293fb8",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/claims/result-evaluation/evaluation-specification.md",
+      "sha256": "e1dccd97de6886b2e1961d396c044631c4d2f3b412cb3f4c7d715e9101fd6fe4",
+      "mediaType": "text/markdown",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/claims/result-evaluation/evaluator-implementation.json",
+      "sha256": "b7c4d8b4fc4719780b91e6e69a1236beb2ef66773f5e35450adb346ea21bfc24",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/claims/result-evaluation/evaluator.mjs",
+      "sha256": "3a8a0807de3a0b506774e15a5c20f28d5eceec01dd063700b43007c09736dfb1",
+      "mediaType": "application/octet-stream",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/claims/result-evaluation/public-key.pem",
+      "sha256": "16684c7972473fe267e361290c08ea09d6989d29bee17e962535e9790148d2ce",
+      "mediaType": "application/octet-stream",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/claims/result-evaluation/result-evaluation.dsse.json",
+      "sha256": "80ae658a7015a0e5df07d99f9cf4f75c60d07e631cdbc3c48f5bc85575914382",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/claims/result-evaluation/statement.json",
+      "sha256": "7e41ef580944ec4b35f1fe20411d3f5416b334a064340b4856ba0af3c61c1fe8",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/conformance-report.json",
+      "sha256": "f2f3ee486a1944c5c52f4117e5719afaa5f05b3fa28100ebf51fb2b16c742024",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/execution/evidence/in-run-tests.json",
+      "sha256": "3ceef13187cc78434fcfd57b74aefdd005bdb143f9a628dbe7dcf2b115627602",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/execution/external/marketplace-reference.json",
+      "sha256": "ace9082d640415c4c33a4c3b292bf3bb637b14959b7e5006ae417240f3797bbf",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/execution/inputs/knowledge.md",
+      "sha256": "36a4911c74dbe04c7dfad94248e9eeae38d4237b27086cebb0f1459f0182a086",
+      "mediaType": "text/markdown",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/execution/inputs/repository-tree.json",
+      "sha256": "0c6d3f024ae4e4a87bda04b2b06a55b99cba73f9eb5a70f38f1857e549379b1d",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/execution/inputs/repository/src/slug.ts",
+      "sha256": "a47e413df6cdc33ce9634783b047dc702b4a78177debe476ee2b0698eba7b5ff",
+      "mediaType": "application/octet-stream",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/execution/inputs/repository/test/slug.test.ts",
+      "sha256": "2ddfeb6b357adaa5a86a59c7d78ca1d26d721c52e47f12e7e5a689f61860fc92",
+      "mediaType": "application/octet-stream",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/execution/results/slug-normalization.patch",
+      "sha256": "c43b406505b8c53ff9bf0a1c57442080d99a14b9f278739cb426313cf3238b07",
+      "mediaType": "application/octet-stream",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/execution/ro-crate-metadata.json",
+      "sha256": "7c55e8e528cf5760508093141a3d859218bca33a436347a7f719667ed2ad46bf",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/execution/runtime/hosted-model.json",
+      "sha256": "dcaf7b063b278a45fe08b78873ce21dc9e337455e153fdbc43c2ceb8a125d848",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/execution/runtime/runner.mjs",
+      "sha256": "4f24efa2d21d2e457487aef2f152b574c977f0750d4e8a5ca623d659cc60425a",
+      "mediaType": "application/octet-stream",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/execution/runtime/runtime-lock.json",
+      "sha256": "1717bb740edf41b607300c5358e148f4b42f12d8fcccca8903649385e0345018",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/execution/runtime/runtime-specification.json",
+      "sha256": "b1563a6db13e9214ca716653fc9862fa7fffc4e03c6a3b7ffde11b6922ba981a",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/execution/runtime/system-prompt.md",
+      "sha256": "db220054da8a9524f82f6505a04320f66300f21fd169f74a991b8b8bac319451",
+      "mediaType": "text/markdown",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/execution/runtime/tool-policy.json",
+      "sha256": "11bf01bd97086d09e8c55d1c4d8954ad97922e97c4ee60b0b916143939bf80a1",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/execution/runtime/workflow.json",
+      "sha256": "e1e0d8e2424598ef24ebf5b3c6f0e4ff03f3b94d0eb6c68eab4edd00b338f74c",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/execution/task/task.md",
+      "sha256": "1f42fd35cecf09d1bdf953fe4c7a1c8d25fd0bcf415a6b39aa7b61f1e982ef93",
+      "mediaType": "text/markdown",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/execution/trace/trace.jsonl",
+      "sha256": "49db69574d82af9133e1b37ab2c1b28e32067642f9fb92d45b58a789d958ff2a",
+      "mediaType": "application/octet-stream",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/public/results/slug-normalization.patch",
+      "sha256": "c43b406505b8c53ff9bf0a1c57442080d99a14b9f278739cb426313cf3238b07",
+      "mediaType": "application/octet-stream",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/public/ro-crate-metadata.json",
+      "sha256": "d31b6017ef4e4a23d61d510a51a13c6fff39ca344e87436cdc4c3360b69de8ed",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/public/scrub/public-execution-policy.json",
+      "sha256": "40140317cf686ffff29d64eef1b2287eb4560ed09c44c7fa24d21f6eef0f71f7",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/public/scrub/scrub-receipt.json",
+      "sha256": "efaa01cac74d7ddc0a9a607ac84347630e914a5506a32fc963cf61ed6100d010",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/public/task/task.md",
+      "sha256": "1f42fd35cecf09d1bdf953fe4c7a1c8d25fd0bcf415a6b39aa7b61f1e982ef93",
+      "mediaType": "text/markdown",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/public/trace/trace.public.jsonl",
+      "sha256": "e261de0ff9ccfc2a2c074d26a1fe0683405c3829c7127b4d0eb3d235e9491e76",
+      "mediaType": "application/octet-stream",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/golden-execution-evidence-v1/ro-crate-metadata.json",
+      "sha256": "c723f3280d7c5d46a703eb1fd0c78c1b83562b35b3bf6ac0a40ba54ff97d30d0",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/manifest.sha256.json",
+      "sha256": "b05339f7ea8d18f9ea2b17481d18f6e92e797b38adcdcd321ee0c79d2caf7f23",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-protocol/fixtures/task-execution-identifiers-v1/task-execution-identifiers.json",
+      "sha256": "624da4155807fe1f81488c086700e30ebeeaf676a54f5195ad985bcab09973aa",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "@jinn-network/evidence-trace/fixtures/adversarial-v1/empty-with-spans/document.json",
+      "sha256": "7b409a1f1c1293218e8c92183bb596ef0b68b5c9f4ab19d21f6d8a5827411dde",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-trace"
+    },
+    {
+      "path": "@jinn-network/evidence-trace/fixtures/adversarial-v1/full-with-skipped/document.json",
+      "sha256": "665e5e6818c4f1fa722dd13796de05ddbc74805de846c883249a91281247e45c",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-trace"
+    },
+    {
+      "path": "@jinn-network/evidence-trace/fixtures/adversarial-v1/grafted-parent/document.json",
+      "sha256": "ac6c6a375841f81445b2168bf351f4ba8436fb0781f4875fe22a8b017ecf5d53",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-trace"
+    },
+    {
+      "path": "@jinn-network/evidence-trace/fixtures/adversarial-v1/manifest.json",
+      "sha256": "1c1c18ebb25c25876a5bed885e1bc28b50d42bd74a78f2ba18e3afb5fb1f3543",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-trace"
+    },
+    {
+      "path": "@jinn-network/evidence-trace/fixtures/adversarial-v1/message-content-attribute/document.json",
+      "sha256": "0f5007de40866fa8b388e0a548b62e8779b69453b8d33131f4e3148297255fdd",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-trace"
+    },
+    {
+      "path": "@jinn-network/evidence-trace/fixtures/adversarial-v1/namespaced-extension-preserved/document.json",
+      "sha256": "5f61b55304339c691617c0128a8ed324adf382e0dd9a5d67749faa6e7b9bfef0",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-trace"
+    },
+    {
+      "path": "@jinn-network/evidence-trace/fixtures/adversarial-v1/nested-native-trace-key/document.json",
+      "sha256": "5f32b1f114bba1a7db95efa900cfaebbee69a64b3e670bc5800830f00e52e8c7",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-trace"
+    },
+    {
+      "path": "@jinn-network/evidence-trace/fixtures/adversarial-v1/partial-without-skipped/document.json",
+      "sha256": "d935bf0c0735e607a6d3c3502009021fd5ea04b4a26783b7227d7f01d268e35d",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-trace"
+    },
+    {
+      "path": "@jinn-network/evidence-trace/fixtures/adversarial-v1/substituted-source-digest/document.json",
+      "sha256": "078748c0661c3c86ad1e5126cc61580760da5552681a7d3f0363c18a4a9b7dc9",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-trace"
+    },
+    {
+      "path": "@jinn-network/evidence-trace/fixtures/derivation/execution-golden-base.json",
+      "sha256": "80f71b7bc400a1452dc5dbc30e2ce642f1a28691cc91c35eaf74d694883475b2",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-trace"
+    },
+    {
+      "path": "@jinn-network/evidence-trace/fixtures/equivalence/expected-digest.json",
+      "sha256": "7bd06294bb0b0dc2a352129d650681e792d5b74dfa3e3edb2027a337b04be88f",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-trace"
+    },
+    {
+      "path": "@jinn-network/evidence-trace/fixtures/equivalence/input-a.json",
+      "sha256": "1a3f6a3c0959282f5276a8a898b3264079a8810f833354622aac0a9c3c963ead",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-trace"
+    },
+    {
+      "path": "@jinn-network/evidence-trace/fixtures/equivalence/input-b.json",
+      "sha256": "684b3cb79d63196e6d8caf9a36afa9529f606f9ad2a6e8d87a35d939de036e65",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-trace"
+    },
+    {
+      "path": "@jinn-network/evidence-trace/fixtures/manifest.sha256.json",
+      "sha256": "5b93438f250643d1408f5618ef8f270335af7c7618731c4957a31797343dd731",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-trace"
+    },
+    {
+      "path": "@jinn-network/evidence-trace/fixtures/trace/invalid-forged-span-id.json",
+      "sha256": "3b1767e2329dbcd84b3926ff188f1d4f6bdd86625b5d777afb62683b04ba0458",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-trace"
+    },
+    {
+      "path": "@jinn-network/evidence-trace/fixtures/trace/invalid-forged-trace-id.json",
+      "sha256": "c16e3fda970a4fa930b47078f0a5a9adc06bd86e6100ad09a976e058d2813ad2",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-trace"
+    },
+    {
+      "path": "@jinn-network/evidence-trace/fixtures/trace/invalid-unknown-extension-key.json",
+      "sha256": "641d49e4b5f1e9bb236507a4cecb09e8bd6d7a07113ba8ddeb5c9ee3c30b76db",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-trace"
+    },
+    {
+      "path": "@jinn-network/evidence-trace/fixtures/trace/invalid-unsorted-attributes.json",
+      "sha256": "42c448fd800cef7f0249f3dfcd79fc9f965318bdd0ea129fd62be6d20fbda1f4",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-trace"
+    },
+    {
+      "path": "@jinn-network/evidence-trace/fixtures/trace/minimal.json",
+      "sha256": "f03f4cac8274ad31de957dddd1a5c6eeddae7c4a410b8debf4f455e10b7050dd",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-trace"
+    },
+    {
+      "path": "@jinn-network/evidence-trace/fixtures/trace/valid.json",
+      "sha256": "85c75d3c2b4f86fc0c86e9765f709e8f0c0eaf963b19da6fd8ecbf134c8e002f",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-trace"
+    },
+    {
+      "path": "@jinn-network/record-discovery-protocol/fixtures/derivation-annotation-tolerance/annotation-with-registered-additions.json",
+      "sha256": "caa877e70823c18944b167249ddb287739695ed45050bbf6c88797bd94e33117",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-protocol"
+    },
+    {
+      "path": "@jinn-network/record-discovery-protocol/fixtures/equivalence/key-shuffled.json",
+      "sha256": "7692da97b234fe7a86672f35dd1bad5c50f3e52f880c5d2d7d3ac34e7bea512b",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-protocol"
+    },
+    {
+      "path": "@jinn-network/record-discovery-protocol/fixtures/equivalence/nested.json",
+      "sha256": "7fee0b00cc6c6cecb2371be5b46141b670cd590244beeccc1074109bb82962a8",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-protocol"
+    },
+    {
+      "path": "@jinn-network/record-discovery-protocol/fixtures/equivalence/simple.json",
+      "sha256": "40fc0a61d3958216e2236a0889ae2c0b636d87d2e1f1cba0289b89e7641ef6b8",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-protocol"
+    },
+    {
+      "path": "@jinn-network/record-discovery-protocol/fixtures/expected-digests.json",
+      "sha256": "bc6b21bed8db273ac81f0f00ade6b1c4db512a2d8c3c08148b40838c943be2d5",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-protocol"
+    },
+    {
+      "path": "@jinn-network/record-discovery-protocol/fixtures/golden-entries/available-withdrawn.json",
+      "sha256": "7bc99b08f30a7357ad4c26d7c67a0797af58a82f66dd0326dbe2a2724e8b6061",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-protocol"
+    },
+    {
+      "path": "@jinn-network/record-discovery-protocol/fixtures/golden-entries/genesis-shuffled-keys.json",
+      "sha256": "4d486a6277d9c257914cc9b49d6ae3ecfd798ece3ae8d888e1f2a8561d2c7918",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-protocol"
+    },
+    {
+      "path": "@jinn-network/record-discovery-protocol/fixtures/golden-entries/genesis.json",
+      "sha256": "e16f4326006c032b13b6e8e567cdeeb3f27c24d55c0329cb60a1934724e58c94",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-protocol"
+    },
+    {
+      "path": "@jinn-network/record-discovery-protocol/fixtures/golden-heads/head.json",
+      "sha256": "02ba3b1677dd98d013dd987871f3c43855428c69e0db389fd969991b60e6dd00",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-protocol"
+    },
+    {
+      "path": "@jinn-network/record-discovery-protocol/fixtures/manifest.sha256.json",
+      "sha256": "b8e725b774e1e46b10522965a73902f2fca87a699eb3b92c0769706f6755194b",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-protocol"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/manifest.sha256.json",
+      "sha256": "4fea3ad5da80092814a320df6314ef3d69e76aa34664ffa409ecfead4149f0fc",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/broken-linkage-previous-mismatch/vector.json",
+      "sha256": "82f97be2c4d5877a5aede6b20986eab291fc0d6baa7d19944111b42ed451e38c",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/competing-head-rotated-out-key/vector.json",
+      "sha256": "3d7f3989d888229d49c326c094f8874faa5847bbaa90abf000513bd0ff43e22d",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/consumer-cold-start-mirror-disagreement/vector.json",
+      "sha256": "2b0a1efc7e0f68738a658f5aed98400d2dcf46a4cadb931b6fe78507c8c1ea9b",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/consumer-head-vs-delivered-divergence/vector.json",
+      "sha256": "3e922e2d2ba584cce76d1a9977e2725575f65c20e8d63dfbe3fa23a91bf40bfe",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/consumer-hostile-locator-oversize/vector.json",
+      "sha256": "07c1b28465f0fa810d09ca76acebb923252227a27e51f49b709ded78ff04ecef",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/consumer-hostile-locator-private-address/vector.json",
+      "sha256": "e5fb7d21f8995c8dfacd9444fab71289618782432d90857920cb9b83d9349f45",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/consumer-hostile-locator-wrong-content-type/vector.json",
+      "sha256": "bcfae9f5758d5078a308e5c055d1e8450faa0016f2667e9cf96ff29feca5b378",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/consumer-ping-flood-debounce/vector.json",
+      "sha256": "de7ef17c237c38966fe5b3ae3de70a39aee79dea27d7f06b8d182c2c64459070",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/consumer-reorged-withdrawal-recompute/vector.json",
+      "sha256": "f748c2870b65883fc3f493b5aacfa4f4add92f3235829078a3c44f116ab9b9b2",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/consumer-withdrawal-retrospective-no-prune/vector.json",
+      "sha256": "7d0b76f90faaaaa8f96bea82c6b5e3a1eaddb92e8c491ef66a44732a7ab9fd21",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/derivation-consistency-fabricated/vector.json",
+      "sha256": "804fb5a973e7dca1872c7ab75faf4eeff095288c34b63f867cbdc05fae0edf0c",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/derivation-consistency-present/vector.json",
+      "sha256": "3867e4a5e9feef6a844e7c225d3ecf95fd3c93c4fec48a575e3f0b0ae4d1ae13",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/derivation-consistency-reorged-away/vector.json",
+      "sha256": "fce3ccfb12fe11fe1d09661a6f7883d7affaf8abeb2afa96e7c6ba0768ffd42a",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/duplicate-announcement-id-across-entries/vector.json",
+      "sha256": "66064ac30d34eef4e75a3b4b52cc54fc7350beac3a006f4a4486b37b20cb890f",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/duplicate-genesis-entries/vector.json",
+      "sha256": "c84e29e473f65192ebe26d3454e5af02745b10241e9232d8e90936f6e4d8b88c",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/facts-consistency-consistent/vector.json",
+      "sha256": "103d679ced2c527e029f140f9838bcb8b5dca7878f4a3e85ed596ffd2e415ed4",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/facts-consistency-inconsistent/vector.json",
+      "sha256": "3ac545b9fcb5947ae9699ee85de98d79bcd66e991e87fc94ebb79ee0db7c1c26",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/facts-consistency-indeterminate-unavailable-referenced-bytes/vector.json",
+      "sha256": "fb278816229a4154e5278fce61fd7c68a0855eb05093481a7f8172bc644a7da4",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/forked-chain-second-signed-child/vector.json",
+      "sha256": "e13a2536ccb4a21f3aa9e881061e17043a695df9cdc7b922ef5085cc89e0ccf3",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/forked-chain-shared-previous/vector.json",
+      "sha256": "dcb1e24ceb509e4bdf0917dafbeb86533a7f9fb9dbf4aa4d15ec0bb6ceae6cc6",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/genesis-pinned-sequence/vector.json",
+      "sha256": "5dc156f400efb40c596d37dfacdb1d903083210ce2d8a8dce6da9e8be5b8ad5f",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/head-issued-ahead/vector.json",
+      "sha256": "9c684945334c9d082ed1d974524de1290ddf2796443a37f756d41aa4fbb132c1",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/issued-at-regression-v2/vector.json",
+      "sha256": "ffdc63f2d676ec65e79756e4c23c6bb8304f2b33da77e0aacc4f75cdf3004a78",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/issued-at-regression/vector.json",
+      "sha256": "6f722d6964558a5595fbae2dcfa0cc941e50c8acf4b45340190325ea7c8796f6",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/item-content-corruption/vector.json",
+      "sha256": "3a95c8f67120390e5ae8a23ed7d11dd4f70e1e80d1c4242cc01d5624f93a917f",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/item-lying-entry-provenance/vector.json",
+      "sha256": "d503db820342c2dd1a07f32a942967de269b0b10d5594493c8adf5788d5bb5f9",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/item-unauthorized-provenance/vector.json",
+      "sha256": "91db25222ea2b96048a74374ded767debdab0c90b93333cb0f1e95c73254aff8",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/item-verified-consistent/vector.json",
+      "sha256": "281a444fa6738287501b3744b00e5e6a68d4242cfbe70da3d3f731eaf799131c",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/missing-withdrawal-reason/vector.json",
+      "sha256": "89811d2a985bd3c61b349d24071cd1e267042035abdfb4d3e6bd6c460181b671",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/non-genesis-previous-null/vector.json",
+      "sha256": "3ab618a59580af65a9bc4d28634d8134e779d24ad67ba85b10eb86fbab1781fb",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/oversized-archive-page/vector.json",
+      "sha256": "e587939aaee4cda39e86f60dfd22af0189c248f83a39dd4665e6c60301f39712",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/oversized-entry/vector.json",
+      "sha256": "2aac92c6d5c852104591cb1e5f4cac10ab631a8a64f65fa37b4d281c966347cc",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/query-complete-honesty/vector.json",
+      "sha256": "e40dfa44b72519c446c97113ec151176cba0ef49e47eadff1eed89d659421d87",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/query-cursor-determinism-digest-tiebreak/vector.json",
+      "sha256": "d101cab7cc059ec3791cd4e6d2484549cc8fd7df316ebc7a77d9c32f4823ad53",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/query-fabricated-provenance/vector.json",
+      "sha256": "33a25df00ba4a4b1270c24671d1d59e82053e9bdbe4412b4e523e77b5ae6ac27",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/query-provenance-present-on-every-item/vector.json",
+      "sha256": "61c1c41e46cb3da29b31e7028e28c413d45257e8da43ac59f90c974b300c86c5",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/query-service-originates-rejected/vector.json",
+      "sha256": "121763c7c8bbc3303e8d09b781e4b98cd298ea409ae63812ccf0c9e3389960c1",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/re-announce-after-withdrawal/vector.json",
+      "sha256": "3bb795d4dd4301e876a9ff268902f9a9f8602a701485371671dd5db465151b45",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/refresh-by-ceiling-inverted-window/vector.json",
+      "sha256": "c6b973f99a6f1a3f8d0067c30ab11ae3a228cf357c520edfb02b6bca76281c18",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/rolled-back-head/vector.json",
+      "sha256": "11753d3eaceb25bd0ce2613b4db7f5abb60191a67cc9093f0fb787578d522c18",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/sequence-duplicate/vector.json",
+      "sha256": "bec0e94a06fcf57c4a953edb9260b9e1f89731263f596b91bba32fa2e05bb620",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/sequence-gap/vector.json",
+      "sha256": "8804f254c872f93a85a54172c30d433d1768860b4ea308c3e974b2ce5bc23ede",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/source-conformance-correction-by-append-reorged/vector.json",
+      "sha256": "7fa6c74921eaf6836537799cc223f0e9b5b8cc008be81d7b2d7b22d38237cccb",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/source-conformance-freshness-maintenance/vector.json",
+      "sha256": "18203b0bfe9d1dcc4816446a2e8a7faf542507270ac199a252f10635497d8c38",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/source-conformance-published-profile/vector.json",
+      "sha256": "44e3548ebce4c43a24ffc14f2f2f373a5185b1f58ee55cb0dd35b0a2f10894fa",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/source-conformance-refreshby-bound/vector.json",
+      "sha256": "0982ff0242147a38338d1748034930e492d696ff5c4e8688243bd3794b86a6cb",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/source-conformance-unpublished-profile/vector.json",
+      "sha256": "4140fa77b2fdc9f68dc3db9da98038908070b054e16efb24416b78d99ece582b",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/stale-head/vector.json",
+      "sha256": "0e8d56e26cd8ef0a11be14b6bed5c1c8abcfd2ee06a4175075ee2fe74aa63d8a",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/subscribe-announcement-dedupe-key/vector.json",
+      "sha256": "dd72feeb9669c04453db459c8c6293a074e8fbc20322a6654f7c65b2c7af2f84",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/subscribe-cursor-no-cursor/vector.json",
+      "sha256": "3c4a1f364bcdc567c0274d149ed1a5e7e2b3af63aa20c6ba29dc29df2d51f5a0",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/subscribe-cursor-older-than-window/vector.json",
+      "sha256": "336b3cbb3ddd5919ef55f6f682bbc627b319bf692cdff637a6f3361cfa40bbc2",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/subscribe-cursor-oldest/vector.json",
+      "sha256": "616fd31c5621a9532f75e04fc2b9e2546dfd96ac589550ef60f1dd6b0527036f",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/subscribe-cursor-unknown-or-future/vector.json",
+      "sha256": "efff9ed6968a234acd1f1bf8d25f5f65d6452854ca63fbee6d72d15aab8d05b2",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/subscribe-cursor-within-window/vector.json",
+      "sha256": "aa86401fd3fbeb712665ed496a8c0af991838a5d071b56ba30b80297910f4866",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/subscribe-declared-replay-window/vector.json",
+      "sha256": "2c3055a669e6a1fc8d3fb7e655378d7e3282c3ae97f94c59f6153e73e214141e",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/subscribe-observation-passthrough-unaltered/vector.json",
+      "sha256": "cac0ba359f7fd7800c5c1f037a2dc55ff8cd4b853801bf2db189e44333cf2e3b",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/subscribe-per-item-drop-censoring-relay/vector.json",
+      "sha256": "9f3ed4f39a7607e132e440337457d67e0b2c4dcb8d215466bf8d6d3fce5899bc",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/subscribe-relay-local-cursor-declaration/vector.json",
+      "sha256": "88e6b1dd4744f4317af44118e244ec402d8e89407bb48c1c2ff0d5a17b356b00",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/substrate-fact-in-author-source/vector.json",
+      "sha256": "9a557f154bfd273194ccdcaf5cbd90f7808a5b2b073f712c0d85c6a18b32078f",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/unknown-facts-field-skip/vector.json",
+      "sha256": "d605a88be297e89db1a46cb38c95d0d6212c0c0eafed6e974ede92e27329e4a9",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/unknown-record-kind-skip/vector.json",
+      "sha256": "1c842a8204da35305ce03ed1d72dbb75bd21385e7b3bf4d3b60afbdf14004df8",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/valid-chain/vector.json",
+      "sha256": "5bec2c2544a379d8b0d4688425e532f2f9b268620e30572e9fb665c4ac2ee756",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/withdrawal-of-foreign-announcement/vector.json",
+      "sha256": "a08bae9992b801e7283b491c4e19f8fcd7014085b8e68990141d1c42136ad0d6",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/withdrawal-of-withdrawal/vector.json",
+      "sha256": "c9e9a8edca78da87671aceecdcc7b07da8c6e6ae98f4cbf94a8028e3fd9e59e2",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/record-discovery-testing/fixtures/vectors/wrong-signing-scope/vector.json",
+      "sha256": "3d13ea117928b7132dcbf1db34263780d3580449eaec8c0b1a1ff4971e7a330c",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/record-discovery-testing"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/README.md",
+      "sha256": "39516445a2133cde0a363a8cfeb73bfb1ccc3359632b0b527a50dde94ba825a8",
+      "mediaType": "text/markdown",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/admission-receipt/adversarial/reused.json",
+      "sha256": "63814a142480814a8f98fddcf0a03b0a3765d92c0f3864c51e224accb8d2a2ab",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/admission-receipt/adversarial/unsigned.json",
+      "sha256": "e9962568c652b131cd3ed352b7f15ccc907762421eac2bb68c56efaf683c875c",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/admission-receipt/adversarial/wrong-subject.json",
+      "sha256": "fd636df60980c85a2851ea96934dc43f22d4a9637c3f074ad7b86cf337df109e",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/admission-receipt/golden/valid-signed.json",
+      "sha256": "f850ac8d075510f8a5003dab352795fa9fcaa4c9b8d286eae9eaa3a8f00b8a9d",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/binary-judgment-request/golden/unicode-line-endings-profile-2.json",
+      "sha256": "41e409ebbbdfb66a18f056fcf3752f8bfda80d0beb1ade329c22e13f90b24c4d",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/binary-judgment-request/golden/unicode-line-endings.json",
+      "sha256": "1b6829723ff13df7138158b5bfe101529b9a6d6b34b686f7434d008abeef22a5",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/composite/adversarial/composite-depth-3.json",
+      "sha256": "3515f206c49bf7ec2af7ae4589e36c2792184264387a6ca696809b317c4a5dee",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/composite/adversarial/composite-fanout-33.json",
+      "sha256": "50cf1c18c4fd0cdf2b8c3a6b5208bd4ad390f7b0216585ccdfd70ac9ab94db22",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/composite/golden/within-bounds.json",
+      "sha256": "7992bfc22125532f099ce4755201852da1458bbb33697cb7d09f8fd0b9afc4a4",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/equivalence/expected-digests.json",
+      "sha256": "f220e17372419673734c4a528b9a7c3772297801cf9599324975bf7e1515ebdc",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/equivalence/key-order-sensitive.json",
+      "sha256": "2c8a95eb34694db869fc7aff8240399e1e37b2c1b09dda1dec319ddeb5303427",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/evaluation-spec/adversarial/wrong-protocol.json",
+      "sha256": "6ba590c267c7189eb2938b4b583ae6eed5b2efb3ca8a34bddebc782566817b1b",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/evaluation-spec/golden/deterministic-minimal.json",
+      "sha256": "198ebb9a677b36259a5e499d83cfef1cc4b55acab64a15af5551747373c85a39",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/evaluation-spec/golden/fractional-threshold.json",
+      "sha256": "21590a5615ce1cd33d878059f075f2ecd28edb1b2079a592278364970dcd5157",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/evaluation-spec/golden/state-predicate-minimal.json",
+      "sha256": "88c1d5c4e7f81cbc26d91364e6abfd0ec0de8120d3ce47cc09c5395d786c8b37",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/evaluation-task-derivation/adversarial/competitor-delivery.json",
+      "sha256": "b4682d54c3d3c278d771cdb0696238e46bc168ff16c365e9aea464bdcfec1f8b",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/evaluation-task-derivation/adversarial/evaluator-modified-template.json",
+      "sha256": "d2b0d13302b8e35d8d9530c1de63defe6e2d9ecf2c039d8d91954493e5ea96e4",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/evaluation-task-derivation/adversarial/superseded-delivery.json",
+      "sha256": "d7d307356e14b75524182cc49984f209095031b5d1b86930dfd8fd8db94c76a7",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/evaluation-task-derivation/adversarial/wrong-spec-digest.json",
+      "sha256": "34086f899e92f4b9129d6a0ca43bb2caaf115e756e77439df138815d30081ea9",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/evaluation-task-derivation/golden/derive-TD.json",
+      "sha256": "11a8352e4ba4b93b67fe89e55925172431dddbbc2e66b036e0db3aedbb1df0e9",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/family-blocks/adversarial/composite-bare-extra-key.json",
+      "sha256": "137d123651d60b60edc1f8abda974c694524e28ca9e9b0d7f9ab4a54d0193f28",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/family-blocks/adversarial/composite-fanout-33.json",
+      "sha256": "a6227a8e5df9ba7c5f0bf89eee97d2a1e9dc538c4deb18da5d8aebcfc1b5eeb5",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/family-blocks/adversarial/composite-numeric-weight.json",
+      "sha256": "58e750b3a11b23a43594a8b6ece34c0d8056c16dabc403db7702d28db179d960",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/family-blocks/adversarial/deterministic-process-bare-extra-key.json",
+      "sha256": "d99577e61b03080c1a5c06555d8dd1e101a7c01b5a645c287679238c4a39a0fc",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/family-blocks/adversarial/human-review-bare-extra-key.json",
+      "sha256": "3f9e4ceb34887925119993cedae5f89f17cd1b167b35416fd6942861bffdcd27",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/family-blocks/adversarial/judge-invented-digest.json",
+      "sha256": "32c29d3b437a7bfb69b6975f5d20b1f9c51da9759dd896589ba5abad8d15497e",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/family-blocks/adversarial/model-graded-bare-extra-key.json",
+      "sha256": "31fc97b015915ac79727b90e52806949134f83ffec0a5ed647b7c6580740dec4",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/family-blocks/adversarial/parser-with-code.json",
+      "sha256": "9cee1ee1734dc86c1789c809e60be57c8a248680847da072dc4763cdb9eb1d11",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/family-blocks/golden/composite-namespaced-extra-key.json",
+      "sha256": "0c65b2d09ef1db7f73b298262c3ebe0dc41b5070562076dea6b5317cfa472418",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/family-blocks/golden/composite.json",
+      "sha256": "6b361e645fc90ab9858d97cbfd7dadcaf2bd825cd564ade96763fc5128c3b4e2",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/family-blocks/golden/deterministic-process-namespaced-extra-key.json",
+      "sha256": "1acc5d2ac6bcb92c3238c79345e0a1bcb2285d78f0590f8363124012f9ca9e11",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/family-blocks/golden/deterministic-process.json",
+      "sha256": "1405640d3810a536e8657e099cb5973858a144834a906e3dbc16d1626aca9a44",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/family-blocks/golden/human-review-namespaced-extra-key.json",
+      "sha256": "8dd17fa01ce067b3285d68f00e303f392d24819b7dd2786498c4520e5d24fa14",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/family-blocks/golden/human-review.json",
+      "sha256": "6b85d7a73f07ac460b50ae05f6732897dfbae3f9e514f8c613656c3819bbdfec",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/family-blocks/golden/model-graded-namespaced-extra-key.json",
+      "sha256": "877758449e97a29ce46142b51ba993f8092f1606c36ab4ec42296a956d047530",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/family-blocks/golden/model-graded.json",
+      "sha256": "8e318b4d52945424ac1ad4a1bbba02d8403b496209478d6d3f25c53233176074",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/manifest.sha256.json",
+      "sha256": "9d2b7a0767b33ebe6e25574b57a3fe54eef992104a579b8edf5b7246a2a5dc28",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/measurements-coverage/adversarial/missing-required.json",
+      "sha256": "7d5539d4b428cf202ee38521fb528849a6ee0c7f0ae49faaf5ef7a81a5e9e6fb",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/measurements-coverage/golden/full-coverage.json",
+      "sha256": "17681bd08dbac1f2e52ac61f7d145df51b9cd3f8e2dd41e732dcbf2bb183c25a",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/migration/jinn-repo-to-repository-work/golden/live-issue.json",
+      "sha256": "0b3cb085a8a768f0feae7500a701db228b05f860045fe5b54ab56a0d12de5969",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/migration/jinn-repo-to-repository-work/golden/merged-pr.json",
+      "sha256": "e9c6e3b5d569b0a2a28414518025a3c75e0896659107f8cd215a8b769f609ead",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/requirement-merge/adversarial/addable-conflict.json",
+      "sha256": "893eef620e278444dfefd547e8a4aeaba67874c2631400e2d4306639f8922232",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/requirement-merge/adversarial/ceiling-conflict.json",
+      "sha256": "845c36fd90b84b6fd6440b46391eb9fba54f160eeaa6a8001da1aab2d8884ddb",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/requirement-merge/adversarial/constraint-rejected.json",
+      "sha256": "1280a7eba8c5e3004fa2e29c16b2fd06478e1457dce73d9d5fb5faa8edb9379c",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/requirement-merge/adversarial/exact-conflict.json",
+      "sha256": "080944afc7e804e3b5d7fa3e0dde6064c7f5d51ba22abed1bf9623d22f34cdf7",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/requirement-merge/adversarial/floor-conflict.json",
+      "sha256": "383a74ab1457decfaadc1eedfb596e7ab9473852d887a159864e7946b679e1bb",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/requirement-merge/adversarial/pinning-inventory-reject.json",
+      "sha256": "3cd810bf5c76ebce5654ecf5d14d4c8b600a31ebe555ba6c15198b6932dd8c4f",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/requirement-merge/golden/addable-new-key.json",
+      "sha256": "f097d03097b592e8743b34c0c25ef8171c3c37563f22758f5fdef99ad799b46b",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/requirement-merge/golden/ceiling-tighter.json",
+      "sha256": "db722c069e7b5f62eaaaa60f34ca6b435c23aeabf194cc95fd0b79cf07b9aed2",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/requirement-merge/golden/constraint-admitted.json",
+      "sha256": "bedf212119835dac35253d3b9250e05f6ae170e13ebd1e7471bcfec81904208c",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/requirement-merge/golden/exact-match.json",
+      "sha256": "c9fa957ca5721c12b74e58044c627135a300292cda512368c234e6ac5a41b097",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/requirement-merge/golden/floor-tighter.json",
+      "sha256": "b029899f0335709efe381af6856c54d65a006dff208be30e213c72143983614c",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/resolution/adversarial/drift.json",
+      "sha256": "f1a8ae200a6151cc9c9edaa4d78a7fd32662bfd114b4d961e1c837ba550f16c8",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/resolution/adversarial/unknown-digest.json",
+      "sha256": "4ef2a5ded0ec4685cf1ed7fd133e67dea36c5364a5e0e474c158d18bcfbe4440",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/resolution/golden/resolves.json",
+      "sha256": "d3c5087ff325541ba4b257aad6243de1784288cc52f74aacc8e56ea66f8835e9",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/result-evaluation/golden/evidence-statement.PROVENANCE.md",
+      "sha256": "3cc7c7eca98205675fa8474fd02996be029b60ff6bbb977200aad8c48f5d0e77",
+      "mediaType": "text/markdown",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/result-evaluation/golden/evidence-statement.json",
+      "sha256": "7e41ef580944ec4b35f1fe20411d3f5416b334a064340b4856ba0af3c61c1fe8",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/schema-hardening/adversarial/depth-bomb.json",
+      "sha256": "ed5233afa2d3948c93d57fdc6d0e557605b0671b84f0aea7352ded7ef6d9ffc5",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/schema-hardening/adversarial/overlong-pattern.json",
+      "sha256": "4b019b813f39500e6d1889b5fd5cb7438d0ed547f1294f65253f8e972f3ea67b",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/schema-hardening/adversarial/oversized.json",
+      "sha256": "0670bdf50b2090214f25d7f5fd0956d9a229f094382a3541908e2c2d5a743f0a",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/schema-hardening/adversarial/redos-pattern.json",
+      "sha256": "0611db9b1167e2e0ac683e450ac0843485a89de5c02e0633f0c8d1dba0bef00e",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/schema-hardening/adversarial/remote-ref.json",
+      "sha256": "d2c9e774f2890de1bdba3d0c6113abfed5e1cb3d00f013e322b85486fb0b6c53",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/schema-hardening/golden/valid-conforms.json",
+      "sha256": "6b430d0d8da0ea993b14a581ae2a25ce2e7832305305db8b4174d295fc3e5237",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/schema-hardening/golden/valid-rejects-nonconforming-payload.json",
+      "sha256": "71b736030838f8712b338108bc871a0efd89d903d6daeeebb3d5c77f47041ac7",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/state-predicate-block/adversarial/bare-extra-key.json",
+      "sha256": "ec342a62df78877812ec70ee343ef1f887d726537088000cfd8cf6d4b31ae9b7",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/state-predicate-block/adversarial/environment-record-inlined-content.json",
+      "sha256": "e18d57c84636b5e6b65e64bcac73e34e83404ee763af83a8d63989a84bc28ebd",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/state-predicate-block/adversarial/environment-record-prefixed-digest.json",
+      "sha256": "0e4031c08084038f085b519e008b8d119885095a00543257f947338c5c83dbc7",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/state-predicate-block/adversarial/predicate-bare-extra-key.json",
+      "sha256": "925181fcca468bb9dd0e41ad1d7db9d6a4e87a91f12ad17810bc595bd6780f5c",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/state-predicate-block/adversarial/reserved-measurement-name.json",
+      "sha256": "06643de73ff53375cf8a341d497d4fa8ee0ea84315ab119d634c7e36f3ee61bc",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/state-predicate-block/adversarial/safety-constraint-state-predicate.json",
+      "sha256": "d3b4a04fdad4055f2aca6939a1293d102db5e969ac1b0064597972068e98b508",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/state-predicate-block/adversarial/source-consulted-as-success-predicate.json",
+      "sha256": "3d6f5ecd58af8f63ed8db78a8163f79fded8533edddfec3850b1dc3d6155231a",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/state-predicate-block/adversarial/tolerance-without-within-comparator.json",
+      "sha256": "106b163530b208209befb3d78f271ee96568a0d436da3fe509631b0cb7f41d1b",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/state-predicate-block/adversarial/unknown-predicate-kind.json",
+      "sha256": "edb6e4488bf9d2eb23f0849a60cbeeaa70bb0543fa94619563ce46b2be8a4ffc",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/state-predicate-block/golden/measurements-and-tightenings.json",
+      "sha256": "c5d04b43bcea85d341d205267a8d5e2ba59c2773cfd8ffdc2326a288e32572d8",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/state-predicate-block/golden/minimal.json",
+      "sha256": "e90d255c881c7f45294f8b89f8f9e4cbf327b98f5f1a9592f477e1f06fee0ab2",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/state-predicate-block/golden/namespaced-extra-key.json",
+      "sha256": "ef74ac9841905eb55129c99a4966dab15e385820d8d7eba4d6c9a3aa76a7fa03",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/state-predicate-evaluation/adversarial/duplicate-state-read.json",
+      "sha256": "89b084f814eeffa4de7fc9216b0322383aab29cbd888815b73f21f76aebe18fe",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/state-predicate-evaluation/adversarial/environment-record-mismatch.json",
+      "sha256": "55c4f3a61255047e82930d5a1bcccfb7ab7d9e22a98fe2ee9ab0f4d066174a6e",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/state-predicate-evaluation/adversarial/replay-refused.json",
+      "sha256": "7b2c62046e21e11c0a4791d5b68ae90b7df1fec83cd21f39d956fecb292355d4",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/state-predicate-evaluation/adversarial/reported-value-post-replay-only.json",
+      "sha256": "acf7d35b517cb1ae9bdfbb866aa0d837c43ebfe265cea14bf7073783f9440ba1",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/state-predicate-evaluation/adversarial/source-read-unavailable.json",
+      "sha256": "f95fbeb85ce186aab749bb79dd3a3eaf0a4cda61df046b7276ce1c212ed8176e",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/state-predicate-evaluation/golden/declarative-call-ground-truth.json",
+      "sha256": "bd6ea0a86b633e02430beb71266dfde9df0c35f1121cca83775e88caf3170f45",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/state-predicate-evaluation/golden/do-nothing-satisfies-conjunction.json",
+      "sha256": "0299c6ade658ae9b4d6834f18524e79ef6209fb4b5cf6eec050dabbf3f61d82b",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/state-predicate-evaluation/golden/reported-value-baseline-ground-truth.json",
+      "sha256": "d8f977c8137913ce6f63f4198bf6c17532676e0baf000ec390deb190bc5c68d3",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/state-predicate-evaluation/golden/reported-value-post-replay-declared.json",
+      "sha256": "78539fdd1c87de65f8cbebcec70042010f1994c3ddde65954128b47d36124dad",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/state-predicate-evaluation/golden/safety-violated-unlimited-approval.json",
+      "sha256": "54272c33413e5bcaed8079f71935e1413d0bb809800f2139b2ef858b62bf0146",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/state-predicate-evaluation/golden/source-value-and-consulted.json",
+      "sha256": "68a219c86492dd884618feeb02ed2b25ecad5521c6416365982080d5f7aca1d4",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/state-predicate-evaluation/golden/success-conjunction-satisfied.json",
+      "sha256": "bf192b797a4c5895d2bbf1c509ec74253711689dc447eb5d45d956b976120d3c",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/state-predicate-evaluation/golden/time-bound-across-timewarp.json",
+      "sha256": "7d1e59d9fa9bc447eb35997080172e110a64bbd8fd2c21d8e6dde45404f96cbd",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/sub-profile/adversarial/chain-depth-9.json",
+      "sha256": "2e15c5d8e88b2704e6df5abce92a384a4168887a3821686af1592b1f233b3b5a",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/sub-profile/adversarial/closed-parent.json",
+      "sha256": "78af5e0d64c27a18793ab3d7473579b273346775fe14013a60fd77c4bb722cc7",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/sub-profile/adversarial/widening-subprofile.json",
+      "sha256": "239e052884e17f17e99cc599e61677bffdbdf4cad02cec8a8742debed32ae8b6",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/sub-profile/golden/family-chain.json",
+      "sha256": "892db1e1c8f7a79896ae897ffa8b92075a515805ec38e25198459c2141c550a6",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/sub-profile/golden/valid-subprofile.json",
+      "sha256": "1d21e7001ab0b4f4edaf38fbfe501f886c5bdc1120814422a48c6bf109d58918",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/task-profile/adversarial/requirement-key-no-class.json",
+      "sha256": "7e45e1a3c2dd8c8b50b943017ae9d243a93d884be1c3c67603d7166b7816617d",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/task-profile/adversarial/wrong-format-uri.json",
+      "sha256": "2e6e1b3bee9a428d017c105fb31c5718b1dd8c75bdc1dccf432eef5e605a1faa",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/task-profile/golden/minimal-profile.json",
+      "sha256": "0f947b172f43e248b1b3eb2b4ca4cf117d047f9443b083d963c4e2d6750707e2",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/unscorable/adversarial/unknown-disposition.json",
+      "sha256": "9f523456d4b979314cb1b027ceb2bfb8964126cb17a9616125d82d57300743a1",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/unscorable/golden/recorded-inconclusive.json",
+      "sha256": "711625fd8dd5ccc14591fdb9c36bf7de476aa22d3de387a64471d5599698c78c",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/unscorable/golden/retryable-infra.json",
+      "sha256": "b29d527eb03c633598abb28c3d0d34bc58fd163a2c2ae6be49b4e0c0e7a063a8",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/verdict-consistency/adversarial/laundered-inconclusive.json",
+      "sha256": "f3687e2fa8071f264637e8b5da6d4674fd3f90bc410972740625d36e504221f6",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/verdict-consistency/adversarial/undeclared-limitation.json",
+      "sha256": "ec497f50bb5ba7584bfb8bb17abc20b99218c6003d11e65335034b034eb60c0d",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/verdict-consistency/golden/consistent-pass.json",
+      "sha256": "386795d4648a39daef609106dc8e41e336dbbad587ecec76ea0ec21beb46fba5",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/verdict-rule/adversarial/malformed-decimal-string.json",
+      "sha256": "b862db22ddb718483b463061b09895a5da0ffdd5791eda5e85a068cec49ae641",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/verdict-rule/adversarial/missing-measurement.json",
+      "sha256": "77ffcd51a8d3c5d8f56c4d7a448f9bb5066e2fb2b2d05a97d0c623ba9a306311",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/verdict-rule/adversarial/unknown-op.json",
+      "sha256": "d8dfc5b227445bb852bd4e5f8454e7b9c12eb7331080b971d9cf06946b1dfb50",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/verdict-rule/golden/all-combinator.json",
+      "sha256": "ac7404107779996cc177205c7111d53aa0a28d926ccd67df95f9d71648a0db52",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/verdict-rule/golden/decimal-string-equality-canonical-scale.json",
+      "sha256": "d7ad495a6928dc278fc7719367c178bd4fea2b3ebbbb08138a37e8857e4d2dae",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/verdict-rule/golden/fractional-decimal-string-threshold-fail.json",
+      "sha256": "ab4a9788f6cda075de6ff7453cf9bedeadb6eff06a4e8acac971cf3f7ad4122c",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/verdict-rule/golden/fractional-decimal-string-threshold.json",
+      "sha256": "152578db85195b11f9ac04eb0986b5505df6ce121d2c24132aebda29f8a80193",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/verdict-rule/golden/inconclusive-predicate.json",
+      "sha256": "5dd5b4439e3642b0cab9733c94a24ae7db31407aacb107d361fd1ee478cfd262",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-profiles/fixtures/verdict-rule/golden/threshold-pass.json",
+      "sha256": "2222677838d21824db5fdf1d9cc9af63ae30c731496336c2664dcbf53f52c23e",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/adversarial-v1/contradictory-terminals/observations.json",
+      "sha256": "491cfffa128bc08af94983637838bfe028a2ec090ae9d9304ae7b65af1b09ae9",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/adversarial-v1/digest-mismatch/claimed-digest.json",
+      "sha256": "54a517c4fe8d3bc6e9a6968e660bb5ff81e9320472feff22965e507b202a5afe",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/adversarial-v1/digest-mismatch/document.json",
+      "sha256": "7b1da34286ba2e4d5fa5f5c2df83f334b6411721d95793ce1c4f3e996fb6f115",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/adversarial-v1/dispatch-context-grafting/NOTE.md",
+      "sha256": "43dfc71574719f1fe60dee11b47408816bfd8c6cdf9e75b7a600af14bf745124",
+      "mediaType": "text/markdown",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/adversarial-v1/dispatch-context-grafting/grafted-dispatch-context.json",
+      "sha256": "1d291f9aeaac6a7ddbb17a96a86fa4555992e88c34d6f2f736eed45f8bd83a18",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/adversarial-v1/expired-then-late-terminal/fold-options.json",
+      "sha256": "c78ca118263865edd21d1286f3d579cadf9a94fe16705254365db803ea670deb",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/adversarial-v1/expired-then-late-terminal/log-with-terminal.json",
+      "sha256": "2af313765d21a237f7e15386acece74006804c9f3dfd5edd2c8fe9b9e46ecb7b",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/adversarial-v1/expired-then-late-terminal/log-without-terminal.json",
+      "sha256": "6e03f754fdeb6b46538e848fc6db2907675a761eda950b76b390f5583e52ddb4",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/adversarial-v1/extension-override/task.json",
+      "sha256": "583c1829a9ffce6c4294fc49b8f023d4a470c4c43b06f24fc3226f2bfacb97a7",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/adversarial-v1/forged-cross-attempt-supersedes/delivery-a.json",
+      "sha256": "7b0185fc4331b5440828bb477cf06bae66eff49a7658d4fc8c3467ef7c9717df",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/adversarial-v1/forged-cross-attempt-supersedes/delivery-b-forged-supersedes.json",
+      "sha256": "14f24a6a247521bbe819d4cd285f74b6a14a7f646c8d8241c140677a2287a817",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/adversarial-v1/idempotency-scopes/submission-a.json",
+      "sha256": "157c69ab949d603bea3eb33c8ed53b526c006a763b98c6a390372be0a964fc12",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/adversarial-v1/idempotency-scopes/submission-b-same-key-different-bytes.json",
+      "sha256": "d09b7ee63c0c22f00f001dbd70e7563181dd7c0827b7007907deedbdfc5b48e3",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/adversarial-v1/idempotency-scopes/submission-c-different-requester-same-key.json",
+      "sha256": "b06c755fa75b1854f31ce88bccdf09d4f970668ff8c5dd1682fe45f29dfd7a16",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/adversarial-v1/illegal-terminal-transition/observations.json",
+      "sha256": "83a3e78ba8d4e445e71e6d8c938cef944c33d3965920fae0b8a39774dbf62f59",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/adversarial-v1/leaked-task-resubmission/confidential-task.json",
+      "sha256": "7d5462ac95f6ec0acc3473cc445836ac281b9380a2ffc8cf9b2c5e22ccc14fe7",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/adversarial-v1/leaked-task-resubmission/unauthorized-submission.json",
+      "sha256": "19cf9157256dbef73bb70745112f2544d9024024deef7daccdea55a3b337c863",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/adversarial-v1/lost-then-corrected/observations.json",
+      "sha256": "89bdb52c115a2c61186796c126c0cace3c7b599ab437f7e45ad21fb24542de47",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/adversarial-v1/malformed-document/task.json",
+      "sha256": "a04d4b93625ca2a01ecfe4209b9c827e2cd1e490cbaba3776d825f4e5100e651",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/adversarial-v1/manifest.json",
+      "sha256": "9d574ea842d3f6093dce92c5d124784a73110a971a0f25d98788d5a5e26ddd34",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/adversarial-v1/oversized-content/oversized-observation.json",
+      "sha256": "3e2972cf8b0bdda345c34cf0aeb0869ec2202542b87c6d2227cb96a6ffde16f9",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/adversarial-v1/oversized-content/resource-descriptor.json",
+      "sha256": "f3e9cc2964f2cae0a6024cdd153e36b4387742ce2c5d1128c9efbf7b01d69622",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/adversarial-v1/replayed-and-out-of-order/observations.json",
+      "sha256": "75ecef2f51080d57fd42443f715f7a4debb3ffe03f79c300fd7a55e737a303ef",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/adversarial-v1/sequence-boundary/observations.json",
+      "sha256": "ffbcad80bba21af74aa639e4a5056d2c53b4332860a56dd1d43c54c97bf2ca72",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/golden-task-execution-v1/artifacts/patch.diff",
+      "sha256": "dc8231acfaa265ffcb0853fdb6716718e4e75c68f372e73ccea21e7a6f44a0de",
+      "mediaType": "application/octet-stream",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/golden-task-execution-v1/conformance-report.json",
+      "sha256": "638ad3d22abdf000057e1b540a2723fa0b2d2bf22b65576ed207a8e233a278b4",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/golden-task-execution-v1/equivalence/expected-digest.json",
+      "sha256": "17945b6a491c8d1bc060aabe33e95a2acf5bd9f80bdc76761c29b1b18407082d",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/golden-task-execution-v1/equivalence/task-a.json",
+      "sha256": "fc1a04cdbafaa835006e85d81ba952e6d4fcb02bc9166f7848f0e4def21bd607",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/golden-task-execution-v1/equivalence/task-b.json",
+      "sha256": "fc1a04cdbafaa835006e85d81ba952e6d4fcb02bc9166f7848f0e4def21bd607",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/golden-task-execution-v1/local/delivery.json",
+      "sha256": "84a7367623136bbabda781b570080c704c129657bc250aedd7865dbc0c1180b5",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/golden-task-execution-v1/local/observations.json",
+      "sha256": "017f8b0bfc3e4d4ef5153a577549da5267ef928ec11417f242ea1a2490dfb566",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/golden-task-execution-v1/local/submission.json",
+      "sha256": "7b78f52210fc430449e0bfb2ccc65fb72e4f92aa6290d817dba4c71b2b4fc1b1",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/golden-task-execution-v1/marketplace/delivery.json",
+      "sha256": "5cc823fdd9b7c727b79427221bb609c5eec6370c82257a95bf2d12cf5bab268e",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/golden-task-execution-v1/marketplace/observations.json",
+      "sha256": "951712b20dd8d5bce338c1d00c933ef696b0ca1491e2456fd1121a71b1b6193b",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/golden-task-execution-v1/marketplace/submission.json",
+      "sha256": "ecfd0277d9c614abaa934d6a60f14c1046876fc0333275951ee90c2397cb1b9d",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/golden-task-execution-v1/task.json",
+      "sha256": "fc1a04cdbafaa835006e85d81ba952e6d4fcb02bc9166f7848f0e4def21bd607",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/manifest.sha256.json",
+      "sha256": "217e75b53d736ce34435ca8b739cdf18711bf3da8f72ca5dbfff35e140a7a80d",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/trust-core/fixtures/anchor-evidence-v1/expected-digests.json",
+      "sha256": "58c1090d3230f868283a685ad98094692627c4a2127c9563fa7d3dcbdac505eb",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-core"
+    },
+    {
+      "path": "@jinn-network/trust-core/fixtures/anchor-evidence-v1/golden.json",
+      "sha256": "19aec39662c656f92b9a42b70bf0a0ee08db91f72343760987c7ca25f0eeaf10",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-core"
+    },
+    {
+      "path": "@jinn-network/trust-core/fixtures/ceremony-v1/eoa-siwe.json",
+      "sha256": "69411989c855d15600c2fff5a05c086aec7fa0d9f58253f0e854e44e1afa8825",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-core"
+    },
+    {
+      "path": "@jinn-network/trust-core/fixtures/ceremony-v1/recap.json",
+      "sha256": "5b19ad6bd8241416df2d605f22b7bbb7aa6ad55eff756bafc7ba450c9d7487e1",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-core"
+    },
+    {
+      "path": "@jinn-network/trust-core/fixtures/manifest.sha256.json",
+      "sha256": "41d5d5f23d87a9bbcb23825a5f859bacbd345254dba6218e0216540080283032",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-core"
+    },
+    {
+      "path": "@jinn-network/trust-core/fixtures/policy-chain-v1/genesis.json",
+      "sha256": "fcbd424b56622188e2599a9913621333464c6daac7c6810049aa4064a45f02a9",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-core"
+    },
+    {
+      "path": "@jinn-network/trust-core/fixtures/policy-chain-v1/v2.json",
+      "sha256": "1805889f14e3d9645d74c42606fc73b85659b3653f3c3abebbef7e61c7ed5591",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-core"
+    },
+    {
+      "path": "@jinn-network/trust-core/fixtures/policy-chain-v1/v3.json",
+      "sha256": "ba618632f8e68f711ec3bdd7e4bea254e3876f6030fbc09ace101de3e73c7611",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-core"
+    },
+    {
+      "path": "@jinn-network/trust-core/fixtures/sealing-v1/authorization.json",
+      "sha256": "d2c015f4a3eb8bdb1d31d65213cb911fc84de5ed74a945a28e28d3c9a309ddad",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-core"
+    },
+    {
+      "path": "@jinn-network/trust-core/fixtures/sealing-v1/expected-digests.json",
+      "sha256": "670a7cc531bf4d8748f65adfe710ce761566b28f5ac821398e3d9df8e4d081f5",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-core"
+    },
+    {
+      "path": "@jinn-network/trust-core/fixtures/sealing-v1/key-binding.json",
+      "sha256": "5318657ca372cab70c3990ac4b1ee20cd37d35840a665497c97cc057f5702d96",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-core"
+    },
+    {
+      "path": "@jinn-network/trust-core/fixtures/sealing-v1/policy.json",
+      "sha256": "5889a3e6e4ad751ea70296218e5dbbfd4eae4443f9e4d32d1f0af8dc36b705e7",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-core"
+    },
+    {
+      "path": "@jinn-network/trust-core/fixtures/sealing-v1/revocation.json",
+      "sha256": "1dcb8e1d3ac8e4df47efa341ce74b76c935524959b707aa2eb729fe209a33b78",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-core"
+    },
+    {
+      "path": "profiles/binary-judgment/parsers/binary-accept-reject/1.0.0/semantics.json",
+      "sha256": "02aa652770de9e74415cd206c8741b6148e3ea82c21773983a6d8c66030d0073",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "profiles/binary-judgment/parsers/binary-complete-json-label/1.0.0/semantics.json",
+      "sha256": "db1215184eb98aec6fe26f5412e6e823fbd19f75c5c080fbb58ecd1968503f4b",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "profiles/binary-judgment/parsers/binary-complete-json-label/2.0.0/semantics.json",
+      "sha256": "88545378ce165666102edc22393bbe87950c3a48d325fe142fab0f1c319a1916",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "profiles/binary-judgment/parsers/binary-correct-wrong/1.0.0/semantics.json",
+      "sha256": "2dd7e73c9ee063edb00fe7859821eee1122b483d4bd70568aebb046a6983ac4c",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "profiles/binary-judgment/parsers/binary-evermem-json-label/1.0.0/semantics.json",
+      "sha256": "4834ba3e6c817c560c72afb93a4a5b56c0cf654cf6ff1012843ea7675f507942",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "profiles/binary-judgment/parsers/binary-evermem-json-label/2.0.0/semantics.json",
+      "sha256": "f3d9ca6df8bfc263e64e25500c300d24124175c1c76596effc8be1c3780c1fb6",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "profiles/binary-judgment/parsers/binary-json-verdict/1.0.0/semantics.json",
+      "sha256": "543a71887f3ae95b0aede4513af3fdeadfc706c7a86f93452e3272d7ccdd2201",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "profiles/binary-judgment/parsers/binary-judgment-evaluation/1.0.0/semantics.json",
+      "sha256": "3568ee132ece234c15b7f9b6b4a7a954aefc2c417e17f2fde91729a7240bb343",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "profiles/binary-judgment/parsers/binary-judgment-evaluation/2.0.0/semantics.json",
+      "sha256": "838a8e4d21893524cba10e5a282397b334a67fe9bc516d53ae20fd4f2b915038",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "profiles/binary-judgment/parsers/binary-label-in-prose/1.0.0/semantics.json",
+      "sha256": "d53d23afc8734090c8d54c39de8105ead37c3ecad0cf0f454e97a535e5937f10",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "profiles/binary-judgment/parsers/binary-mem0-json-label/1.0.0/semantics.json",
+      "sha256": "7453de03b2614395b6cd223f6bfb104d924dfcbd05006d38328307bd7a1d825a",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "profiles/binary-judgment/parsers/binary-mem0-json-label/2.0.0/semantics.json",
+      "sha256": "89e4d1037d2e80c47867ca867cafeb91ff9d6a16125c18062ffb3d23e477b406",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "profiles/binary-judgment/parsers/binary-strict-json-label/1.0.0/semantics.json",
+      "sha256": "e5c723c97a55d631d26a8da2badea0df755943987cd679acf7bad7653f48dca6",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "profiles/binary-judgment/parsers/binary-strict-json-label/2.0.0/semantics.json",
+      "sha256": "f43f988181ed8490fb85824b1c0ed7d991f5b050097a6874fccf750d815593ca",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "profiles/binary-judgment/parsers/binary-yes-no/1.0.0/semantics.json",
+      "sha256": "1b99469a195fee154c27d0c3b219da7778e1b8f4210bd773350d107c459b7949",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "profiles/execution-evidence/v1/ro-crate-metadata.json",
+      "sha256": "1ec559243afab4bd19620ff9d07449994d394e63b462d3bb3320f28050dea818",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "profiles/execution-evidence/v1/schemas/dsse-envelope.schema.json",
+      "sha256": "f2da8854900fe7800974f9ca85d9f69d5a51428b9e048805cd8c6a2989405e01",
+      "mediaType": "application/schema+json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "profiles/execution-evidence/v1/schemas/execution-evidence-document.schema.json",
+      "sha256": "910ae22df1864ae8887b4ef7c1ce8268cd0e7ee264424721021d6135865c389e",
+      "mediaType": "application/schema+json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "profiles/execution-evidence/v1/schemas/execution-verification-statement.schema.json",
+      "sha256": "e2f4e642dbe9f6e27970c063345071cc95684b8ea05c37688e58930742f6757f",
+      "mediaType": "application/schema+json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "profiles/execution-evidence/v1/schemas/resource-descriptor.schema.json",
+      "sha256": "c00ae4d4ea6cef0170dfc36fa293f71537b42b126b164cd0476064a28d03b5a0",
+      "mediaType": "application/schema+json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "profiles/execution-evidence/v1/schemas/result-evaluation-statement.schema.json",
+      "sha256": "97c81ca33e4b6daae3d4a15113aaacc09be2bbfde9c0f9f17517a93a2ad88e69",
+      "mediaType": "application/schema+json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "profiles/execution-evidence/v1/specification.md",
+      "sha256": "59fef2e4ebf2231821bafcf4fe13521734cb3a020c0f878f6732447ee6056aee",
+      "mediaType": "text/markdown",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "profiles/execution-evidence/v1/vocabulary.jsonld",
+      "sha256": "ee8dd187742dd020056e6c35b07630e77f7bb8f30b1e3740a95e5d28adda6469",
+      "mediaType": "application/ld+json",
+      "sourcePackage": "@jinn-network/evidence-protocol"
+    },
+    {
+      "path": "profiles/task-execution/v1",
+      "sha256": "ec4eb17d94b2bfa2aa7d65b2913b3ded3760e948c2ee12a221540f91a954a20c",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "profiles/task-profile/v1",
+      "sha256": "dd511d9444658dad75252f7bd6ffb448a6d8cdd4967d35d37503e92b96515020",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "profiles/trace-vocabulary/v1",
+      "sha256": "c83d0c574afe42c35996ef907e8f06d4138e33e45bcafe4595c8464332c4e446",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/evidence-trace"
+    },
+    {
+      "path": "schemas/chain-environment/v1",
+      "sha256": "1da3f23fed5385b70778c51a6a39e5040dd9137038bb9a9c36d4a31aa5c7516b",
+      "mediaType": "application/schema+json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "schemas/crypto-environment/v1",
+      "sha256": "9562900f92fe38ed169b57c75591c11d4ec9472d6f6c61f94057d9510d8e407e",
+      "mediaType": "application/schema+json",
+      "sourcePackage": "@jinn-network/chain-environment-record"
+    },
+    {
+      "path": "schemas/delivery.schema.json",
+      "sha256": "1fdfca358429a5e0127e70aeba7acb05b3336b4135badba696903a0334f6af69",
+      "mediaType": "application/schema+json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "schemas/dispatch-context.schema.json",
+      "sha256": "c9984def6c56391da7f8ac281b3b8c83fc308c798ca9a7b4a6065e8c33def523",
+      "mediaType": "application/schema+json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "schemas/environment/v1",
+      "sha256": "a2030fec0e4cde2174263414da6268f933eca2a41f7f0255e59a65472f343dde",
+      "mediaType": "application/schema+json",
+      "sourcePackage": "@jinn-network/environment-record"
+    },
+    {
+      "path": "schemas/observation.schema.json",
+      "sha256": "488d17f6054044bbc585c7b23bfa3e4d65a160ed07a4267d55162dbfe4797d95",
+      "mediaType": "application/schema+json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "schemas/submission.schema.json",
+      "sha256": "07a3432bfd9c9240eb1bc30b96d9ba433e358b2b7bb9681c1277b53083d50d30",
+      "mediaType": "application/schema+json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "schemas/task.schema.json",
+      "sha256": "7426dea31c64f2ee53c409609993dab7742d287412f239d76aafc7b40267bfc1",
+      "mediaType": "application/schema+json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "schemas/trace-derivation-statement/v1",
+      "sha256": "760dd9c6ee22a21205b33b971db889a3a886d4d21fc4797405b24a06ee1a95a0",
+      "mediaType": "application/schema+json",
+      "sourcePackage": "@jinn-network/evidence-trace"
+    },
+    {
+      "path": "schemas/trace/v1",
+      "sha256": "24ac556223e0fb4f1f304cc6b9f7961e45307f5fff548ddc367f85a91dcdb635",
+      "mediaType": "application/schema+json",
+      "sourcePackage": "@jinn-network/evidence-trace"
+    },
+    {
+      "path": "task-profiles/binary-judgment/2.0",
+      "sha256": "ebb34d8362e2cc3135847a5ad6f3ee3d9c2d9922a2b827aa9dfcbaf440b22557",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "task-profiles/evaluation-task/1.0",
+      "sha256": "5131bab4aa41743eb625963d12b222f814c8367e08967baecef5d0af932aab1e",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "task-profiles/prediction-forecast/1.0",
+      "sha256": "7e451784e0f25caba25333b941368e78f781669bc03f6d1b59f8f4215ddc3ef9",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "task-profiles/repository-work/1.0",
+      "sha256": "4a920949b7c6f7eea430ca0b8aca530db10135b967638dc5869734dd5bb51ec5",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-profiles"
+    }
+  ]
+}

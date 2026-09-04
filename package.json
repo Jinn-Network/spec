@@ -1,0 +1,16 @@
+{
+  "name": "@jinn-network/spec",
+  "version": "0.0.0",
+  "private": true,
+  "description": "The Jinn protocol specification: served documents, their digest manifests, and the pipeline that builds the served root.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "node --test scripts/*.test.mjs",
+    "build:sealed-platform-v1": "node scripts/build-profile-root.mjs --out build/sealed-platform-v1 --release-group sealed-platform-v1 --lane stable",
+    "build:implementations-v1": "node scripts/build-profile-root.mjs --out build/implementations-v1 --release-group implementations-v1 --lane stable"
+  }
+}
