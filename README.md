@@ -47,7 +47,16 @@ The normative text for each family states which of these rules apply to which re
 
 Every family ships vectors: a corpus of inputs paired with expected outcomes, expressed as data, with a digest manifest over the corpus. An implementation conforms to a family when it produces every expected outcome. The vector format for each family is written in that family's text.
 
-The vectors arrive with the first release of this repository. A black-box conformance runner, which drives any implementation through a fixed command-line contract and reports per vector, will live in a sibling repository, `Jinn-Network/conformance`.
+The vectors are here, under [`documents/`](documents/), with their digest manifests under [`manifests/`](manifests/). A black-box conformance runner, which drives any implementation through a fixed command-line contract and reports per vector, will live in a sibling repository, `Jinn-Network/conformance`.
+
+## Repository layout
+
+- [`documents/`](documents/): every served document, at the served path its identifier resolves to. Schemas, profiles, vocabularies, normative text, and conformance vectors. These bytes are the published ones; nothing here is edited by hand.
+- [`manifests/`](manifests/): one digest manifest per release group, generated from `documents/` and `inventory.json`. See [`manifests/README.md`](manifests/README.md).
+- [`scripts/`](scripts/): the pipeline that builds a release group's served root, signs its manifest, assembles the deploy bundle, and serves a bundle over HTTP for verification. `inventory.json` beside them says which documents belong to which group.
+- [`proposals/`](proposals/): numbered proposals, the way anything that is not a draft changes.
+
+Five files inside the golden execution-evidence fixture look like code and are not: a two-file repository under test, the runner that executed it, and two claim scripts. They are that vector's input data, and a reader replaying the vector needs their exact bytes. They cross for the same reason a fixture's JSON does.
 
 ## Implementations and networks
 
