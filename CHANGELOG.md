@@ -2,7 +2,7 @@
 
 Every release of the specification, newest first. Each entry names the documents that changed status and the proposals ruled since the previous release.
 
-## Unreleased
+## v0.1.0 — 2026-09-08
 
 - Repository created with its front door, governance, contributing guide, proposal template, and license.
 - Continuous integration: `check` runs the test suite on every pull request and on `main`; `release` builds, signs, deploys and then verifies the origin on a `v*.*.*` tag, gated by `scripts/verify-live-host.mjs`, a fail-closed live-host verifier with no "host unreachable, skip" branch. See [`docs/releasing.md`](docs/releasing.md).
