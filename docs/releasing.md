@@ -144,8 +144,9 @@ have it, so use an OpenSSL 3 build there.
 
 What this proves is the whole chain: the key the origin publishes signs the manifest, the
 manifest names the digest of every document, and each document's bytes hash to the digest
-the manifest names. What it does not prove is who holds the key. That is a separate
-question, and the answer is in [`GOVERNANCE.md`](../GOVERNANCE.md).
+the manifest names. What it does not prove is who holds the key. No published record yet
+binds the key to the maintainers named in [`GOVERNANCE.md`](../GOVERNANCE.md); see "What is
+not yet proven" in the [README](../README.md).
 
 ## The previously generated host repository
 
