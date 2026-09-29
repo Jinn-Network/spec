@@ -70,13 +70,13 @@ The text is written here, inside the proposal, because the serving pipeline toda
 >
 > Execution Verification records, and the `supersedes` and `disputes` references of an evaluation, are not inputs in this version. A surface that shows a subject SHOULD show whether a later record supersedes or disputes it.
 >
-> **The state of the records today.** No record kind in this specification is yet defined as signed by its executor: the Delivery vectors are unsigned, and Execution Evidence is not itself signed. Until one is, no subject has an executor attestation, and `executed-by` is `not-established` for every subject. The rule is written now so that the label rises when executors sign, and not before.
+> **The state of the records today.** No record kind in this specification is yet defined as signed by its executor: the Delivery vectors are unsigned, and Execution Evidence is not itself signed. Until one is, no subject has an executor attestation, and `executed-by` and `evaluator-distinct` are `not-established` for every subject. The rule is written now so that the label rises when executors sign, and not before.
 >
 > ## 3. Resolving a signature
 >
 > Several labels depend on who signed a record. A checker resolves a valid DSSE signature over a record to one of `identified-strong`, `identified-weak`, or `key-only`.
 >
-> **The resolution time.** The resolution time is the time the record states for its act (`evaluatedAt` for an evaluation; the end time of the Execution for an executor attestation), but only if a verified anchor proves the record's exact bytes existed at a time when the binding was in force. Otherwise the resolution time is the time the checker checks. A signer therefore cannot keep an expired or revoked binding in force by stating an earlier time.
+> **The resolution time.** The resolution time is the earliest time at which a verified anchor, accepted under the trust policy, proves the signed record's exact bytes existed. Without such an anchor it is the time the checker checks. A time the record states for itself, such as `evaluatedAt`, is never used: a signer cannot keep an expired or revoked binding in force by stating an earlier time.
 >
 > **Accepted bindings.** A key-binding record resolves the signing key when all of these hold:
 >
@@ -84,17 +84,17 @@ The text is written here, inside the proposal, because the serving pipeline toda
 > 2. It names a ceremony. A binding with no ceremony does not resolve.
 > 3. Its `relationship` is `controls`.
 > 4. Its `scope` includes `verdicts` when the signed record is an evaluation, or `deliveries` when it is an executor attestation.
-> 5. It is in force at the resolution time: from its `validFrom`, or from its earliest verified anchor time where that is later, until the earlier of its `expiresAt` and the `effectiveFrom` of any accepted revocation that targets it. A binding with no verified anchor is in force from its `validFrom`.
+> 5. It is in force at the resolution time: from its `validFrom`, or from its earliest verified anchor time where that is later, until the earlier of its `expiresAt` and the `effectiveFrom` of any accepted revocation that targets it. A binding with no verified anchor of its own is in force from its `validFrom` only when the resolution time is the time the checker checks; at any earlier resolution time it does not resolve. If a source the trust policy names cannot be reached, no binding resolves.
 >
 > **The result.**
 >
-> - `identified-strong`: exactly one accepted binding resolves the key, and the strength derived from its ceremony type is strong.
-> - `identified-weak`: exactly one accepted binding resolves the key, and the strength derived from its ceremony type is weak.
-> - `key-only`: the signature is valid and no accepted binding resolves the key, or more than one does and they name different Agents or different voucher identities.
+> - `identified-strong`: at least one accepted binding resolves the key, all that do name one Agent IRI and one voucher identity, and the weakest strength derived from their ceremony types is strong.
+> - `identified-weak`: as `identified-strong`, but the weakest derived strength is weak.
+> - `key-only`: the signature is valid and no accepted binding resolves the key, or the bindings that resolve it name more than one Agent IRI or more than one voucher identity.
 >
 > Strength is derived from the ceremony type, never read from the binding's own `strength` field. A GitHub-human ceremony derives weak; account ceremonies (an externally owned account, a Safe, an agent identifier composed with an account ceremony) and machine identity ceremonies derive strong. Strong describes how firmly the key is tied to the identity, not how costly the identity was to create: accounts can be created freely.
 >
-> An identified result carries three things: the key id, the bound **Agent IRI**, and the **voucher identity**, which is the inspectable identity the ceremony proved (the account address, the machine identity, or the profile). Two identified results **match** when their key ids are equal, their Agent IRIs are equal, or their voucher identities are equal.
+> An identified result carries three things: the key id, the bound **Agent IRI**, and the **voucher identity**, which is the inspectable identity the ceremony proved, compared in the form of its ceremony type plus the identity's stable identifier (an account address, a machine identity's subject, a profile's numeric id; never a profile URL, which can change). Two identified results **match** when their key ids are equal, their Agent IRIs are equal, or their voucher identities are equal.
 >
 > ## 4. Out of scope in this version
 >
@@ -110,11 +110,11 @@ The text is written here, inside the proposal, because the serving pipeline toda
 > | Value | Meaning |
 > | --- | --- |
 > | `identified-strong` | Every executor attestation held resolves to `identified-strong` for the same Agent the Execution Evidence names. |
-> | `identified-weak` | As above, and at least one resolves to `identified-weak`. |
+> | `identified-weak` | Every executor attestation held resolves to an identified value for the Agent the Execution Evidence names, and at least one is `identified-weak`. |
 > | `key-only` | Every executor attestation held has a valid signature, and at least one resolves to `key-only`. |
 > | `not-established` | There is no execution, no executor attestation, the attestations resolve to different Agents or voucher identities, or a bound Agent differs from the executor the Execution Evidence names. |
 >
-> Derivation: resolve every executor attestation held (section 3). If there are none, or their identified resolutions do not all match one another, or any identified resolution names an Agent other than the primary executor Agent IRI of the Execution Evidence, the value is `not-established`. Otherwise the value is the lowest resolution among them, in the order `identified-strong`, `identified-weak`, `key-only`.
+> Derivation: resolve every executor attestation held (section 3). An attestation with more than one valid signature is resolved as in 5.2. If there are none, or two identified resolutions name different voucher identities, or any identified resolution names an Agent other than the primary executor Agent IRI of the Execution Evidence, the value is `not-established`. Otherwise the value is the lowest resolution among them, in the order `identified-strong`, `identified-weak`, `key-only`.
 >
 > Alongside the value, the checker reports each signing key id and, for an identified value, the bound Agent IRI, the voucher identity, and the ceremony type.
 >
@@ -126,7 +126,7 @@ The text is written here, inside the proposal, because the serving pipeline toda
 > | `identified-weak` | As above, with `identified-weak`. |
 > | `key-only` | Otherwise: no signature resolves to an identity bound to `evaluator.id`. |
 >
-> Derivation: for each valid signature on the subject, resolve it (section 3); if it resolves to an identity whose Agent IRI differs from `evaluator.id`, treat it as `key-only`. Report the highest result, in the order `identified-strong`, `identified-weak`, `key-only`, and on a tie the one with the lexically smallest key id.
+> Derivation: for each valid signature on the subject, resolve it (section 3); if it resolves to an identity whose Agent IRI differs from `evaluator.id`, treat it as `key-only`. Report the highest result, in the order `identified-strong`, `identified-weak`, `key-only`, and on a tie the one with the lexically smallest key id. Alongside the value, the checker reports the key id and, for an identified value, the bound Agent IRI, the voucher identity, and the ceremony type.
 >
 > The value is never `not-established`, because a subject that is not validly signed does not verify and is not labeled.
 >
@@ -209,7 +209,7 @@ The text is written here, inside the proposal, because the serving pipeline toda
 >
 > ## 9. Conformance
 >
-> A checker conforms when, for every vector in this vocabulary's corpus, it derives exactly the expected label set, or reports that the subject does not verify where the vector expects that. A vector whose expectation depends on recomputation names the procedure it uses; a checker that does not implement that procedure conforms on that vector when it derives every other label as expected and `recomputation` as `attested-only`.
+> A checker conforms when, for every vector in this vocabulary's corpus, it derives exactly the expected label set, or reports that the subject does not verify where the vector expects that. A vector whose expectation depends on recomputation names the procedure it uses and also gives the label set expected from a checker that does not implement that procedure, with `recomputation` as `attested-only`; such a checker conforms on that vector when it derives that label set.
 
 ## Effect on existing records and implementations
 
@@ -230,7 +230,8 @@ The implementing pull request adds a vector corpus with a digest manifest, in th
 - an expired binding, with `evaluatedAt` backdated into its validity window and no anchor: `key-only`;
 - a binding revoked before the check, where the bundle supplied with the subject omits the revocation but the trust policy's source holds it: `key-only`;
 - a key bound to two different Agents, where the bundle omits one binding: `key-only`;
-- a binding with no verified anchor: in force from its `validFrom`;
+- a binding with no verified anchor: resolves at the time of checking, and does not resolve for a signature anchored before the check;
+- two bindings of one key that name the same Agent and voucher identity, one by a strong ceremony and one by a weak one: `identified-weak`;
 - a binding whose `scope` lacks `verdicts`: the evaluation resolves as `key-only`;
 - two keys bound to different Agent IRIs through the same voucher identity: `same-party`;
 - an evaluation co-signed by the executor's key and a distinct evaluator key: `same-party`;
@@ -246,7 +247,7 @@ The implementing pull request adds a vector corpus with a digest manifest, in th
 
 ## Rationale
 
-**Why labels are derived and never written.** The four questions are asked because the reader does not trust the producer. A label the producer writes answers them with the producer's word. Deriving every label from signatures, bindings and bytes, and ignoring any stated value, is the only rule under which a label means the same thing whichever application produced the record. The rule that missing inputs yield the lowest value closes omission of inputs the checker needs. Omission of records that would lower a label, a conflicting binding or a revocation, is closed by taking bindings and revocations from the trust policy's sources rather than from the producer's bundle. Backdating is closed by resolving a stated act time only when an anchor proves it.
+**Why labels are derived and never written.** The four questions are asked because the reader does not trust the producer. A label the producer writes answers them with the producer's word. Deriving every label from signatures, bindings and bytes, and ignoring any stated value, is the only rule under which a label means the same thing whichever application produced the record. The rule that missing inputs yield the lowest value closes omission of inputs the checker needs. Omission of records that would lower a label, a conflicting binding or a revocation, is closed by taking bindings and revocations from the trust policy's sources rather than from the producer's bundle. Backdating is closed by never using a time a record states for itself: a signature resolves at its earliest anchor time, or at the time of checking.
 
 **Why the specification owns the names.** A reader who filters records from several applications by "evaluated by a distinct identity" needs one name with one derivation. If each application owned its own, the names would drift and the filter would mean nothing. Presentation is left to applications because words for people vary by audience, while the derivation must not.
 
@@ -262,7 +263,7 @@ The implementing pull request adds a vector corpus with a digest manifest, in th
 
 **Alternatives set aside.**
 
-- *Composite labels such as "independently executed" in the specification.* Useful, but each is a predicate over these labels, and choosing which predicates matter is presentation. Left to applications, subject to section 6.
+- *Composite labels such as "independently executed" in the specification.* Useful, but each is a predicate over these labels, and choosing which predicates matter is presentation. Left to applications, subject to section 7.
 - *A single trust score.* A number hides which question failed and invites comparison across policies that are not comparable.
 - *Carrying labels in announcement facts.* A fact published by the producer is a producer statement. Labels are computed by the reader's checker; a feed can carry the inputs, never the outputs.
 - *Specifying the key-to-organization ceremony and third-party execution now.* Both are needed for `independence` to rise above `not-established` and for executors other than the record's own producer to be named. Both are larger than this vocabulary and are left out; the labels answer `not-established` until they exist.
