@@ -9,6 +9,7 @@ A proposal is the permanent record of why a rule is the way it is. It is never d
 | Number | Title | Status | Sponsor |
 | --- | --- | --- | --- |
 | [0000](0000-template.md) | Template | n/a | n/a |
+| [0001](0001-provenance-vocabulary.md) | Provenance vocabulary | draft | none |
 
 ## Statuses
 
