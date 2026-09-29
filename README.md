@@ -76,7 +76,7 @@ No second implementation exists yet. The smallest one would be a verifier in ano
 
 Releases are semantic-version tags of the whole set. Each release is a signed manifest of document digests. Old releases stay readable beside new ones.
 
-This is in place, not planned. Release `v0.1.0`, published on 2026-09-24, was the first built and deployed by this repository's own continuous integration: each release group's manifest is signed, the manifests and their signatures are attached to the GitHub release, and the release run verified the live origin against the signed bundle byte for byte. Anyone can repeat that check with the steps in [`docs/releasing.md`](docs/releasing.md). A signature proves which key signed a manifest; it does not by itself prove who holds that key (see "What is not yet proven").
+Release `v0.1.0`, published on 2026-09-24, was the first built and deployed by this repository's own continuous integration: each release group's manifest is signed, the manifests and their signatures are attached to the GitHub release, and the release run verified the live origin against the signed bundle byte for byte. Anyone can repeat that check with the steps in [`docs/releasing.md`](docs/releasing.md). A signature proves which key signed a manifest; it does not by itself prove who holds that key (see "What is not yet proven").
 
 Every document carries a status line:
 
