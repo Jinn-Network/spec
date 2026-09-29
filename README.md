@@ -15,6 +15,8 @@ The protocol defines an interoperability floor. Any two implementations, written
 
 Everything beyond the floor is a choice made by an implementation or by a network: which venue matches requesters to operators, how work is paid for, which runtime executes it, where records are stored. The protocol says how work is described, done, evidenced, judged, trusted, and found. It does not say how work is paid for.
 
+The protocol does carry offers. The holder of any record can publish an **offer** for it: a record that names the record by its digest, states a price on one or more payment rails together with the address to pay on each (or no price, for a free offer), and names the gate where a buyer asks for the record. The protocol carries the offer and lets anyone find and verify it. It does not settle payment: a buyer pays the address the offer names, directly, outside the protocol.
+
 The protocol does say what a venue must supply so that records stay exact: a strictly increasing attempt number per task, a deadline per attempt, and the digests it anchors. A network publishes its own venue binding beside the protocol, not inside it.
 
 ## The record families
@@ -22,7 +24,7 @@ The protocol does say what a venue must supply so that records stay exact: a str
 Every record is a sealed JSON document with a published schema, a stable identifier, and a digest. The families:
 
 - **Task execution.** Task, Submission, Attempt, Lifecycle Observation, Delivery. How work is described, claimed, observed while it runs, and handed back.
-- **Execution evidence.** Execution Evidence, Result Evaluation, Execution Verification. What happened during an execution, what a judge concluded about the result, and what a verifier concluded about the judge.
+- **Execution evidence.** Execution Evidence, Result Evaluation, Execution Verification, Offer. What happened during an execution, what a judge concluded about the result, what a verifier concluded about the judge, and the terms on which a record's holder will release it: the record's digest, a price and where to pay, and where to ask for it.
 - **Trust.** Key bindings, authorizations, trust policies. Which keys speak for which accountable identities, and what a reader is willing to believe.
 - **Record discovery.** Announcement entries and source heads. How a source publishes what it holds, and how a reader walks it, over HTTP.
 - **Task profiles.** Task profiles and evaluation specifications. Reusable shapes of work and the rules by which a result is judged.
