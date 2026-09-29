@@ -68,13 +68,15 @@ No second implementation exists yet. The smallest one would be a verifier in ano
 ## What is not yet proven
 
 - **Interoperability.** One implementation exists. Until a second one passes the vectors, "written from the spec alone" is a claim, not a result.
-- **Signed releases.** The first release of this repository is a byte-identical import of the documents already served at `https://spec.jinn.network/`. Releases carry a signed digest manifest from the point at which this repository's own continuous integration publishes the origin.
+- **Who holds the release key.** Releases are signed, and the public half of the key is served at `https://spec.jinn.network/keys/<key id>.pem`. No published record yet binds that key to the maintainers named in [`GOVERNANCE.md`](GOVERNANCE.md), so a reader can check which key signed a release but not, from records alone, whose key it is.
 - **Attempt identity without a venue.** On the chain venue, the attempt number is minted by a contract. Between two implementations with no venue, the text must say who mints it and how two operators avoid colliding. This is open.
 - **Vectors as data.** Some expectations in the first implementation still live in that implementation's tests rather than in the vector corpus. They are lifted into data before the corresponding family is marked sealed.
 
 ## Releases and document status
 
 Releases are semantic-version tags of the whole set. Each release is a signed manifest of document digests. Old releases stay readable beside new ones.
+
+This is in place, not planned. Release `v0.1.0`, published on 2026-09-24, was the first built and deployed by this repository's own continuous integration: each release group's manifest is signed, the manifests and their signatures are attached to the GitHub release, and the release run verified the live origin against the signed bundle byte for byte. Anyone can repeat that check with the steps in [`docs/releasing.md`](docs/releasing.md). A signature proves which key signed a manifest; it does not by itself prove who holds that key (see "What is not yet proven").
 
 Every document carries a status line:
 
