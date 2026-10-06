@@ -94,13 +94,31 @@ This repository carries the evaluation specification as vectors only. No text is
 > For each trial the harness reports a reward map: a set of named values. Each measurement the specification declares is the value of the same-named key in that map.
 >
 > - The measurement's name is the key, unchanged.
-> - The measurement's value is the harness's value, unchanged. A whole number that is a safe integer (magnitude at most 2^53 - 1) is carried as a number. Any other number is carried as the shortest decimal string that reads back as the same binary64 value, written without an exponent.
+> - The measurement's value is the harness's value, unchanged. A value that is a number is carried in the one form given under "Carrying a number" below.
 > - A key the specification does not declare is not a measurement.
 > - A declared measurement whose key is absent from the map has no value. Whoever records the measurements MUST NOT supply a default for it.
 >
 > A specification of this family MUST declare at least one measurement.
 >
 > The verdict comes from the specification's own `verdictRule` over these measurements. The family fixes no rule.
+>
+> ### Carrying a number
+>
+> Measurements go into sealed records, and a sealed record is compared by its bytes. So a reward that is a number MUST be carried in one form only, whoever records it. Three steps give that form.
+>
+> 1. **Read the number as a binary64 value.** It is the binary64 value nearest the number as written. If two are equally near, it is the one whose significand is even. This is the rounding that IEEE 754 calls round to nearest, ties to even. A JSON parser that keeps numbers as doubles and rounds correctly gives this value. From here on the reward is that binary64 value, however the harness wrote it. A number of magnitude 2^1024 - 2^970 or more reads as no finite value. It cannot be carried, and a reward map that holds one under a declared key is invalid.
+> 2. **A whole number of magnitude at most 2^53 - 1 is carried as a number.** Such a value is a safe integer.
+> 3. **Any other value is carried as a decimal string.** Take every decimal number that step 1 reads as this same binary64 value. Keep those with the fewest significant digits, counted from the first non-zero digit to the last non-zero digit. If more than one is left, keep the one nearest the binary64 value. If two are equally near, keep the one whose last significant digit is even. Write the number that is left with no exponent: `-` if it is negative; then its whole part, which is `0` when the magnitude is below 1 and has no leading zero otherwise; then, only if it has a fractional part, `.` and its fractional digits, with no trailing zero.
+>
+> Five rewards show the steps at work.
+>
+> | Reward | Carried as | Why |
+> | --- | --- | --- |
+> | 1, written `1.0` | the number `1` | A whole number of magnitude at most 2^53 - 1. |
+> | One ten-millionth, written `1e-07` | `"0.0000001"` | One significant digit, written with no exponent. |
+> | The binary64 sum of 0.1 and 0.2 | `"0.30000000000000004"` | Six numbers of 17 significant digits read as it, and no number of fewer digits does. This one is nearest. |
+> | 2^60 + 256, which is 1152921504606847232 | `"1152921504606847200"` | Two numbers of 17 significant digits read as it, and no number of fewer digits does. This one is nearer. The exact value has 19 significant digits and is not what is carried. |
+> | 2^49 + 0.25, which is 562949953421312.25 | `"562949953421312.2"` | Two numbers of 16 significant digits read as it, and they are equally near. This one ends in an even digit. |
 >
 > ## 5. What a specification of this family does not state
 >
@@ -188,7 +206,7 @@ Nothing breaks, because the change adds a family that no existing record uses.
 
 ## Vectors
 
-The implementing pull request adds the vectors below under `@jinn-network/task-execution-profiles/fixtures/` and extends the digest manifest there. Each case has the form its part of the corpus already uses. In the three new vector families a case is an input paired with an expected outcome. Under `evaluation-spec/` a case is a whole specification, valid in `golden/` and invalid in `adversarial/`. No vector format is added. Every vector is built from the text, starting from the example in section 7 and the worked content hash in section 6. None is captured from a run or copied from a published benchmark's packages.
+The implementing pull request adds the vectors below under `@jinn-network/task-execution-profiles/fixtures/` and extends the digest manifest there. Each case has the form its part of the corpus already uses. In the three new vector families a case is an input paired with an expected outcome. Under `evaluation-spec/` a case is a whole specification, valid in `golden/` and invalid in `adversarial/`. No vector format is added. Every vector is built from the text, starting from the example in section 7, the worked content hash in section 6 and the worked rewards in section 4. None is captured from a run or copied from a published benchmark's packages.
 
 `external-verifier-block/golden/`, each returned unchanged:
 
@@ -229,9 +247,13 @@ The implementing pull request adds the vectors below under `@jinn-network/task-e
 - `golden/fractional-reward.json`: `reward` of 0.5 is carried as the string `"0.5"`.
 - `golden/small-fractional-reward.json`: a reward of one ten-millionth is carried as `"0.0000001"`, with no exponent.
 - `golden/unsafe-whole-reward.json`: a reward of 2^53, a whole number that is not a safe integer, is carried as the string `"9007199254740992"`.
+- `golden/nearest-digits-reward.json`: a reward of 0.30000000000000004, the binary64 sum of 0.1 and 0.2. Six numbers of 17 significant digits read as it and no number of fewer digits does. The nearest is carried: `"0.30000000000000004"`.
+- `golden/large-whole-reward.json`: a reward written as the whole number 1152921504606847232, which is 2^60 + 256. It is carried as `"1152921504606847200"`, the nearer of the two numbers of 17 significant digits that read as it, and not as its exact value.
+- `golden/tied-digits-reward.json`: a reward of 562949953421312.25, which is 2^49 + 0.25. Two numbers of 16 significant digits read as it and are equally near. The one that ends in an even digit is carried: `"562949953421312.2"`.
 - `golden/undeclared-key-dropped.json`: a key the specification does not declare is not a measurement.
 - `golden/required-key-absent.json`: the map lacks a required key. No measurement is produced for it and no default appears.
 - `adversarial/non-numeric-value.json`: a `harbor` reward that is not a number.
+- `adversarial/out-of-range-value.json`: a `harbor` reward written as `1e400`, which is too large to read as a finite binary64 value.
 - `adversarial/not-a-map.json`: the reward map is absent or is not an object.
 
 `evaluation-spec/`, whole specifications, as the existing cases there are:
@@ -258,7 +280,11 @@ The implementing pull request adds the vectors below under `@jinn-network/task-e
 
 **Why `declaredImage` is a string.** A resource descriptor invites a reader to treat it as a reference to fixed bytes. A tag is not that. A plain string with this name says what it is: what the package declared.
 
-**Why a reward that is not a safe integer becomes a string.** The corpus already writes a quantity that is not a safe integer as a decimal string: the threshold `"0.5"` in `@jinn-network/task-execution-profiles/fixtures/evaluation-spec/golden/fractional-threshold.json` is one. JSON implementations do not all read and write a fraction, or a whole number beyond 2^53 - 1, the same way, and measurements are recorded in sealed records, which are compared by digest. The shortest string that reads back as the same value is a single string, so two recorders write the same measurement for the same reward.
+**Why a reward that is not a safe integer becomes a string.** The corpus already writes a quantity that is not a safe integer as a decimal string: the threshold `"0.5"` in `@jinn-network/task-execution-profiles/fixtures/evaluation-spec/golden/fractional-threshold.json` is one. JSON implementations do not all read and write a fraction, or a whole number beyond 2^53 - 1, the same way, and measurements are recorded in sealed records, which are compared by digest. Two recorders must write the same measurement for the same reward, so the text has to name the one string they write.
+
+**Why the string is fixed in three steps.** "The shortest decimal string that reads back as the same value" sounds like one string and is not. Six numbers of 17 significant digits read as the binary64 sum of 0.1 and 0.2, and no number of fewer digits does. Past 2^53 neighboring whole numbers read as one binary64 value: 9007199254740992 and 9007199254740993 are the same length and both read as 2^53. A reader that keeps a whole number exact also starts from a different value than a reader that keeps a double, so the two differ on a reward written as 9007199254740993 before either chooses a digit. The rule therefore fixes the reading first, then the digits, then the notation. Each step leaves one answer. Each choice the rule makes has a vector: the nearest of several, the even digit of a tie, a whole number whose digits are not its exact value, and a number too large to read.
+
+**Why the fewest digits, and not the exact value.** Every binary64 value has an exact decimal expansion, and carrying it would also name one string. It was set aside for three reasons. The exact value of the binary64 nearest 0.1 has 55 significant digits, where 0.1 has one. A split rule, exact for whole numbers and fewest digits for fractions, is two rules where one will do. And fewest digits, then nearest, then even is the choice RFC 8785 makes when it writes a number, and RFC 8785 is what every record in this protocol is canonicalized with. Its own samples write 2^68, which is 295147905179352825856, as 295147905179352830000. An implementation can take the digits from an RFC 8785 number serializer and write out the exponent, if there is one, as zeros. The cost is stated plainly: past 2^53 the string is not the exact value of the binary64. 2^60 + 256 is 1152921504606847232 and is carried as `"1152921504606847200"`. Both read as the same binary64 value, and after the first step that value is all the reward is.
 
 **Why the facts of a run stay out.** Which image ran, on what platform, under which harness version and with what timeout are true of one evaluation and can differ in the next. A specification is sealed before any evaluation and is shared by all of them. Result Evaluation Evidence already has `evaluationMethod` and `evidence` for what one evaluation did.
 
