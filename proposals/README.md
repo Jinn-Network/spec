@@ -9,6 +9,7 @@ A proposal is the permanent record of why a rule is the way it is. It is never d
 | Number | Title | Status | Sponsor |
 | --- | --- | --- | --- |
 | [0000](0000-template.md) | Template | n/a | n/a |
+| [0002](0002-external-verifier-grader-family.md) | External-verifier grader family | sponsored | ritsukai |
 
 ## Statuses
 
