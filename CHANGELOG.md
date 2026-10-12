@@ -2,6 +2,10 @@
 
 Every release of the specification, newest first. Each entry names the documents that changed status and the proposals ruled since the previous release.
 
+## Unreleased
+
+- Proposal [0002](proposals/0002-external-verifier-grader-family.md), External-verifier grader family, ruled accepted on 2026-10-12.
+
 ## v0.1.0 — 2026-09-08
 
 - Repository created with its front door, governance, contributing guide, proposal template, and license.
