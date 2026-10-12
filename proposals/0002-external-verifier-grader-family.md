@@ -1,7 +1,7 @@
 ---
 number: 0002
 title: External-verifier grader family
-status: sponsored
+status: accepted
 sponsor: ritsukai
 supersedes: none
 superseded-by: none
@@ -308,4 +308,4 @@ The implementing pull request adds the vectors below under `@jinn-network/task-e
 
 ## Ruling
 
-Filled in by the sponsoring maintainer: the ruling, the date, and one sentence of reason.
+Accepted on 2026-10-12 by the sponsoring maintainer: the family is a new capability that the first implementation intends to build, and it lets an evaluation specification describe a task judged by an external harness's verifier without stating anything the task package does not state.
