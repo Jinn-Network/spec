@@ -158,6 +158,18 @@
       "sha256": "9d120f7e5410cab3ba0f36ba3345243c19b843bd3df41cea081f069a0a9b025c"
     },
     {
+      "id": "observation-conflict-v1/engaged-disagreeing-on-source-other-content-order/observations.json",
+      "sha256": "55afd4b330b6265795965dd386998dd9d28fbb8ce07e53344e6df5b04941eb8f"
+    },
+    {
+      "id": "observation-conflict-v1/engaged-disagreeing-on-source/observations.json",
+      "sha256": "426b51f9278f272691a2fee163e502fe14a552e0fcf7660d2e5dd7092ffc3e4b"
+    },
+    {
+      "id": "observation-conflict-v1/engaged-disagreement-from-another-producer/observations.json",
+      "sha256": "72ecbf2b3f114fa2ca798e9329fc190d6fce55dfd2e4e6fd1a4c6be8e9549a22"
+    },
+    {
       "id": "observation-conflict-v1/equal-sequence-breaks-on-the-pair/observations.json",
       "sha256": "26011add9e452c35d790c20be6a432448e23983e3898774ec94b82eb03b419b3"
     },
@@ -175,7 +187,7 @@
     },
     {
       "id": "observation-conflict-v1/manifest.json",
-      "sha256": "abba39034e3d9a514636992c301e2a4e743c5cc39c79020866b3d045b1d3363e"
+      "sha256": "9707bcc013bb4ad5855c09272702b0a7271f1f323a54c679bc2fc8541bfcd59a"
     },
     {
       "id": "observation-conflict-v1/no-engagement-pins-a-source/observations.json",

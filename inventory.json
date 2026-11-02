@@ -1683,6 +1683,18 @@
               "mediaType": "application/json"
             },
             {
+              "path": "@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/engaged-disagreeing-on-source-other-content-order/observations.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/engaged-disagreeing-on-source/observations.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/engaged-disagreement-from-another-producer/observations.json",
+              "mediaType": "application/json"
+            },
+            {
               "path": "@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/equal-sequence-breaks-on-the-pair/observations.json",
               "mediaType": "application/json"
             },

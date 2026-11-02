@@ -26,9 +26,11 @@ The refusal MUST NOT depend on the order of the log. It is for that Attempt alon
 
 ## 4. What is inside the fold
 
-The fold reads the authoritative source's observations: the `source` that the first `attempt-engaged` in order pins. An observation from any other source is outside it, so a disagreement there has no effect, and a producer outside the source cannot take an Attempt's state away from the source that owns it. If no `attempt-engaged` pins a source, every source is inside.
+The fold reads the authoritative source's observations: those whose `source` is the `data.source` of the first `attempt-engaged` in order. An observation from any other source is outside it, so a disagreement there has no effect, and a producer outside the source cannot take an Attempt's state away from the source that owns it. If no `attempt-engaged` pins a source, every source is inside.
 
-A contradiction between two `attempt-terminal` observations with different dedupe keys is not this case. It stays what it was: the first terminal in order holds, and the snapshot is flagged `contradictory`.
+A disagreement between two `attempt-engaged` observations is always inside the fold. The source they would pin is itself in doubt, so the fold refuses rather than let the content of a payload decide which one pins. A producer outside the source can therefore make the fold refuse an Attempt by contradicting itself in `attempt-engaged`. That is a refusal, never a wrong state.
+
+A contradiction between two `attempt-terminal` observations with different dedupe keys is not this case, and this text does not change how the fold resolves it.
 
 ## 5. Order
 
@@ -36,7 +38,7 @@ A reader orders a log by `sequence`, comparing the fixed-width strings. Differen
 
 ## 6. Conformance
 
-An implementation conforms to this text when it produces every expected outcome in `@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/`. Each case is a directory holding an Attempt's `observations.json`. The directory's `manifest.json` lists the cases with an `expectedDisposition` in words, in the shape of `adversarial-v1/manifest.json`, and an `expected` value: the derived `state` and `contradictory` flag, or `{"refused": "protocol-violation"}`. Every outcome MUST be the same in every order of the log.
+An implementation conforms to this text when it produces every expected outcome in `@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/`. Each case is a directory holding an Attempt's `observations.json`. The directory's `manifest.json` lists the cases with an `expectedDisposition` in words, in the shape of `adversarial-v1/manifest.json`, and an `expected` value: the derived `state` and `contradictory` flag, or `{"refused": "protocol-violation"}`. In these cases the fold derives `pending` from an `attempt-engaged`, `running` once an `attempt-started` is read, nothing from `progress`, and otherwise the `data.state` of the terminal that holds. Every outcome MUST be the same in every order of the log.
 
 ## 7. Why these rules (non-normative)
 
@@ -48,4 +50,4 @@ An implementation conforms to this text when it produces every expected outcome 
 
 **Canonical forms for `data`.** Key order is not content. RFC 8785 is what every record in this protocol is canonicalized with, and it gives one comparison two implementations can match byte for byte.
 
-**Only inside the fold.** A blanket refusal would let any producer outside the authoritative source wedge any Attempt by contradicting itself in a log that holds several sources. With no engagement nothing is authoritative, so nothing can be set aside.
+**Only inside the fold.** A blanket refusal would let any producer outside the authoritative source wedge any Attempt by contradicting itself in a log that holds several sources. With no engagement nothing is authoritative, so nothing can be set aside. A disagreement in `attempt-engaged` is the exception, because it puts in doubt which source is authoritative at all.

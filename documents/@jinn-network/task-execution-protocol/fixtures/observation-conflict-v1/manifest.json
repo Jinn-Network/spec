@@ -103,6 +103,30 @@
         "state": "delivered",
         "contradictory": true
       }
+    },
+    {
+      "id": "engaged-disagreeing-on-source",
+      "description": "One (source, id) pair, two attempt-engaged payloads naming different authoritative sources. The other one sorts after this source.",
+      "expectedDisposition": "refused: protocol-violation, whichever payload sorts first",
+      "expected": {
+        "refused": "protocol-violation"
+      }
+    },
+    {
+      "id": "engaged-disagreeing-on-source-other-content-order",
+      "description": "The same, with the other source sorting before this one, so the other payload is first in content order.",
+      "expectedDisposition": "refused: protocol-violation, whichever payload sorts first",
+      "expected": {
+        "refused": "protocol-violation"
+      }
+    },
+    {
+      "id": "engaged-disagreement-from-another-producer",
+      "description": "After this source's attempt-engaged, a producer outside it emits one pair as two attempt-engaged payloads that disagree.",
+      "expectedDisposition": "refused: protocol-violation (a disagreement between two attempt-engaged observations is always inside the fold)",
+      "expected": {
+        "refused": "protocol-violation"
+      }
     }
   ]
 }

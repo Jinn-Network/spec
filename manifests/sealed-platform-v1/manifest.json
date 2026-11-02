@@ -6,7 +6,7 @@
   },
   "inventory": {
     "path": "inventory.json",
-    "sha256": "aecc415df3608e463980ccf49b776a07ef6d44804afd2f3675359e5c7c5c13dc"
+    "sha256": "30beb4366b6474c2c0a835573b725700f9c21b0cfe6d33271c44ef6b097dbb47"
   },
   "releaseGroup": "sealed-platform-v1",
   "lane": "stable",
@@ -2179,7 +2179,7 @@
     },
     {
       "path": "@jinn-network/task-execution-protocol/fixtures/manifest.sha256.json",
-      "sha256": "5ea5d3172c72a3287fc163e56c674daf7008f45f679999d9ca704543f692ccb3",
+      "sha256": "b94a6b550db892bab41105380a013f5c331f6398fe7efaa13c229fbc7430333a",
       "mediaType": "application/json",
       "sourcePackage": "@jinn-network/task-execution-protocol"
     },
@@ -2198,6 +2198,24 @@
     {
       "path": "@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/disagreeing-type/observations.json",
       "sha256": "9d120f7e5410cab3ba0f36ba3345243c19b843bd3df41cea081f069a0a9b025c",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/engaged-disagreeing-on-source-other-content-order/observations.json",
+      "sha256": "55afd4b330b6265795965dd386998dd9d28fbb8ce07e53344e6df5b04941eb8f",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/engaged-disagreeing-on-source/observations.json",
+      "sha256": "426b51f9278f272691a2fee163e502fe14a552e0fcf7660d2e5dd7092ffc3e4b",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/task-execution-protocol"
+    },
+    {
+      "path": "@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/engaged-disagreement-from-another-producer/observations.json",
+      "sha256": "72ecbf2b3f114fa2ca798e9329fc190d6fce55dfd2e4e6fd1a4c6be8e9549a22",
       "mediaType": "application/json",
       "sourcePackage": "@jinn-network/task-execution-protocol"
     },
@@ -2227,7 +2245,7 @@
     },
     {
       "path": "@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/manifest.json",
-      "sha256": "abba39034e3d9a514636992c301e2a4e743c5cc39c79020866b3d045b1d3363e",
+      "sha256": "9707bcc013bb4ad5855c09272702b0a7271f1f323a54c679bc2fc8541bfcd59a",
       "mediaType": "application/json",
       "sourcePackage": "@jinn-network/task-execution-protocol"
     },
@@ -2479,7 +2497,7 @@
     },
     {
       "path": "profiles/observation-log/v1/specification.md",
-      "sha256": "77f4d3e82821b868a08868584abdf8ff3729967c17443112a5b927f340a416d8",
+      "sha256": "ff604895dc9e93d998a89cae86032a4e01d2d09c3300dc22b36e85096a9ac724",
       "mediaType": "text/markdown",
       "sourcePackage": "@jinn-network/task-execution-protocol"
     },
