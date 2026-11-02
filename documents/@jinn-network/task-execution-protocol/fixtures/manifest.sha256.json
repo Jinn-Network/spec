@@ -144,6 +144,58 @@
     {
       "id": "golden-task-execution-v1/task.json",
       "sha256": "fc1a04cdbafaa835006e85d81ba952e6d4fcb02bc9166f7848f0e4def21bd607"
+    },
+    {
+      "id": "observation-conflict-v1/disagreeing-data/observations.json",
+      "sha256": "b543ff39ab54639bf0e97bff21fb6c2271bc12472ba579e345145088dbaafcf3"
+    },
+    {
+      "id": "observation-conflict-v1/disagreeing-sequence/observations.json",
+      "sha256": "9fd8141887a2b9cd70eb86c1d7b41ddf404913c6c8410559ae8cb741617d16ed"
+    },
+    {
+      "id": "observation-conflict-v1/disagreeing-type/observations.json",
+      "sha256": "9d120f7e5410cab3ba0f36ba3345243c19b843bd3df41cea081f069a0a9b025c"
+    },
+    {
+      "id": "observation-conflict-v1/equal-sequence-breaks-on-the-pair/observations.json",
+      "sha256": "26011add9e452c35d790c20be6a432448e23983e3898774ec94b82eb03b419b3"
+    },
+    {
+      "id": "observation-conflict-v1/exact-replay/observations.json",
+      "sha256": "615fbdc3d872a498ccb9ff955d92d27b17a4ed7ca1dca7c92ddceceff4e205b3"
+    },
+    {
+      "id": "observation-conflict-v1/foreign-producer-contradicting-itself/observations.json",
+      "sha256": "2d78101d013941250b06fb1d71b303685b4d5988612600106c9e65b04fb47979"
+    },
+    {
+      "id": "observation-conflict-v1/key-order-is-not-content/observations.json",
+      "sha256": "9920fa59cd6611584dcc90f483cbebb12aa67ff93dc0389193a2d59f890b460f"
+    },
+    {
+      "id": "observation-conflict-v1/manifest.json",
+      "sha256": "abba39034e3d9a514636992c301e2a4e743c5cc39c79020866b3d045b1d3363e"
+    },
+    {
+      "id": "observation-conflict-v1/no-engagement-pins-a-source/observations.json",
+      "sha256": "af303868ca97c7585238831fda9c5d162fe00b9c3ba2ea836a4aad66de694cf1"
+    },
+    {
+      "id": "observation-conflict-v1/replay-differing-only-in-time/observations.json",
+      "sha256": "22e36a8e9863c2ecedfc14e1e0b18e62880fcb137c12bdbca7e1db74ccee715e"
+    },
+    {
+      "id": "observation-conflict-v1/same-id-under-two-sources/observations.json",
+      "sha256": "02005e82e6938658dce6d073b4b6fe6e6381489fc85425363db8d34913881723"
+    },
+    {
+      "id": "observation-conflict-v1/structure-is-content/observations.json",
+      "sha256": "4e151127ac05a27d0611f73a8035ef80d55d5f361b4b22df11583f084bd4da9c"
+    },
+    {
+      "id": "observation-conflict-v1/two-terminals-with-their-own-ids/observations.json",
+      "sha256": "db1539b03c553cbb6f2af6761650c034cc0af61fd5f0b02e5821a911c82efa59"
     }
   ],
   "errata": []

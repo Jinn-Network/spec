@@ -6,7 +6,7 @@
   },
   "inventory": {
     "path": "inventory.json",
-    "sha256": "ebe380d1b0f86db6d5638a52c41b5b637d9d4b2ecad13e2ffb4886214a0d1c38"
+    "sha256": "aecc415df3608e463980ccf49b776a07ef6d44804afd2f3675359e5c7c5c13dc"
   },
   "releaseGroup": "implementations-v1",
   "lane": "stable",
