@@ -6,7 +6,7 @@
   },
   "inventory": {
     "path": "inventory.json",
-    "sha256": "ccae75c443eb1a8b6aa70afc5efc4e1405f18cf2156bf46aadae330e0d0223c3"
+    "sha256": "95a182cb83eb6e4a444f939b872e4e6d97b54d153c074f09e39b23d4280fd2ab"
   },
   "releaseGroup": "sealed-platform-v1",
   "lane": "stable",
@@ -2350,6 +2350,12 @@
       "sha256": "1b99469a195fee154c27d0c3b219da7778e1b8f4210bd773350d107c459b7949",
       "mediaType": "application/json",
       "sourcePackage": "@jinn-network/task-execution-profiles"
+    },
+    {
+      "path": "profiles/ceremony-currency/v1/specification.md",
+      "sha256": "765a985b7c9dc8be5739d363166b83d56c41a90db0fb9be9080cb0bee4f03a5c",
+      "mediaType": "text/markdown",
+      "sourcePackage": "@jinn-network/trust-core"
     },
     {
       "path": "profiles/execution-evidence/v1/ro-crate-metadata.json",

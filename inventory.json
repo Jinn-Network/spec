@@ -48,6 +48,11 @@
           "identifier": "https://spec.jinn.network/profiles/key-authority/v1",
           "resolution": "prefix",
           "entryPoint": "profiles/key-authority/v1/specification.md"
+        },
+        {
+          "identifier": "https://spec.jinn.network/profiles/ceremony-currency/v1",
+          "resolution": "prefix",
+          "entryPoint": "profiles/ceremony-currency/v1/specification.md"
         }
       ],
       "packages": [
@@ -1752,6 +1757,10 @@
               "mediaType": "application/json"
             },
             {
+              "path": "profiles/ceremony-currency/v1/specification.md",
+              "mediaType": "text/markdown"
+            },
+            {
               "path": "profiles/key-authority/v1/specification.md",
               "mediaType": "text/markdown"
             }
@@ -2256,6 +2265,98 @@
             },
             {
               "path": "@jinn-network/trust-testing/fixtures/binding-v1/example.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/README.md",
+              "mediaType": "text/markdown"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/commitment-after-a-third-resource.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/commitment-in-upper-case.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/commitment-not-last.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/commitment-of-an-unknown-version.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/committed-after-the-cutover.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/committed-with-an-expiry.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/committed.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/end-moved.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/end-removed.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/no-commitment-and-no-cutover.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/no-commitment-at-the-cutover.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/no-commitment-before-the-cutover.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/other-relationship.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/other-start.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/takes-effect-after-the-expiration.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/takes-effect-at-the-expiration.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/takes-effect-before-the-account-vouched.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/two-commitments.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/unreadable-expiration.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/unreadable-issued-at.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/verified-long-after-the-expiration.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/wider-scope.json",
               "mediaType": "application/json"
             },
             {
