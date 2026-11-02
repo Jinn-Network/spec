@@ -1,6 +1,6 @@
 {
   "name": "own-revocation-naming-a-record-whose-ceremony-fails",
-  "description": "A forged sibling's revocation of itself reaches nothing: no ceremony backs its scope.",
+  "description": "A key's own revocation of a sibling whose ceremony fails has no effect: no ceremony backs that sibling's scope.",
   "bindings": [
     {
       "id": "g",

@@ -12,9 +12,9 @@ Each case is a relationship among several sealed records: who vouched which key,
 | `description` | What the case shows. |
 | `profile` | `anchors-required` or `anchors-optional`. Absent means the case holds under both. |
 | `bindings` | Records, in no meaningful order. |
-| `entries` | Stored entries that do not parse. `anchor` is where they are placed, `"unreadable"` means their anchor references cannot be read, and `digest: "low"` gives them a digest of 64 zeros. |
+| `entries` | Stored binding entries that do not conform to the key-binding schema. Each is an object whose only field is `anchors`: one anchor reference reported at `anchor`, or, for `"unreadable"`, a value that is not a list of anchor references. `digest: "low"` files it under `sha256:` and 64 zeros; otherwise the harness chooses its digest. |
 | `revocations` | Each with `target` (a binding's `id`), `by` (a key, or `account:` and an account), `at` (its anchor time, `null` for none) and `stated` (its `effectiveFrom`, defaulting to `at`). |
-| `checks` | Each with `key`, `at` (defaulting to `06-01`) and `expect`, the outcome of section 9 of the text for record family `verdicts`. A check with `join` gives the keys and times of section 10, and `expect` is `joined` or `refused`. |
+| `checks` | Each with `key`, `at` (defaulting to `06-01`) and `expect`, the outcome of section 9 of the text for record family `verdicts`. A check with `join` gives the keys and times of section 10, for record family `verdicts`, and `expect` is `joined` or `refused`. |
 
 A binding has `id`, `key`, `voucher` and `from` (its `validFrom`), and these optional fields.
 
@@ -65,4 +65,4 @@ These vectors do not yet cover `agentId` composition.
 
 ## Rotation
 
-A rotation replaces a binding with a later one for the same Agent. Under section 7 of the text, the old binding must still be in window when the new one takes effect, because it is the new one's authority. The windows may touch: a binding is in window at its own `expiresAt`. `incumbent-expiring-at-the-mint` in `chain/` states this. This README supersedes the rotation sentence in `resolution-v1/README.md`, which speaks of a `validTo` field that a key binding does not have.
+A rotation replaces a binding with a later one for the same Agent. Under section 7 of the text, the old binding must still be in window when the new one takes effect, because it is the new one's authority. The windows may touch: a binding is in window at its own `expiresAt`. `incumbent-expiring-at-the-mint` in `chain/` states this. This README supersedes `resolution-v1/README.md`, whose rotation sentence speaks of a `validTo` field that a key binding does not have.

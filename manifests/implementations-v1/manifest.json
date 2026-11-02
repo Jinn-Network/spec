@@ -6,7 +6,7 @@
   },
   "inventory": {
     "path": "inventory.json",
-    "sha256": "ccae75c443eb1a8b6aa70afc5efc4e1405f18cf2156bf46aadae330e0d0223c3"
+    "sha256": "299532f84343b4eb0c6351c27e87cef74e8b6babbcfeab25cdf996f41db125a1"
   },
   "releaseGroup": "implementations-v1",
   "lane": "stable",
@@ -482,7 +482,7 @@
     },
     {
       "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/README.md",
-      "sha256": "0238069762b0c7080234dc750ee32347b592cbf29ab6c1b8843754d1f97ce718",
+      "sha256": "631bf7880c905e7d9ec8ec38bf114caf224d11242878515d2aa9f68101b27716",
       "mediaType": "text/markdown",
       "sourcePackage": "@jinn-network/trust-testing"
     },
@@ -757,6 +757,12 @@
       "sourcePackage": "@jinn-network/trust-testing"
     },
     {
+      "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reach/own-key-revoking-through-a-standing-sibling.json",
+      "sha256": "28054ec72953944015560b2ad9e55ebf0c7d74d9b73288462ec1d68f7755933c",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-testing"
+    },
+    {
       "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reach/own-revocation-and-a-replacement-under-another-voucher.json",
       "sha256": "5623eafe5f3820af1132c4a7fc3c124d8b22dc6dda025b2bea8e738886f58842",
       "mediaType": "application/json",
@@ -776,7 +782,7 @@
     },
     {
       "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reach/own-revocation-naming-a-record-whose-ceremony-fails.json",
-      "sha256": "151d222b4b068c05e0b7454c6482e0d6cffad76475003828586eae7d848da412",
+      "sha256": "4e6fa422143d1ea1a9975d487a9aab97c72ffd4a6921e33bf8dd5b5879b4b358",
       "mediaType": "application/json",
       "sourcePackage": "@jinn-network/trust-testing"
     },
@@ -1070,7 +1076,13 @@
     },
     {
       "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/settlement-join/join-settlement-leg-after-founding-recovery.json",
-      "sha256": "4f7b267d57a96461db9bc6d775f2710d2b0c58a76740b89dc81bf409228eb634",
+      "sha256": "60764dc2b56f0429c6f00f9a96039e8a2acbc46b34f6efcbcf27b753ab033e86",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-testing"
+    },
+    {
+      "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/settlement-join/join-settlement-leg-after-the-founding-account-revoked-its-genesis.json",
+      "sha256": "f494d6972dabedee844ddb9172ac19fd86a1a141c7a7a98d0283b35e828c6f4e",
       "mediaType": "application/json",
       "sourcePackage": "@jinn-network/trust-testing"
     },
@@ -1130,7 +1142,7 @@
     },
     {
       "path": "@jinn-network/trust-testing/fixtures/manifest.sha256.json",
-      "sha256": "2ffd5a6d4fe52f7c737bf13a1d6a4fb97e2c4bf96cc2c6e8005794c7d335df57",
+      "sha256": "dba7ae0ccbdcf611aa67fe663a3a4f7ed05af2f9249517124d864f90d77bc02a",
       "mediaType": "application/json",
       "sourcePackage": "@jinn-network/trust-testing"
     },
