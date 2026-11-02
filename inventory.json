@@ -43,6 +43,11 @@
           "identifier": "https://spec.jinn.network/profiles/execution-evidence/v1",
           "resolution": "prefix",
           "entryPoint": "profiles/execution-evidence/v1/specification.md"
+        },
+        {
+          "identifier": "https://spec.jinn.network/profiles/key-authority/v1",
+          "resolution": "prefix",
+          "entryPoint": "profiles/key-authority/v1/specification.md"
         }
       ],
       "packages": [
@@ -1745,6 +1750,10 @@
             {
               "path": "@jinn-network/trust-core/fixtures/sealing-v1/revocation.json",
               "mediaType": "application/json"
+            },
+            {
+              "path": "profiles/key-authority/v1/specification.md",
+              "mediaType": "text/markdown"
             }
           ]
         }
@@ -2280,6 +2289,438 @@
             {
               "path": "@jinn-network/trust-testing/fixtures/join-v1/README.md",
               "mediaType": "text/markdown"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/README.md",
+              "mediaType": "text/markdown"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/account-signature/contract-account.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/account-signature/signed-by-another-account.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/account-signature/signed-by-the-account.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/account-signature/signed-over-the-payload-alone.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/chain/authority-revoked-later.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/chain/consent-attaches-an-account.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/chain/consented-account-extends.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/chain/consenter-expiring-later.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/chain/genesis-stands-alone.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/chain/incumbent-expiring-at-the-mint.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/chain/self-extension.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/first-and-conflict/ceremony-the-verifier-cannot-check.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/first-and-conflict/failed-ceremony-does-not-win-a-key.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/first-and-conflict/founding-tie-between-two-claims-other-digest-order.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/first-and-conflict/founding-tie-between-two-claims.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/first-and-conflict/key-tie-goes-to-the-lowest-digest.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/first-and-conflict/lone-record-whose-ceremony-fails.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/first-and-conflict/record-its-key-never-signed-does-not-win.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/first-and-conflict/record-its-key-never-signed.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/first-and-conflict/unsigned-record-counts-for-what-came-first.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/founding-account/all-revoked-corner.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/founding-account/founding-account-ends-its-own-incumbency.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/founding-account/founding-account-through-a-later-record.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/founding-account/owner-revokes-only-key-and-recovers.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/founding-account/recovery-needs-that-account.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/founding-account/recovery-reaches-other-accounts.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/founding-account/revoked-founding-key-cannot-consent.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/founding-account/revoked-founding-key-cannot-revoke.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/no-authority/back-dated-past-a-revocation.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/no-authority/back-dated-past-an-ended-authority.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/no-authority/conflict-loser-gives-nothing.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/no-authority/consenter-expired-first.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/no-authority/consenter-revoked-first.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/no-authority/consenter-whose-ceremony-fails.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/no-authority/consenter-with-no-chain.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/no-authority/consenter-without-bindings-scope.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/no-authority/incumbent-expired-first.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/no-authority/incumbent-revoked-first.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/no-authority/incumbent-with-no-chain.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/no-authority/key-held-only-as-operates.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/no-authority/ring-of-consent.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/no-authority/self-countersignature.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/no-authority/undecodable-countersignature.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reach/bound-again-after-the-reach-has-ended.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reach/entitled-revoker-of-a-sibling-with-a-failed-ceremony.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reach/own-revocation-and-a-replacement-under-another-voucher.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reach/own-revocation-before-the-record-took-effect.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reach/own-revocation-draws-on-the-record-it-names.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reach/own-revocation-naming-a-record-whose-ceremony-fails.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reach/own-revocation-of-a-record-without-bindings-scope.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reach/own-revocation-through-a-record-of-another-voucher.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reach/reach-is-read-at-the-revocation-time.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reach/reach-stops-at-the-voucher.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reach/replacement-does-not-leave-a-revocation-behind.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reach/revoking-an-ended-record-reaches-nothing-else.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reach/revoking-the-later-record-ends-the-earlier.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reach/standing-given-up-through-either-record.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reading/stored-entry-that-cannot-be-placed.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reading/stored-entry-that-does-not-parse-comes-first.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reading/stored-entry-that-does-not-parse-comes-later.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reading/stored-entry-that-does-not-parse-loses-a-tie.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reading/unanchored-binding-under-an-anchor-requiring-profile.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reading/unreadable-expiry.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reading/unreadable-start-sorts-last.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reading/unreadable-stated-time-of-a-binding.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reading/unreadable-stated-time-of-a-revocation.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/revocation/consent-at-the-revocation-instant.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/revocation/consent-one-millisecond-after-the-revocation.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/revocation/evidence-at-the-revocation-instant.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/revocation/mutual-revocation-at-one-instant.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/revocation/own-key-without-bindings-scope.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/revocation/own-revocation.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/revocation/revocation-before-the-record-it-names-took-effect.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/revocation/revocation-stated-earlier-than-its-anchor.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/revocation/revocation-stated-later-than-its-anchor.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/revocation/revocation-with-no-authority.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/revocation/revoker-revoked-first.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/revocation/revoker-that-does-not-stand.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/revocation/revoker-without-bindings-scope.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/revocation/self-extension-at-the-revocation-instant.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/revocation/successor-revokes-its-ancestor.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/revocation/unanchored-revocation.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/revocation/unauthorized-does-not-mask-authorized.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/same-instant/authority-through-a-batch.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/same-instant/batch-after-founding.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/same-instant/batch-by-one-account.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/same-instant/batch-with-a-delegate-sorting-first.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/same-instant/consent-at-one-instant-digest-above.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/same-instant/consent-at-one-instant-digest-below.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/same-instant/consent-by-genesis-at-the-founding-instant-digest-above.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/same-instant/consent-by-genesis-at-the-founding-instant-digest-below.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/same-instant/same-instant-consenter-already-revoked.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/same-instant/same-instant-consenter-whose-ceremony-fails.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/same-instant/same-instant-peers-with-no-root.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/settlement-join/join-baseline.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/settlement-join/join-later-record-does-not-lift.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/settlement-join/join-later-record-with-no-revocation.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/settlement-join/join-settlement-leg-after-founding-recovery.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/settlement-join/join-settlement-leg-revoked-after-the-claim.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/settlement-join/join-settlement-leg-revoked-at-the-claim-instant.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/settlement-join/join-settlement-leg-revoked-before-the-claim.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/settlement-join/join-settlement-leg-revoked-by-its-account.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/settlement-join/join-settlement-leg-whose-ceremony-fails.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/settlement-join/join-settlement-leg-with-no-chain.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/settlement-join/join-unauthorized-revocation.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/settlement-join/join-verdict-leg-revoked-after-the-envelope.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/settlement-join/join-verdict-leg-revoked-by-the-envelope.json",
+              "mediaType": "application/json"
             },
             {
               "path": "@jinn-network/trust-testing/fixtures/manifest.sha256.json",
