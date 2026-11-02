@@ -183,7 +183,7 @@
     },
     {
       "id": "key-authority-v1/README.md",
-      "sha256": "0238069762b0c7080234dc750ee32347b592cbf29ab6c1b8843754d1f97ce718"
+      "sha256": "631bf7880c905e7d9ec8ec38bf114caf224d11242878515d2aa9f68101b27716"
     },
     {
       "id": "key-authority-v1/account-signature/contract-account.json",
@@ -366,6 +366,10 @@
       "sha256": "6a79116b1cd2d26d53830a755b6723ecf17c40b7cf66524b1712c74448a68f8e"
     },
     {
+      "id": "key-authority-v1/reach/own-key-revoking-through-a-standing-sibling.json",
+      "sha256": "28054ec72953944015560b2ad9e55ebf0c7d74d9b73288462ec1d68f7755933c"
+    },
+    {
       "id": "key-authority-v1/reach/own-revocation-and-a-replacement-under-another-voucher.json",
       "sha256": "5623eafe5f3820af1132c4a7fc3c124d8b22dc6dda025b2bea8e738886f58842"
     },
@@ -379,7 +383,7 @@
     },
     {
       "id": "key-authority-v1/reach/own-revocation-naming-a-record-whose-ceremony-fails.json",
-      "sha256": "151d222b4b068c05e0b7454c6482e0d6cffad76475003828586eae7d848da412"
+      "sha256": "4e6fa422143d1ea1a9975d487a9aab97c72ffd4a6921e33bf8dd5b5879b4b358"
     },
     {
       "id": "key-authority-v1/reach/own-revocation-of-a-record-without-bindings-scope.json",
@@ -575,7 +579,11 @@
     },
     {
       "id": "key-authority-v1/settlement-join/join-settlement-leg-after-founding-recovery.json",
-      "sha256": "4f7b267d57a96461db9bc6d775f2710d2b0c58a76740b89dc81bf409228eb634"
+      "sha256": "60764dc2b56f0429c6f00f9a96039e8a2acbc46b34f6efcbcf27b753ab033e86"
+    },
+    {
+      "id": "key-authority-v1/settlement-join/join-settlement-leg-after-the-founding-account-revoked-its-genesis.json",
+      "sha256": "f494d6972dabedee844ddb9172ac19fd86a1a141c7a7a98d0283b35e828c6f4e"
     },
     {
       "id": "key-authority-v1/settlement-join/join-settlement-leg-revoked-after-the-claim.json",

@@ -1,6 +1,6 @@
 {
   "name": "join-settlement-leg-after-founding-recovery",
-  "description": "A leg the founding account bound after a working key revoked its genesis binding joins.",
+  "description": "A leg the founding account bound after a working key revoked its genesis binding joins. The revoking key holds signs-for, so the leg's only incumbent is the genesis binding.",
   "bindings": [
     {
       "id": "g",
@@ -12,7 +12,8 @@
       "id": "c",
       "key": "K4",
       "voucher": "A",
-      "from": "02-01"
+      "from": "02-01",
+      "rel": "signs-for"
     },
     {
       "id": "s",

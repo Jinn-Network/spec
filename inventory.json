@@ -2576,6 +2576,10 @@
               "mediaType": "application/json"
             },
             {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reach/own-key-revoking-through-a-standing-sibling.json",
+              "mediaType": "application/json"
+            },
+            {
               "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reach/own-revocation-and-a-replacement-under-another-voucher.json",
               "mediaType": "application/json"
             },
@@ -2785,6 +2789,10 @@
             },
             {
               "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/settlement-join/join-settlement-leg-after-founding-recovery.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/settlement-join/join-settlement-leg-after-the-founding-account-revoked-its-genesis.json",
               "mediaType": "application/json"
             },
             {

@@ -18,17 +18,21 @@ A *key* is a working key in its `did:key` spelling. Two vouchers are *the same v
 
 *Lowest digest* compares two `sha256:` digests by their UTF-16 code units.
 
+A *deployment profile* is what a deployment publishes for these texts: whether it requires anchors, its trust policy, and whatever else a text leaves to it.
+
 ## 2. Time
 
 **Reading a time.** A time is *readable* when it is an RFC 3339 date-time with hours, minutes and seconds, an optional fraction, and `Z` or a numeric offset, that names a day the calendar holds. Second 60 is readable only at the end of a UTC June 30 or December 31. Two readable times compare as instants at the full precision written, never as text. A time that cannot be read sorts after every readable time. Two such times sort by their UTF-16 code units.
 
-**Effective start.** A record's *anchor time* is the earliest time an anchor surface reports for any of its anchor references. A binding's *effective start* is the later of its `validFrom` and its anchor time. A `validFrom` that cannot be read claims nothing, so the effective start is the anchor time. A binding with no anchor time is *unanchored*. Under a profile that requires anchors an unanchored binding has no effective start. Under any other profile its effective start is its `validFrom`.
+**Effective start.** A record's *anchor time* is the earliest time an anchor surface reports for any of its anchor references. A binding's *effective start* is the later of its `validFrom` and its anchor time. A `validFrom` that cannot be read claims nothing, so the effective start is the anchor time. A binding with no anchor time is *unanchored*. Under a profile that requires anchors an unanchored binding has no effective start. Under any other profile its effective start is its `validFrom`, which, if it cannot be read, sorts after every readable time.
 
 **Effective time.** A revocation's *effective time* is the later of its `effectiveFrom` and its anchor time. An `effectiveFrom` that cannot be read claims nothing, so the effective time is the anchor time. An unanchored revocation has no effective time and never takes effect, under any profile.
 
 **Window.** A binding is *in window* at instant T when its effective start is at or before T and, if it has an `expiresAt`, T is at or before `expiresAt`. Both ends are inclusive. An `expiresAt` that cannot be read does not end the window for section 4, and a binding that holds one gives no authority and supports no evidence.
 
 ## 3. Stored entries
+
+A *stored entry* is what a store holds for one record: the digest the store files it under, the record's fields as far as they can be read, and its envelope. Its anchor references are its `anchors` field.
 
 A binding entry is *placed* when it has a digest, its anchor references can be read, and it has an effective start. A placed entry is a *readable binding* when it also conforms to the key-binding schema and carries its envelope.
 
@@ -44,7 +48,7 @@ An `agentId` ceremony counts only on an `agentId` voucher, and its leg is compos
 
 What *resolves* is the candidate with the earliest effective start, a tie going to the lowest digest. A candidate whose ceremony fails MUST NOT beat one whose ceremony verifies, whatever its time. If no candidate's ceremony verifies, the same order runs over all of them, and verification names the failure at step 4 of section 9. If there is no candidate, nothing resolves.
 
-Where more than one candidate exists, the conflict is surfaced to policy.
+Where more than one candidate exists, a verifier MAY report the conflict to its trust policy; the report changes no outcome except through step 9.
 
 A record that resolves has not been judged. Sections 6 to 8 judge it.
 
@@ -101,13 +105,13 @@ So a replacement beside a revoked record cannot leave the revocation behind, and
 
 1. **The voucher account.** `revokedBy` is the `did:pkh` of B's voucher, that voucher is not a contract account, and that account signed the revocation. The account needs no binding of its own.
 2. **The key itself.** `revokedBy` is B's key, that key signed the revocation, N was in window at E, N's ceremony verifies, and N holds `bindings` scope. No chain is asked: a key giving up its own binding gives no authority to anyone. The scope is N's, not that of whichever record answers for the key at E.
-3. **Another key of the Agent.** `revokedBy` is a key, that key signed the revocation, what resolves for it at E holds `bindings` scope, and that binding stands at E.
+3. **A key of the Agent.** `revokedBy` is a key, B's own included, that key signed the revocation, what resolves for it at E holds `bindings` scope, and that binding stands at E.
 
 Any other revocation has no effect, whatever time it states. Authority is settled before the time is read. An authorized revocation whose effective time cannot be read counts at every instant.
 
 **An account's signature.** An account signs a revocation with a DSSE signature whose `keyid` is the account's `did:pkh`. The `sig` is a 65-byte EIP-191 `personal_sign` signature, `r || s || v`, over the DSSE pre-authentication encoding of the envelope's payload type and payload. The address it recovers MUST be the account's. A revocation carries no ceremony. Its anchor places it in time, so no separate freshness applies.
 
-**Contract accounts.** A contract account cannot revoke under this text. A revocation whose `revokedBy` names one has no effect.
+**Contract accounts.** A voucher whose `contractAccount` is `true` is a contract account. It cannot revoke under this text, and a revocation whose `revokedBy` names one has no effect.
 
 **When a revocation counts.** For evidence and for the settlement join, an authorized revocation counts from its effective time, that instant included. For authority it counts strictly before the instant judged (section 6). An act is judged by the state it was taken in, so a successor can revoke the binding it descends from, and two keys that revoke each other at one instant both take effect.
 
@@ -121,7 +125,7 @@ Given an envelope signed by key K, claiming Agent A, for record family F, at tim
 | 2 | K signed the envelope. | `envelope-signature-invalid` |
 | 3 | Something resolves for K and A at T (section 4). | `binding-not-resolved` |
 | 4 | Its ceremony verifies. | `ceremony-verification-failed` |
-| 5 | It is in window at T, and every time that decides this is readable. | `window-violation` |
+| 5 | It is in window at T, and it has no `expiresAt` that cannot be read. | `window-violation` |
 | 6 | Its `scope` covers F. | `scope-violation` |
 | 7 | Its chain holds (section 7). | `consent-chain-violation` |
 | 8 | No authorized revocation that reaches it counts at T (section 8). | `revoked` |
@@ -131,7 +135,7 @@ If every step passes, the outcome is `accepted`.
 
 ## 10. The settlement join
 
-A join ties an evidence signature to an on-chain actor. It takes a verdict key, a settlement key, an Agent, a record family, the envelope's effective time and the claim time. It holds only if all of these hold, and a missing leg fails it.
+A join ties an evidence signature to an on-chain actor. It takes a verdict key, a settlement key, an Agent, a record family, the time T at which section 9 accepted the envelope, called the envelope's time below, and the claim time. It holds only if all of these hold, and a missing leg fails it.
 
 1. **The verdict leg.** Something resolves for the verdict key and the Agent at the envelope's time. Its `scope` covers the family, and its `relationship` is `controls` or `signs-for`. No authorized revocation that reaches it counts at the envelope's time.
 2. **The settlement leg at the envelope's time.** Something resolves for the settlement key and the Agent at that time, it holds `settlements` scope, no authorized revocation that reaches it counts at that time, and it stands at that time.
@@ -146,7 +150,7 @@ A `bindings` key can revoke the Agent's bindings, and it can consent a new accou
 - **What an anchor reference covers.** A verifier here reads a time from an anchor surface. This text does not say how a verifier checks what a referenced digest is a digest of. Until a text does, a place in time is only as good as the control over what enters the store.
 - **Whether a ceremony is current.** A separate text covers it.
 - **Whether a failed read is a refusal.** A verifier that could not read a dependency has not reached a verdict. This text covers verdicts.
-- **The record schemas.** This text relies on the key-binding and revocation schemas, which this repository does not yet serve. A binding's own times are written with `Z`, so an offset in `validFrom` or `expiresAt` makes an entry fail to conform, although section 2 could read it.
+- **The record schemas.** This text relies on the key-binding and revocation schemas, which this repository does not yet serve. Until it does, a binding's `validFrom` or `expiresAt` conforms when it is written `YYYY-MM-DDTHH:MM`, then optionally `:SS` from 00 to 59 and a fraction, then `Z`, and names a day the calendar holds. So a time without seconds conforms although section 2 cannot read it, and an offset or a second 60 does not conform although section 2 could read it.
 
 ## 13. Conformance
 
