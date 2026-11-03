@@ -515,7 +515,7 @@ test('this repository builds, bundles and verifies end to end over a real socket
     assert.ok(answered.has(`/${group.name}/${SIGNATURE_FILE_NAME}`));
   }
   assert.ok(answered.has(`/${publicKeyPath}`));
-  assert.equal(result.report.documentsVerified, 670);
+  assert.equal(result.report.documentsVerified, 687);
   const refused = requests.filter(({ status }) => status === 404).map(({ target }) => target);
   assert.ok(refused.includes('/manifest.json'));
   assert.ok(refused.includes('/manifest.dsse.json'));

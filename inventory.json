@@ -50,6 +50,11 @@
           "entryPoint": "profiles/key-authority/v1/specification.md"
         },
         {
+          "identifier": "https://spec.jinn.network/profiles/observation-log/v1",
+          "resolution": "prefix",
+          "entryPoint": "profiles/observation-log/v1/specification.md"
+        },
+        {
           "identifier": "https://spec.jinn.network/profiles/ceremony-currency/v1",
           "resolution": "prefix",
           "entryPoint": "profiles/ceremony-currency/v1/specification.md"
@@ -1674,6 +1679,74 @@
             {
               "path": "@jinn-network/task-execution-protocol/fixtures/manifest.sha256.json",
               "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/disagreeing-data/observations.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/disagreeing-sequence/observations.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/disagreeing-type/observations.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/engaged-disagreeing-on-source-other-content-order/observations.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/engaged-disagreeing-on-source/observations.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/engaged-disagreement-from-another-producer/observations.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/equal-sequence-breaks-on-the-pair/observations.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/exact-replay/observations.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/foreign-producer-contradicting-itself/observations.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/key-order-is-not-content/observations.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/manifest.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/no-engagement-pins-a-source/observations.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/replay-differing-only-in-time/observations.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/same-id-under-two-sources/observations.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/structure-is-content/observations.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/task-execution-protocol/fixtures/observation-conflict-v1/two-terminals-with-their-own-ids/observations.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "profiles/observation-log/v1/specification.md",
+              "mediaType": "text/markdown"
             },
             {
               "path": "profiles/task-execution/v1",
