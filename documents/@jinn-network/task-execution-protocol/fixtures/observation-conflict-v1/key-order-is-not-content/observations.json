@@ -1,0 +1,53 @@
+[
+  {
+    "specversion": "1.0",
+    "id": "evt-engaged",
+    "source": "urn:jinn:backend:conflict",
+    "subject": "urn:uuid:f0000007-0000-5000-8000-000000000007",
+    "time": "2026-07-28T00:00:00Z",
+    "datacontenttype": "application/json",
+    "sequence": "0000000000000001",
+    "taskdigest": "sha256:2b929dcdfe77f88e8bbb97f04381798e84db81925f2dda884bedc2ac587b27a0",
+    "type": "network.jinn.task-execution.attempt-engaged.v1",
+    "data": {
+      "attempt": "urn:uuid:f0000007-0000-5000-8000-000000000007",
+      "task": "sha256:2b929dcdfe77f88e8bbb97f04381798e84db81925f2dda884bedc2ac587b27a0",
+      "submission": "urn:uuid:f0000008-0000-5000-8000-000000000008",
+      "effectiveDeadline": "2026-07-29T00:00:00Z",
+      "source": "urn:jinn:backend:conflict",
+      "dispatchContext": {
+        "uri": "https://example.test/dispatch-context.json"
+      }
+    }
+  },
+  {
+    "specversion": "1.0",
+    "id": "evt-progress",
+    "source": "urn:jinn:backend:conflict",
+    "subject": "urn:uuid:f0000007-0000-5000-8000-000000000007",
+    "time": "2026-07-28T00:00:00Z",
+    "datacontenttype": "application/json",
+    "sequence": "0000000000000002",
+    "taskdigest": "sha256:2b929dcdfe77f88e8bbb97f04381798e84db81925f2dda884bedc2ac587b27a0",
+    "type": "network.jinn.task-execution.progress.v1",
+    "data": {
+      "message": "m",
+      "fraction": 0.5
+    }
+  },
+  {
+    "specversion": "1.0",
+    "id": "evt-progress",
+    "source": "urn:jinn:backend:conflict",
+    "subject": "urn:uuid:f0000007-0000-5000-8000-000000000007",
+    "time": "2026-07-28T00:00:00Z",
+    "datacontenttype": "application/json",
+    "sequence": "0000000000000002",
+    "taskdigest": "sha256:2b929dcdfe77f88e8bbb97f04381798e84db81925f2dda884bedc2ac587b27a0",
+    "type": "network.jinn.task-execution.progress.v1",
+    "data": {
+      "fraction": 0.5,
+      "message": "m"
+    }
+  }
+]

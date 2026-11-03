@@ -1,0 +1,132 @@
+{
+  "taskDigest": "sha256:2b929dcdfe77f88e8bbb97f04381798e84db81925f2dda884bedc2ac587b27a0",
+  "fixtures": [
+    {
+      "id": "exact-replay",
+      "description": "The same observation twice.",
+      "expectedDisposition": "one observation; derived state running",
+      "expected": {
+        "state": "running",
+        "contradictory": false
+      }
+    },
+    {
+      "id": "replay-differing-only-in-time",
+      "description": "A replay that restates `time`, an attribute the fold does not read.",
+      "expectedDisposition": "one observation; derived state running",
+      "expected": {
+        "state": "running",
+        "contradictory": false
+      }
+    },
+    {
+      "id": "key-order-is-not-content",
+      "description": "Two spellings of one `data` value, keys in another order.",
+      "expectedDisposition": "one observation; derived state pending",
+      "expected": {
+        "state": "pending",
+        "contradictory": false
+      }
+    },
+    {
+      "id": "disagreeing-data",
+      "description": "One (source, id) pair, two terminal payloads.",
+      "expectedDisposition": "refused: protocol-violation, in either order",
+      "expected": {
+        "refused": "protocol-violation"
+      }
+    },
+    {
+      "id": "disagreeing-type",
+      "description": "One pair, two types.",
+      "expectedDisposition": "refused: protocol-violation",
+      "expected": {
+        "refused": "protocol-violation"
+      }
+    },
+    {
+      "id": "disagreeing-sequence",
+      "description": "One pair, two places in the log.",
+      "expectedDisposition": "refused: protocol-violation",
+      "expected": {
+        "refused": "protocol-violation"
+      }
+    },
+    {
+      "id": "structure-is-content",
+      "description": "Two `data` values with the same digits in different places: `[1, 23]` and `[12, 3]`.",
+      "expectedDisposition": "refused: protocol-violation",
+      "expected": {
+        "refused": "protocol-violation"
+      }
+    },
+    {
+      "id": "foreign-producer-contradicting-itself",
+      "description": "A producer outside the authoritative source emits one pair with two payloads.",
+      "expectedDisposition": "no effect; derived state running",
+      "expected": {
+        "state": "running",
+        "contradictory": false
+      }
+    },
+    {
+      "id": "same-id-under-two-sources",
+      "description": "One id under two sources is two observations, and the foreign one is outside the fold.",
+      "expectedDisposition": "derived state delivered, not contradictory",
+      "expected": {
+        "state": "delivered",
+        "contradictory": false
+      }
+    },
+    {
+      "id": "no-engagement-pins-a-source",
+      "description": "No attempt-engaged in the log, so every source is inside the fold.",
+      "expectedDisposition": "refused: protocol-violation",
+      "expected": {
+        "refused": "protocol-violation"
+      }
+    },
+    {
+      "id": "two-terminals-with-their-own-ids",
+      "description": "Contradictory terminals under distinct pairs.",
+      "expectedDisposition": "derived state delivered (first in sequence), contradictory: true",
+      "expected": {
+        "state": "delivered",
+        "contradictory": true
+      }
+    },
+    {
+      "id": "equal-sequence-breaks-on-the-pair",
+      "description": "Two terminals with one sequence value order by source, then id, not by position in the log.",
+      "expectedDisposition": "derived state delivered (evt-terminal-1 orders first), contradictory: true",
+      "expected": {
+        "state": "delivered",
+        "contradictory": true
+      }
+    },
+    {
+      "id": "engaged-disagreeing-on-source",
+      "description": "One (source, id) pair, two attempt-engaged payloads naming different authoritative sources. The other one sorts after this source.",
+      "expectedDisposition": "refused: protocol-violation, whichever payload sorts first",
+      "expected": {
+        "refused": "protocol-violation"
+      }
+    },
+    {
+      "id": "engaged-disagreeing-on-source-other-content-order",
+      "description": "The same, with the other source sorting before this one, so the other payload is first in content order.",
+      "expectedDisposition": "refused: protocol-violation, whichever payload sorts first",
+      "expected": {
+        "refused": "protocol-violation"
+      }
+    },
+    {
+      "id": "engaged-disagreement-from-another-producer",
+      "description": "After this source's attempt-engaged, a producer outside it emits one pair as two attempt-engaged payloads that disagree.",
+      "expectedDisposition": "refused: protocol-violation (a disagreement between two attempt-engaged observations is always inside the fold)",
+      "expected": {
+        "refused": "protocol-violation"
+      }
+    }
+  ]
+}
