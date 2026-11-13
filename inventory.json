@@ -2641,6 +2641,22 @@
               "mediaType": "application/json"
             },
             {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/one-digest/entry-without-a-chain-under-a-standing-digest.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/one-digest/failed-entry-beside-the-genesis.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/one-digest/stranger-entry-under-the-genesis-digest-does-not-revoke-it.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/one-digest/stranger-verdict-leg-under-the-genesis-digest.json",
+              "mediaType": "application/json"
+            },
+            {
               "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/reach/bound-again-after-the-reach-has-ended.json",
               "mediaType": "application/json"
             },

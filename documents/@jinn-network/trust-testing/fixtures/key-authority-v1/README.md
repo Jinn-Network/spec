@@ -29,6 +29,7 @@ A binding has `id`, `key`, `voucher` and `from` (its `validFrom`), and these opt
 | `ceremony` | `absent` withholds its ceremony evidence, so the ceremony fails. A ceremony type names one the verifier has no leg for. | a genuine `eoa` ceremony |
 | `signed` | `false` means its key did not sign its envelope. | `true` |
 | `below` | The ids whose digests its own digest must sort below. | none |
+| `filed` | The id of another binding whose digest the store files it under, in place of its own. | its own digest |
 
 A time written `MM-DD` is midnight UTC on that day of 2026, as `2026-MM-DDT00:00:00.000Z`. Any other time is literal.
 
@@ -38,6 +39,7 @@ A time written `MM-DD` is midnight UTC on that day of 2026, as `2026-MM-DDT00:00
 - Each binding is a key-binding record of that key to the Agent, vouched by the named account, with the fields above. Its ceremony is a genuine EOA ceremony by that account over a message naming the Agent and the key, unless `ceremony` says otherwise. Its envelope is signed by its key unless `signed` is `false`.
 - Under `anchors-required` each binding with an anchor time cites one anchor reference, and the anchor surface reports that time for it. Under `anchors-optional` bindings cite none. Every revocation with an `at` cites one anchor reference reported at that time, under both profiles.
 - A revocation is a revocation record naming the target binding's digest, signed by `by`.
+- A binding with `filed` is built like any other, with its own fields, ceremony and envelope. Only the digest the store files it under changes, as a store that takes digests as given may do. A revocation that targets that other binding names this one too, since both are filed under one digest.
 - Where `below` asks for one digest to sort below another, the harness varies a namespaced extension field of the record, or another field the case does not read, until it does.
 - The verifier checks `eoa` ceremonies and has no leg for any other ceremony type. Its trust policy accepts every Agent, so step 9 never fails.
 - A verdict MUST be the same in every stored order of the bindings and of the revocations.
@@ -58,6 +60,7 @@ Each file is one case of section 8's account signature, stated directly: `input.
 | `revocation/` | Who may revoke, and when a revocation counts. |
 | `reading/` | Times and entries that cannot be read. |
 | `reach/` | What a revocation reaches. |
+| `one-digest/` | Entries a store files under one digest. |
 | `settlement-join/` | The settlement join. |
 | `account-signature/` | An account's signature on a revocation. |
 
