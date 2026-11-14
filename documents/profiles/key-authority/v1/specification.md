@@ -32,7 +32,7 @@ A *deployment profile* is what a deployment publishes for these texts: whether i
 
 ## 3. Stored entries
 
-A *stored entry* is what a store holds for one record: the digest the store files it under, the record's fields as far as they can be read, and its envelope. Its anchor references are its `anchors` field.
+A *stored entry* is what a store holds for one record: the digest the store files it under, the record's fields as far as they can be read, its envelope, and any ceremony evidence the store holds with it. Its anchor references are its `anchors` field.
 
 A binding entry is *placed* when it has a digest, its anchor references can be read, and it has an effective start. A placed entry is a *readable binding* when it also conforms to the key-binding schema and carries its envelope.
 

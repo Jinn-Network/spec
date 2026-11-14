@@ -2503,7 +2503,7 @@
     },
     {
       "path": "profiles/key-authority/v1/specification.md",
-      "sha256": "09a8f8c5413855488d47958fa9765d8017decc401a4807cd3877d5c1b9c0440f",
+      "sha256": "c140f79b33e8a37cb98fdb44da589876fa8edd4103d86bf554aa0cceeb3ea5de",
       "mediaType": "text/markdown",
       "sourcePackage": "@jinn-network/trust-core"
     },
