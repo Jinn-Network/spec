@@ -6,7 +6,7 @@
   },
   "inventory": {
     "path": "inventory.json",
-    "sha256": "86a39f5b0e9a4e8df57eb4a2bd5b560668f8530d3563a0d9510ba2ee0302f7d9"
+    "sha256": "36abca5708e1daa4b3a8edf41750c71bfea3e13b20171db643c409ba8c1ba33e"
   },
   "releaseGroup": "sealed-platform-v1",
   "lane": "stable",
@@ -2449,7 +2449,7 @@
     },
     {
       "path": "profiles/ceremony-currency/v1/specification.md",
-      "sha256": "de262f1bd69709bdf886f1f2f78237b5babc14d6f98a378f94fb641c50f8d05f",
+      "sha256": "febfb7d79324a55a4756d66b0217b9d24574cdf3c4036bdb5bda765ece45007b",
       "mediaType": "text/markdown",
       "sourcePackage": "@jinn-network/trust-core"
     },

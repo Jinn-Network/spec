@@ -6,7 +6,7 @@
   },
   "inventory": {
     "path": "inventory.json",
-    "sha256": "86a39f5b0e9a4e8df57eb4a2bd5b560668f8530d3563a0d9510ba2ee0302f7d9"
+    "sha256": "36abca5708e1daa4b3a8edf41750c71bfea3e13b20171db643c409ba8c1ba33e"
   },
   "releaseGroup": "implementations-v1",
   "lane": "stable",
@@ -434,7 +434,7 @@
     },
     {
       "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/README.md",
-      "sha256": "76c69014e5141c0fe51380a5edc65a08f2bfcd5ee12225c2c32f0ec21299bb60",
+      "sha256": "d36ebb698a97e368a59bac14b73e854a57677afb98ff49ad26bf19e7eb3d7f5c",
       "mediaType": "text/markdown",
       "sourcePackage": "@jinn-network/trust-testing"
     },
@@ -481,6 +481,12 @@
       "sourcePackage": "@jinn-network/trust-testing"
     },
     {
+      "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/domain-in-upper-case.json",
+      "sha256": "3bad58aa119fa56ff621b963e15ac550a40d655c4518b19f42987c76104f0d1d",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-testing"
+    },
+    {
       "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/end-moved.json",
       "sha256": "f75526a2ae61af081526652479050b0bc1cda39edb8fa96c83ae61f467fcf8fa",
       "mediaType": "application/json",
@@ -511,6 +517,12 @@
       "sourcePackage": "@jinn-network/trust-testing"
     },
     {
+      "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/other-domain.json",
+      "sha256": "721c4c3e6fe5958859108ebccc498323856d6e1a3d23010ad05072e9a752d16d",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-testing"
+    },
+    {
       "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/other-relationship.json",
       "sha256": "5e9b1413400a2cd53376d6be3b08500985bd0d756f261b8d8f414850fa66a104",
       "mediaType": "application/json",
@@ -519,6 +531,12 @@
     {
       "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/other-start.json",
       "sha256": "8766cfc77f00003cb7c2159e1f1951bbb4861d4f9840fd39b2527aa8fb59af0a",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-testing"
+    },
+    {
+      "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/other-uri.json",
+      "sha256": "24ac098a463636c73c3c739c97687f39474d2586b03534490bb176a0c21d1966",
       "mediaType": "application/json",
       "sourcePackage": "@jinn-network/trust-testing"
     },
@@ -1304,7 +1322,7 @@
     },
     {
       "path": "@jinn-network/trust-testing/fixtures/manifest.sha256.json",
-      "sha256": "41147dce9bbc0de8b346af5b31246cc1a3f8d7ef2d8d2be366ca0353449cc886",
+      "sha256": "5693645c8f16df2402c431f69866af0eb9a1a9e96f3f3928f46aa1083f4d6a90",
       "mediaType": "application/json",
       "sourcePackage": "@jinn-network/trust-testing"
     },

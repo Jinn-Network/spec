@@ -2373,6 +2373,10 @@
               "mediaType": "application/json"
             },
             {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/domain-in-upper-case.json",
+              "mediaType": "application/json"
+            },
+            {
               "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/end-moved.json",
               "mediaType": "application/json"
             },
@@ -2393,11 +2397,19 @@
               "mediaType": "application/json"
             },
             {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/other-domain.json",
+              "mediaType": "application/json"
+            },
+            {
               "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/other-relationship.json",
               "mediaType": "application/json"
             },
             {
               "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/other-start.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/ceremony-currency-v1/other-uri.json",
               "mediaType": "application/json"
             },
             {

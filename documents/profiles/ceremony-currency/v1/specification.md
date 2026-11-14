@@ -14,7 +14,7 @@ A ceremony is an account's signature saying that it vouches a working key for an
 
 A ceremony's message names the Agent IRI and the key, and the record must match them. That stops a ceremony being lifted to another key or another Agent, and it says nothing else. A record's `relationship`, `scope`, `validFrom` and `expiresAt` are sealed by the key being bound, so without more they are that key's word, not the account's. The holder of a key with an old ceremony could seal a new record over it, stating terms the account never saw.
 
-This text lets an account commit to a record's terms, and it says what a ceremony's own times mean. Nonce tracking is not the answer here: an offline verifier holds no nonce store.
+This text lets an account commit to a record's terms, says what a ceremony's own times mean, and ties a ceremony to the site and purpose it was asked for. Nonce tracking is not the answer here: an offline verifier holds no nonce store.
 
 ## 2. What a ceremony commits to
 
@@ -42,29 +42,36 @@ This comparison uses the record's effective start and nothing else. A verifier M
 
 A ceremony time that cannot be read fails the ceremony. These times are limits the account set, so an unreadable one is not dropped.
 
-## 5. Requiring the commitment
+## 5. Where a ceremony was asked for
+
+A ceremony's message names a `domain` and a `uri`. The `domain` names the site that asks the account to sign, and the `uri` names what it asks for.
+
+Each deployment profile names one *ceremony domain* and one *key-binding ceremony URI*. A verifier MUST require a ceremony's `domain` to equal the ceremony domain and its `uri` to equal the key-binding ceremony URI, each compared as written, code unit for code unit. Otherwise the ceremony fails. A message that names another site, or another purpose, binds nothing, whoever signed it.
+
+## 6. Requiring the commitment
 
 Each deployment chooses whether to require the commitment. A deployment profile that requires anchors MAY name an instant, its *terms cutover*. A binding whose effective start is at or after the cutover, and whose ceremony does not commit to terms, fails its ceremony.
 
 A profile that names no cutover admits such bindings. There a binding's `relationship`, `scope`, `validFrom` and `expiresAt` remain the bound key's word alone.
 
-## 6. What a stolen working key is bounded by
+## 7. What a stolen working key is bounded by
 
 Where a ceremony commits to terms, a stolen working key is bounded by `expiresAt`, `scope` and revocation, and the voucher account set the first two. Evidence signed between theft and an anchored revocation still attributes to the Agent, because revocation is never retroactive.
 
 Where it does not, that bound holds only against a party who does not hold the key.
 
-## 7. What this text does not state
+## 8. What this text does not state
 
-- **Ceremonies with no SIWE message.** `agentId`, `oidc-machine` and `github-human` ceremonies carry no such message. Sections 3 to 5 do not apply to them, and section 6's bound is not claimed for them.
+- **Ceremonies with no SIWE message.** `agentId`, `oidc-machine` and `github-human` ceremonies carry no such message. Sections 3 to 6 do not apply to them, and section 7's bound is not claimed for them.
+- **Other ceremony messages.** A profiled SIWE message that authorizes capabilities, rather than binding a key, is outside this text, and so is the URI a deployment names for it.
 - **A store that omits records.** A verifier reads the store it holds. A revocation's reach, like the genesis binding itself, assumes the store is complete.
 - **Revocations.** A revocation carries no ceremony. Its anchor places it in time.
 
-## 8. Conformance
+## 9. Conformance
 
 An implementation conforms to this text when it produces every expected outcome in the vectors under `@jinn-network/trust-testing/fixtures/ceremony-currency-v1/`. Their format is in that directory's `README.md`.
 
-## 9. Why these rules (non-normative)
+## 10. Why these rules (non-normative)
 
 **Commit to the terms.** The content match plus validity windows is a replay defense only once the window is inside what the account signs. This is the smallest change that puts it there. It needs no new record field, no chain read and no nonce store, and it verifies offline forever.
 
@@ -81,3 +88,5 @@ An implementation conforms to this text when it produces every expected outcome 
 **A cutover, not a new record format.** A sealed ceremony vector in this repository, `@jinn-network/trust-core/fixtures/ceremony-v1/eoa-siwe.json`, carries two resources and no expiration and must keep verifying. Records citing `https://spec.jinn.network/trust/key-binding/v1` exist, and a published identifier never changes meaning. A cutover keeps old records readable, lets each deployment choose its moment, and is checkable, because under a profile that requires anchors the effective start is fixed by the anchor.
 
 **Other rules considered.** `expirationTime` alone bounds when a record can start and not what it says, and closes nothing for ceremonies with no expiration. Requiring `issuedAt` to equal `validFrom` leaves a record that keeps its time free to change its scope and its end. Letting the first record that relies on a ceremony keep it decides by order, which the holder of a key can influence. Tying the ceremony to the record's digest is circular, since the record holds the ceremony's digest. Requiring `expiresAt` on every record leaves it the key's word.
+
+**The deployment's domain and URI.** The content match ties a ceremony to a key and an Agent, and to nothing else. EIP-4361 has the wallet check a message's `domain` against the site that asks for the signature. So any site can have an account sign a message that names that site, and only the deployment's own site can have it sign one that names the deployment's domain without failing that check. A verifier that requires the deployment's domain accepts only the second kind. The `uri` names the purpose, so a signature asked for as a login, or for anything else, is not read as a key-binding ceremony. The values are the deployment's and not this text's, because a domain is the site where a deployment asks for ceremonies, and this repository holds no network's configuration. They are compared as written because two verifiers must agree, and a rule for which spellings name one host is one more thing to disagree on. Every key-binding ceremony vector that came before this rule names `trust.jinn.network` and `https://trust.jinn.network/ceremony/key-binding`, so under a profile that names them none of their outcomes changes.
