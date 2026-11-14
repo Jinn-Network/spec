@@ -32,7 +32,7 @@ A *deployment profile* is what a deployment publishes for these texts: whether i
 
 ## 3. Stored entries
 
-A *stored entry* is what a store holds for one record: the digest the store files it under, the record's fields as far as they can be read, and its envelope. Its anchor references are its `anchors` field.
+A *stored entry* is what a store holds for one record: the digest the store files it under, the record's fields as far as they can be read, its envelope, and any ceremony evidence the store holds with it. Its anchor references are its `anchors` field.
 
 A binding entry is *placed* when it has a digest, its anchor references can be read, and it has an effective start. A placed entry is a *readable binding* when it also conforms to the key-binding schema and carries its envelope.
 
@@ -40,13 +40,15 @@ A placed entry counts when deciding what came first (section 5), whatever else i
 
 A revocation entry is read when its anchor references can be read and it carries a `revokedBy` and its envelope. It need not otherwise conform. A revocation by a signer with authority does not lapse for how the rest of it is spelled.
 
+**One digest, several entries.** A store that takes digests as given can file more than one entry under one digest. Every rule in this text judges an entry, not a digest. Whether an entry is placed, whether it is a candidate, whether it is usable, whether its chain holds and whether a revocation is authorized against it are decided from what that entry holds, and nothing decided for one entry is decided for another filed under the same digest. Where a rule names an entry by its digest, it names every entry filed under that digest. Entries alike in everything they hold, their digest included, are one entry.
+
 ## 4. What resolves for a key
 
 The *candidates* for key K and Agent A at instant T are the readable bindings of K to A that are in window at T and whose envelope K signed. An `eoa` ceremony is checked offline, at step 4 of section 9. Any other ceremony counts only if a leg the verifier holds has verified it: a binding with a ceremony the verifier has no leg for is no candidate.
 
 An `agentId` ceremony counts only on an `agentId` voucher, and its leg is composition. Composition holds at T when the account that the registry names as the agentId's owner holds a binding to the same Agent, under that account as voucher, that stands at T (section 6). Registry facts alone never vouch an Agent.
 
-What *resolves* is the candidate with the earliest effective start, a tie going to the lowest digest. A candidate whose ceremony fails MUST NOT beat one whose ceremony verifies, whatever its time. If no candidate's ceremony verifies, the same order runs over all of them, and verification names the failure at step 4 of section 9. If there is no candidate, nothing resolves.
+What *resolves* is the candidate with the earliest effective start, a tie going to the lowest digest, and among candidates filed under that digest to one that claims founding (section 5). A candidate whose ceremony fails MUST NOT beat one whose ceremony verifies, whatever its time. If no candidate's ceremony verifies, the same order runs over all of them, and verification names the failure at step 4 of section 9. If there is no candidate, nothing resolves.
 
 Where more than one candidate exists, a verifier MAY report the conflict to its trust policy; the report changes no outcome except through step 9.
 
@@ -54,7 +56,7 @@ A record that resolves has not been judged. Sections 6 to 8 judge it.
 
 ## 5. What came first
 
-The *genesis binding* of an Agent is decided over every placed entry for that Agent, not only those that resolve. Take the placed entries with the earliest effective start. An entry *claims founding* when it is a readable binding with `relationship` `controls` and no `consent`. If any of them claims founding, keep only those that do, and if those name more than one voucher, the Agent has no genesis binding. Otherwise the kept entry with the lowest digest holds the first place, and it is the genesis binding.
+The *genesis binding* of an Agent is decided over every placed entry for that Agent, not only those that resolve. Take the placed entries with the earliest effective start. An entry *claims founding* when it is a readable binding with `relationship` `controls` and no `consent`. If any of them claims founding, keep only those that do, and if those name more than one voucher, the Agent has no genesis binding. Otherwise the kept entry with the lowest digest holds the first place, and it is the genesis binding. If more than one kept entry is filed under that digest, each of them holds the first place and is a genesis binding, and what this text says of the genesis binding it says of each.
 
 A record this verifier cannot check may be the true founder, and leaving it out would make the next record the founder of the Agent. So an entry that will never resolve can hold the first place. The binding after it is then not the genesis binding and needs authority like any other.
 
@@ -97,14 +99,14 @@ So a founding account can mint a new binding, through a ceremony that account si
 
 ## 8. Revocations
 
-**What a revocation reaches.** Records are *siblings* when they are readable bindings of one key to one Agent under the same voucher and that key signed them. Their ceremonies are not asked. A revocation names one record by digest. It reaches that record, whether or not the record was in window at the revocation's effective time. It also reaches every sibling of that record, if both were in window at the revocation's effective time. A revocation that names anything but a readable binding its key signed reaches nothing.
+**What a revocation reaches.** Records are *siblings* when they are readable bindings of one key to one Agent under the same voucher and that key signed them. Their ceremonies are not asked. A revocation names a digest, and so every entry filed under it (section 3). It reaches each readable binding it names that its key signed, whether or not that record was in window at the revocation's effective time. It also reaches every sibling of such a record, if both were in window at the revocation's effective time. A revocation that names no readable binding its key signed reaches nothing.
 
 So a replacement beside a revoked record cannot leave the revocation behind, and a record that ends later lifts nothing. A record that first takes effect after the revocation shares nothing with it. A record under another voucher shares nothing, and stands on its own chain.
 
-**Who may revoke.** A revocation of record N, judged against a record B it reaches, with effective time E, is *authorized* when one of these holds:
+**Who may revoke.** A revocation with effective time E, judged against a record B it reaches, is *authorized* when one of these holds:
 
 1. **The voucher account.** `revokedBy` is the `did:pkh` of B's voucher, that voucher is not a contract account, and that account signed the revocation. The account needs no binding of its own.
-2. **The key itself.** `revokedBy` is B's key, that key signed the revocation, N was in window at E, N's ceremony verifies, and N holds `bindings` scope. No chain is asked: a key giving up its own binding gives no authority to anyone. The scope is N's, not that of whichever record answers for the key at E.
+2. **The key itself.** `revokedBy` is B's key, that key signed the revocation, and a record N the revocation names, B or a sibling of B, was in window at E, N's ceremony verifies, and N holds `bindings` scope. No chain is asked: a key giving up its own binding gives no authority to anyone. The scope is N's, not that of whichever record answers for the key at E.
 3. **A key of the Agent.** `revokedBy` is a key, B's own included, that key signed the revocation, what resolves for it at E holds `bindings` scope, and that binding stands at E.
 
 Any other revocation has no effect, whatever time it states. Authority is settled before the time is read. An authorized revocation whose effective time cannot be read counts at every instant.
@@ -149,6 +151,7 @@ A `bindings` key can revoke the Agent's bindings, and it can consent a new accou
 
 - **What an anchor reference covers.** A verifier here reads a time from an anchor surface. This text does not say how a verifier checks what a referenced digest is a digest of. Until a text does, a place in time is only as good as the control over what enters the store.
 - **Whether a ceremony is current.** A separate text covers it.
+- **Which of two candidates under one digest resolves.** Section 4 breaks a tie between candidates filed under one digest only by a founding claim. Between two that still tie, section 1 rules out the order a store lists them in, but this text does not say which resolves, so two verifiers can resolve different entries for one key.
 - **Whether a failed read is a refusal.** A verifier that could not read a dependency has not reached a verdict. This text covers verdicts.
 - **The record schemas.** This text relies on the key-binding and revocation schemas, which this repository does not yet serve. Until it does, a binding's `validFrom` or `expiresAt` conforms when it is written `YYYY-MM-DDTHH:MM`, then optionally `:SS` from 00 to 59 and a fraction, then `Z`, and names a day the calendar holds. So a time without seconds conforms although section 2 cannot read it, and an offset or a second 60 does not conform although section 2 could read it.
 
@@ -171,6 +174,8 @@ An implementation conforms to this text when it produces every expected outcome 
 **A founding claim goes first at a tie, and two vouchers found nothing.** A batch at the founding instant can include a delegate with `signs-for`, or a record consented by the genesis key. Neither should take the founding by digest. A digest is a value its author can try again for. That is fine for ordering records that agree, as records of one account do. An honest founding never ties across accounts, because a second account joins by consent, so two founding claims from two accounts at one instant have no honest reading, and the text refuses rather than let a digest choose.
 
 **Every placed entry counts for what came first.** A verifier that drops a record it cannot read, or a ceremony type it cannot check, makes the next record the founder. Counting it fails closed. The cost: an entry that does not parse, placed before the genesis binding, displaces it, and the entry gains nothing.
+
+**An entry is judged alone, whatever digest it is filed under.** A store that takes digests as given can file a stranger's entry under an honest record's digest. If a fact about one entry carried to the other, the stranger's entry could lend the honest record its failures, or borrow its standing, according to which one a verifier happened to read first. Judging each entry from what it holds gives one answer, and an entry gains nothing, and costs another nothing, by where it is filed.
 
 **A start that cannot be read claims nothing, and an end that cannot be read gives nothing.** A stated start can only delay, and the anchor is the bound that matters. A stated end is a limit, and reading an unreadable one as no end would extend a key's life.
 

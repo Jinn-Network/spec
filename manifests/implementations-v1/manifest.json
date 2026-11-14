@@ -6,7 +6,7 @@
   },
   "inventory": {
     "path": "inventory.json",
-    "sha256": "309b56ab8b47266d7139f2044b149e0923eb658eacb8a1123ed4de73ecd571ed"
+    "sha256": "36abca5708e1daa4b3a8edf41750c71bfea3e13b20171db643c409ba8c1ba33e"
   },
   "releaseGroup": "implementations-v1",
   "lane": "stable",
@@ -638,7 +638,7 @@
     },
     {
       "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/README.md",
-      "sha256": "631bf7880c905e7d9ec8ec38bf114caf224d11242878515d2aa9f68101b27716",
+      "sha256": "ef34e9f28296c5b791eb50e79007f5e86d734db03000cf7534f38bd3023816c8",
       "mediaType": "text/markdown",
       "sourcePackage": "@jinn-network/trust-testing"
     },
@@ -897,6 +897,30 @@
     {
       "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/no-authority/undecodable-countersignature.json",
       "sha256": "ae70e130f8f66bd7eda041ca5aeea227365a9140a974576d53a22fb430d36e91",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-testing"
+    },
+    {
+      "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/one-digest/entry-without-a-chain-under-a-standing-digest.json",
+      "sha256": "2968b0c97932697b3c7b98c2279d5b8026122360be7de2ef4195cd296ba85ed0",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-testing"
+    },
+    {
+      "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/one-digest/failed-entry-beside-the-genesis.json",
+      "sha256": "fd0e7e1c9561ae3fec46e74d5d375746a00854fcceef7d24cff6fd5689b3fa71",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-testing"
+    },
+    {
+      "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/one-digest/stranger-entry-under-the-genesis-digest-does-not-revoke-it.json",
+      "sha256": "8c7e9776ef7eed3d798c8acc8f6e2112d3f97d854b86e5754733715b7cf498eb",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-testing"
+    },
+    {
+      "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/one-digest/stranger-verdict-leg-under-the-genesis-digest.json",
+      "sha256": "0bc8391b12c06bf1f474192cec679a31dff4eaadfb161b1701606f38e84ea64c",
       "mediaType": "application/json",
       "sourcePackage": "@jinn-network/trust-testing"
     },
@@ -1298,7 +1322,7 @@
     },
     {
       "path": "@jinn-network/trust-testing/fixtures/manifest.sha256.json",
-      "sha256": "29ab9e81f847387725496b0ac8bfec5cd2ecbaa42038c8d13d9601cfb54e0266",
+      "sha256": "5693645c8f16df2402c431f69866af0eb9a1a9e96f3f3928f46aa1083f4d6a90",
       "mediaType": "application/json",
       "sourcePackage": "@jinn-network/trust-testing"
     },
