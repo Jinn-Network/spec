@@ -34,11 +34,13 @@ A *deployment profile* is what a deployment publishes for these texts: whether i
 
 A *stored entry* is what a store holds for one record: the digest the store files it under, the record's fields as far as they can be read, its envelope, and any ceremony evidence the store holds with it. Its anchor references are its `anchors` field.
 
-A binding entry is *placed* when it has a digest, its anchor references can be read, and it has an effective start. A placed entry is a *readable binding* when it also conforms to the key-binding schema and carries its envelope.
+**Fields are read from the envelope.** A signature on an envelope is its signer's word for that envelope's payload, under that envelope's payload type, and for nothing else. So a stored entry's fields are read from its envelope. They *match* the envelope when its payload type is the record's media type, `application/vnd.jinn.trust.key-binding.v1+json` for a binding and `application/vnd.jinn.trust.revocation.v1+json` for a revocation, and the RFC 8785 canonical bytes of the fields equal those of the payload read as JSON. Fields that do not match their envelope are no one's word.
+
+A binding entry is *placed* when it has a digest, its anchor references can be read, and it has an effective start. A placed entry is a *readable binding* when it also conforms to the key-binding schema, carries its envelope, and its fields match that envelope.
 
 A placed entry counts when deciding what came first (section 5), whatever else it holds. Only a readable binding can resolve or give authority. An entry that is not placed has no effect.
 
-A revocation entry is read when its anchor references can be read and it carries a `revokedBy` and its envelope. It need not otherwise conform. A revocation by a signer with authority does not lapse for how the rest of it is spelled.
+A revocation entry is read when its anchor references can be read, it carries a `revokedBy` and its envelope, and its fields match that envelope. It need not otherwise conform. A revocation by a signer with authority does not lapse for how the rest of it is spelled.
 
 **One digest, several entries.** A store that takes digests as given can file more than one entry under one digest. Every rule in this text judges an entry, not a digest. Whether an entry is placed, whether it is a candidate, whether it is usable, whether its chain holds and whether a revocation is authorized against it are decided from what that entry holds, and nothing decided for one entry is decided for another filed under the same digest. Where a rule names an entry by its digest, it names every entry filed under that digest. Entries alike in everything they hold, their digest included, are one entry.
 
@@ -174,6 +176,8 @@ An implementation conforms to this text when it produces every expected outcome 
 **A founding claim goes first at a tie, and two vouchers found nothing.** A batch at the founding instant can include a delegate with `signs-for`, or a record consented by the genesis key. Neither should take the founding by digest. A digest is a value its author can try again for. That is fine for ordering records that agree, as records of one account do. An honest founding never ties across accounts, because a second account joins by consent, so two founding claims from two accounts at one instant have no honest reading, and the text refuses rather than let a digest choose.
 
 **Every placed entry counts for what came first.** A verifier that drops a record it cannot read, or a ceremony type it cannot check, makes the next record the founder. Counting it fails closed. The cost: an entry that does not parse, placed before the genesis binding, displaces it, and the entry gains nothing.
+
+**An entry's fields are its envelope's.** A key signs one envelope's payload under one payload type. If a store could pair a published envelope with other fields, the key would be taken to say what it never signed: a binding with a wider `scope`, a later or absent `expiresAt`, or another `relationship`, which an `eoa` ceremony does not cover because it names only the Agent and the key, or a revocation of a record the key never revoked. Comparing canonical bytes lets a store order and space the fields as it likes. An entry whose fields do not match still counts for what came first, as every placed entry does, and gains nothing from it.
 
 **An entry is judged alone, whatever digest it is filed under.** A store that takes digests as given can file a stranger's entry under an honest record's digest. If a fact about one entry carried to the other, the stranger's entry could lend the honest record its failures, or borrow its standing, according to which one a verifier happened to read first. Judging each entry from what it holds gives one answer, and an entry gains nothing, and costs another nothing, by where it is filed.
 
