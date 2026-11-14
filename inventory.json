@@ -2525,6 +2525,34 @@
               "mediaType": "application/json"
             },
             {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/envelope/binding-sealed-as-another-type.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/envelope/relationship-its-envelope-does-not-carry.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/envelope/revocation-of-another-record.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/envelope/revocation-sealed-as-another-type.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/envelope/scope-its-envelope-does-not-carry.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/envelope/settlement-scope-its-envelope-does-not-carry.json",
+              "mediaType": "application/json"
+            },
+            {
+              "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/envelope/window-its-envelope-does-not-carry.json",
+              "mediaType": "application/json"
+            },
+            {
               "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/first-and-conflict/ceremony-the-verifier-cannot-check.json",
               "mediaType": "application/json"
             },

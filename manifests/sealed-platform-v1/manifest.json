@@ -6,7 +6,7 @@
   },
   "inventory": {
     "path": "inventory.json",
-    "sha256": "36abca5708e1daa4b3a8edf41750c71bfea3e13b20171db643c409ba8c1ba33e"
+    "sha256": "b8f1d4516636f2b76eb734418b68ba64c804efa3eabc2de7072e6a3419769acc"
   },
   "releaseGroup": "sealed-platform-v1",
   "lane": "stable",
@@ -2503,7 +2503,7 @@
     },
     {
       "path": "profiles/key-authority/v1/specification.md",
-      "sha256": "c140f79b33e8a37cb98fdb44da589876fa8edd4103d86bf554aa0cceeb3ea5de",
+      "sha256": "2b5613d2fc8a8e90b3694b8dfba9876231ab45f7ea6d0467b785e793de468fc7",
       "mediaType": "text/markdown",
       "sourcePackage": "@jinn-network/trust-core"
     },

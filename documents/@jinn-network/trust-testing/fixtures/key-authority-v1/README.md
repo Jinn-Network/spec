@@ -13,7 +13,7 @@ Each case is a relationship among several sealed records: who vouched which key,
 | `profile` | `anchors-required` or `anchors-optional`. Absent means the case holds under both. |
 | `bindings` | Records, in no meaningful order. |
 | `entries` | Stored binding entries that do not conform to the key-binding schema. Each is an object whose only field is `anchors`: one anchor reference reported at `anchor`, or, for `"unreadable"`, a value that is not a list of anchor references. `digest: "low"` files it under `sha256:` and 64 zeros; otherwise the harness chooses its digest. |
-| `revocations` | Each with `target` (a binding's `id`), `by` (a key, or `account:` and an account), `at` (its anchor time, `null` for none) and `stated` (its `effectiveFrom`, defaulting to `at`). |
+| `revocations` | Each with `target` (a binding's `id`), `by` (a key, or `account:` and an account), `at` (its anchor time, `null` for none), `stated` (its `effectiveFrom`, defaulting to `at`) and `envelope`, as for a binding: `type` in place of the revocation media type, and `target`, the `id` of the binding its payload names in its place. |
 | `checks` | Each with `key`, `at` (defaulting to `06-01`) and `expect`, the outcome of section 9 of the text for record family `verdicts`. A check with `join` gives the keys and times of section 10, for record family `verdicts`, and `expect` is `joined` or `refused`. |
 
 A binding has `id`, `key`, `voucher` and `from` (its `validFrom`), and these optional fields.
@@ -30,6 +30,7 @@ A binding has `id`, `key`, `voucher` and `from` (its `validFrom`), and these opt
 | `signed` | `false` means its key did not sign its envelope. | `true` |
 | `below` | The ids whose digests its own digest must sort below. | none |
 | `filed` | The id of another binding whose digest the store files it under, in place of its own. | its own digest |
+| `envelope` | What its envelope carries where that differs from the fields the store holds: `type`, a payload type in place of the key-binding media type, and any of `until`, `scope` and `rel`, which its payload carries in their place. `until: null` gives a payload with no `expiresAt`. | what the store holds |
 
 A time written `MM-DD` is midnight UTC on that day of 2026, as `2026-MM-DDT00:00:00.000Z`. Any other time is literal.
 
@@ -40,6 +41,7 @@ A time written `MM-DD` is midnight UTC on that day of 2026, as `2026-MM-DDT00:00
 - Under `anchors-required` each binding with an anchor time cites one anchor reference, and the anchor surface reports that time for it. Under `anchors-optional` bindings cite none. Every revocation with an `at` cites one anchor reference reported at that time, under both profiles.
 - A revocation is a revocation record naming the target binding's digest, signed by `by`.
 - A binding with `filed` is built like any other, with its own fields, ceremony and envelope. Only the digest the store files it under changes, as a store that takes digests as given may do. A revocation that targets that other binding names this one too, since both are filed under one digest.
+- A binding or revocation with `envelope` is sealed from its fields with those changes made, under `type` if one is given, and signed like any other. The store holds that envelope with the fields the world gives, as a store that takes entries as given may.
 - Where `below` asks for one digest to sort below another, the harness varies a namespaced extension field of the record, or another field the case does not read, until it does.
 - The verifier checks `eoa` ceremonies and has no leg for any other ceremony type. Its trust policy accepts every Agent, so step 9 never fails.
 - A verdict MUST be the same in every stored order of the bindings and of the revocations.
@@ -61,6 +63,7 @@ Each file is one case of section 8's account signature, stated directly: `input.
 | `reading/` | Times and entries that cannot be read. |
 | `reach/` | What a revocation reaches. |
 | `one-digest/` | Entries a store files under one digest. |
+| `envelope/` | Entries whose fields do not match their envelope. |
 | `settlement-join/` | The settlement join. |
 | `account-signature/` | An account's signature on a revocation. |
 

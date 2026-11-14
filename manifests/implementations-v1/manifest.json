@@ -6,7 +6,7 @@
   },
   "inventory": {
     "path": "inventory.json",
-    "sha256": "36abca5708e1daa4b3a8edf41750c71bfea3e13b20171db643c409ba8c1ba33e"
+    "sha256": "b8f1d4516636f2b76eb734418b68ba64c804efa3eabc2de7072e6a3419769acc"
   },
   "releaseGroup": "implementations-v1",
   "lane": "stable",
@@ -638,7 +638,7 @@
     },
     {
       "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/README.md",
-      "sha256": "ef34e9f28296c5b791eb50e79007f5e86d734db03000cf7534f38bd3023816c8",
+      "sha256": "2daebe0758be9084bf479fee15d0f1e9ba9f92c90b6966aa07e3444927352b97",
       "mediaType": "text/markdown",
       "sourcePackage": "@jinn-network/trust-testing"
     },
@@ -705,6 +705,48 @@
     {
       "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/chain/self-extension.json",
       "sha256": "32404bfa7d0660a55b00098c215f324410f30078be30b226d22bb7873057a272",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-testing"
+    },
+    {
+      "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/envelope/binding-sealed-as-another-type.json",
+      "sha256": "db5d7ea2dbb95e8bf82221ec0e854f8546d4f2c972cd44e1aebb391fa7d01f95",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-testing"
+    },
+    {
+      "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/envelope/relationship-its-envelope-does-not-carry.json",
+      "sha256": "0ddbaa5569cb90d1bb63fd7352db391967c34bdc55b7138cce0b70e6dfd9679c",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-testing"
+    },
+    {
+      "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/envelope/revocation-of-another-record.json",
+      "sha256": "6f6ac17c6c91d42ade4b3c44aa43abb52e10e515bf7964164320070bf501af9a",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-testing"
+    },
+    {
+      "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/envelope/revocation-sealed-as-another-type.json",
+      "sha256": "4c592e85027f887517e9a2ac66c8793fe47a546d1ff219cb94f8d0836dee9cc1",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-testing"
+    },
+    {
+      "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/envelope/scope-its-envelope-does-not-carry.json",
+      "sha256": "26a0014412090f58d010bd4d84003ab14d601fb7f90a16f174c0c4a263603dea",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-testing"
+    },
+    {
+      "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/envelope/settlement-scope-its-envelope-does-not-carry.json",
+      "sha256": "8fe83d9c7e618fc6781736d094eb7bbe9359103e199c0030296f8c454908f9f0",
+      "mediaType": "application/json",
+      "sourcePackage": "@jinn-network/trust-testing"
+    },
+    {
+      "path": "@jinn-network/trust-testing/fixtures/key-authority-v1/envelope/window-its-envelope-does-not-carry.json",
+      "sha256": "7627b41ccfea910d1ecbf64a7d23f96e3ab3803191effcbbc1b46ced19473a11",
       "mediaType": "application/json",
       "sourcePackage": "@jinn-network/trust-testing"
     },
@@ -1322,7 +1364,7 @@
     },
     {
       "path": "@jinn-network/trust-testing/fixtures/manifest.sha256.json",
-      "sha256": "5693645c8f16df2402c431f69866af0eb9a1a9e96f3f3928f46aa1083f4d6a90",
+      "sha256": "6e17d6b625bf71263d86156cc1889722159ac430a8eff0b546de49c79efa1922",
       "mediaType": "application/json",
       "sourcePackage": "@jinn-network/trust-testing"
     },
